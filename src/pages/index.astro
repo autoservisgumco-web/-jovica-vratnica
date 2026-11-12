@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const opening = [
+  'Често прихватамо себе онаквима какви јесмо, не размишљајући много о томе како смо заправо постали такви. Неко верује да му је такав карактер судбина, неко ће разлог потражити у хороскопу, а неко једноставно каже: „Ја сам такав и ту нема промене.“ Али да ли смо заиста рођени такви или смо временом постали такви?',
+  'Моје уверење је да човека у великој мери обликују околности у којима одраста, а да најзначајнију улогу у том процесу има породица. Породица је прво окружење у којем формирамо представу о свету. Ту усвајамо прве вредности, учимо како да се односимо према другима, како да разумемо ауторитет, како да решавамо сукобе и како да доносимо одлуке.',
+  'Начин на који нас васпитавају, односи које посматрамо и искуства која проживљавамо постепено утичу на формирање наше личности. Зато верујем да многе особине које приписујемо својој природи заправо имају дубље корене у нашем одрастању.',
+  'Нисмо сви одрастали у истим околностима. Нисмо имали исте родитеље, исте породичне односе, исту подршку нити исте животне услове. Зато није реално очекивати да сви развијемо исти поглед на свет, исте вредности и исти однос према животу.',
+  'Човек није само производ онога са чим је рођен. Он је и производ окружења у којем је одрастао, искустава која је стекао и односа који су га обликовали. Али то не значи да смо заувек одређени својим детињством. Напротив, спознаја о томе шта нас је обликовало пружа нам прилику да преиспитамо усвојене обрасце, донесемо сопствене одлуке и преузмемо одговорност за човека каквог желимо да будемо.',
+  'Можда нисмо рођени такви какви јесмо. Можда смо највећим делом постали такви у околностима у којима смо одрастали.'
+];
+---
+<BaseLayout>
+  <header class="site-header">
+    <a class="brand" href="#pocetak" aria-label="Јовица Вратница — почетна">ЈВ<span>.</span></a>
+    <nav aria-label="Главна навигација">
+      <a href="#prica">Моја прича</a>
+      <a href="#borba">Моја борба</a>
+      <a href="#projekti">Пројекти</a>
+      <a href="#kontakt">Контакт</a>
+    </nav>
+    <a class="header-mark" href="#prica">ЛИЧНИ ЗАПИСИ <span>↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="pocetak">
+      <div class="hero-grain"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> ЈОВИЦА ВРАТНИЦА · ЛИЧНА БИОГРАФИЈА</p>
+        <h1>Неконформиста<br />сам <em>откад знам</em><br />за себе.</h1>
+        <p class="hero-copy">Моја прича није прича о уклапању. То је прича о слободи, бунту, одговорности и стварању.</p>
+        <a class="text-link" href="#prica">УПОЗНАЈ МОЈУ ПРИЧУ <span>↘</span></a>
+      </div>
+      <div class="hero-side-note">НЕ ПРИСТАЈЕМ<br />НА ГОТОВЕ ОДГОВОРЕ.</div>
+      <div class="hero-index">01 <span>/</span> ЛИЧНИ ПУТ</div>
+    </section>
+
+    <section class="intro section-wrap" id="prica">
+      <div class="section-kicker"><span>01</span> / УВОД</div>
+      <div class="intro-grid">
+        <div>
+          <p class="overline">ПРЕ НЕГО ШТО ИСПРИЧАМ СВОЈУ ПРИЧУ</p>
+          <h2>Да ли смо заиста<br />рођени такви<br /><em>какви јесмо?</em></h2>
+        </div>
+        <div class="intro-text">
+          <p class="lead">Пре него што говорим о себи, желим да објасним у шта верујем: човек се не формира у празнини. Одрастање, породица и околности остављају дубок траг на то ко постајемо.</p>
+          <details class="reading">
+            <summary>ПРОЧИТАЈ ЦЕО УВОД <span>＋</span></summary>
+            <div class="reading-content">
+              {opening.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <p>„Моја борба није почела на улици.<br /><em>Почела је у породици.</em>“</p>
+      <span>ЛИЧНО УВЕРЕЊЕ · ПОЛАЗНА ТАЧКА</span>
+    </section>
+
+    <section class="chapters section-wrap">
+      <div class="section-kicker"><span>02</span> / ЖИВОТНИ ПУТ</div>
+      <div class="section-heading">
+        <h2>Како сам<br /><em>постао ја.</em></h2>
+        <p>Не желим да ово буде биографија са набројаним датумима. Желим да испричам пут, људе, околности и одлуке које су ме обликовале.</p>
+      </div>
+      <div class="chapter-list">
+        <article class="chapter">
+          <span class="chapter-no">01</span>
+          <div><p class="overline">ПОЧЕТАК</p><h3>Неконформиста од малена</h3><p>Породица, детињство и прва искуства која су обликовала мој однос према свету.</p></div>
+          <span class="chapter-arrow">↗</span>
+        </article>
+        <article class="chapter">
+          <span class="chapter-no">02</span>
+          <div><p class="overline">ОДРАСТАЊЕ</p><h3>Мој животни пут</h3><p>Искуства, послови, сусрети, падови и лекције које нисам учио из књига, већ живећи.</p></div>
+          <span class="chapter-arrow">↗</span>
+        </article>
+        <article class="chapter" id="borba">
+          <span class="chapter-no">03</span>
+          <div><p class="overline">ДЕЛОВАЊЕ</p><h3>Моја борба</h3><p>Од личног бунта до јавног ангажовања, од уверења до конкретних поступака.</p></div>
+          <span class="chapter-arrow">↗</span>
+        </article>
+      </div>
+      <p class="chapter-note">Ово су теме и оквир поглавља. Личне приче ћемо уносити постепено, на основу твојих сећања и чињеница — без измишљања.</p>
+    </section>
+
+    <section class="projects section-wrap" id="projekti">
+      <div class="section-kicker"><span>03</span> / НАСТАВАК БОРБЕ</div>
+      <div class="projects-grid">
+        <div>
+          <p class="overline">ИДЕЈЕ КОЈЕ ПОСТАЈУ ДЕЛА</p>
+          <h2>Борба се<br />наставља кроз<br /><em>стварање.</em></h2>
+        </div>
+        <div class="project-copy">
+          <p>За мене прича о животу није само осврт на оно што је било. Она је и објашњење зашто данас покрећем пројекте, повезујем људе и покушавам да мењам ствари које не прихватам као нормалне.</p>
+          <a class="project-link" href="https://junackosrce.co.rs/" target="_blank" rel="noreferrer"><span>ЈУНАЧКО СРЦЕ</span><b>Маркетинг који буди, не продаје.</b><i>↗</i></a>
+          <a class="project-link" href="https://junackosrce.co.rs/" target="_blank" rel="noreferrer"><span>ОДГОВОРНА ПЛАНА</span><b>Грађанска одговорност и промена.</b><i>↗</i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-wrap" id="kontakt">
+      <div class="section-kicker"><span>04</span> / КОНТАКТ</div>
+      <p class="overline">ПРИЧА СЕ НАСТАВЉА</p>
+      <h2>Ако имаш разлог<br />да се <em>повежемо —</em><br />јави се.</h2>
+      <p class="contact-note">Овде ћемо поставити директне контакт податке и линкове ка профилима када их изаберемо.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#pocetak">ЈВ<span>.</span></a>
+    <p>СЛОБОДА · АУТЕНТИЧНОСТ · ОДГОВОРНОСТ</p>
+    <a href="#pocetak">НАЗАД НА ВРХ ↑</a>
+  </footer>
+</BaseLayout>
