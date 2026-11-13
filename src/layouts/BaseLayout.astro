@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SharedNavigation from '../components/SharedNavigation.astro';
 
 const {
   title = 'Јовица Вратница — лична прича',
@@ -16,6 +17,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
+    <SharedNavigation />
     <slot />
   </body>
 </html>
