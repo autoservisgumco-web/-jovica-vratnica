@@ -12,46 +12,32 @@ const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_U
         <h1>Јовица <em>Вратница</em></h1>
         <p class="identity">Филозоф. Бунтовник. Човек који се води срцем.</p>
         <p class="motto">Пишем. Делујем. Повезујем.</p>
-        <div class="pathways" aria-label="Изабери свој пут">
-          <a class="path path-about" href={basePath + 'o-meni/'}>
-            <span class="path-kicker">УПОЗНАЈ ЧОВЕКА</span>
-            <span class="path-title">Ко сам ја?</span>
-            <span class="path-description">Моја прича, мој пут, моја уверења и борба.</span>
-            <span class="path-arrow">↗</span>
-          </a>
-          <a class="path path-for-you" href={basePath + 'junacko-srce/'}>
-            <span class="path-kicker">МОЈА МИСИЈА</span>
-            <span class="path-title">Ја сам ту за оне који се усуде.</span>
-            <span class="path-description">За људе са идејом, иницијативом и жељом да покрену промену.</span>
-            <span class="path-arrow">↗</span>
-          </a>
+        <div class="home-actions">
+          <a class="home-action home-action-primary" href={basePath + 'o-meni/'}>Ко сам ја? <span>↗</span></a>
+          <button class="home-action" type="button" onclick="document.getElementById('global-menu').showModal()">Упознај мој свет <span>＋</span></button>
         </div>
-        <p class="supporting">За људе који не чекају да неко други направи први корак.</p>
-        <button class="world-trigger" type="button" onclick="document.getElementById('world-menu').showModal()">Упознај мој свет <span>↓</span></button>
       </div>
       <span class="hero-index">ПИШЕМ <i>·</i> ДЕЛУЈЕМ <i>·</i> ПОВЕЗУЈЕМ</span>
     </section>
 
-    <dialog class="world-menu" id="world-menu" aria-labelledby="world-menu-title">
-      <div class="menu-head">
-        <div><p>ЈОШ МАЛО О МОМ СВЕТУ</p><h2 id="world-menu-title">Изабери где желиш да наставиш.</h2></div>
-        <button class="menu-close" type="button" aria-label="Затвори мени" onclick="document.getElementById('world-menu').close()">×</button>
-      </div>
-      <nav class="menu-links" aria-label="Све странице">
-        <a href={basePath + 'o-meni/'}><span>01</span><strong>О мени</strong><i>Мој животни пут</i><b>↗</b></a>
-        <a href={basePath + 'moja-borba/'}><span>02</span><strong>Моја борба</strong><i>Уверења и деловање</i><b>↗</b></a>
-        <a href={basePath + 'junacko-srce/'}><span>03</span><strong>Јуначко срце</strong><i>За оне који се усуде</i><b>↗</b></a>
-        <a href={basePath + 'projekti/'}><span>04</span><strong>Пројекти</strong><i>Идеје преточене у дела</i><b>↗</b></a>
-      </nav>
-    </dialog>
+    
     <footer>ЗА ЉУДЕ, НЕ ЗА ПРОФИТ.</footer>
   </main>
   <style>
+
+    .home-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+    .home-action{min-height:44px;display:inline-flex;align-items:center;justify-content:space-between;gap:26px;padding:0 17px;border:1px solid rgba(255,255,255,.42);border-radius:3px;background:rgba(15,15,15,.38);color:#fff;font:750 11px 'Manrope',sans-serif;letter-spacing:.04em;cursor:pointer;backdrop-filter:blur(8px)}
+    .home-action span{color:#e44743;font-size:16px}
+    .home-action-primary{background:#e44743;border-color:#e44743}
+    .home-action-primary span{color:#fff}
+    .home-action:hover{border-color:#e44743;background:rgba(228,71,67,.15)}
+    .home-action-primary:hover{background:#c93a36}
+    @media(max-width:600px){.home-actions{gap:8px}.home-action{min-height:42px;padding:0 13px;gap:15px;font-size:10px}}
     :global(*){box-sizing:border-box}
     :global(html),:global(body){margin:0;min-height:100%;background:#101010}
     .landing{width:100%;min-height:100svh;color:#e9e7e3;background:#101010;font-family:'Manrope',Arial,sans-serif}
     .hero{position:relative;width:100%;min-height:100svh;min-height:100dvh;display:flex;align-items:center;overflow:hidden;padding:clamp(48px,7vw,90px) clamp(24px,10vw,150px);color:#fff;background:radial-gradient(ellipse at 78% 22%,rgba(228,71,67,.2),transparent 42%),linear-gradient(135deg,#252321 0%,#141312 58%,#101010 100%)}
-    .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2000&q=88') center 34%/cover;opacity:.55}
+    .hero-photo{position:absolute;inset:0;background:url('/-jovica-vratnica/images/jovica-uvod.jpg') center 34%/cover;opacity:.55}
     .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.72) 52%,rgba(8,8,8,.3)),linear-gradient(0deg,rgba(8,8,8,.72),transparent 65%),radial-gradient(ellipse at 78% 20%,rgba(228,71,67,.16),transparent 48%)}
     .hero-content{position:relative;z-index:1;width:min(850px,100%)}
     .eyebrow{margin:0 0 18px;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.24em}
