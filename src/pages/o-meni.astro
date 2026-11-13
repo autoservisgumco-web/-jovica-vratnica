@@ -37,6 +37,13 @@ const chapters = [
         <div class="about-section-label"><span>01</span> БИОГРАФИЈА ЈОВИЦЕ ВРАТНИЦЕ</div>
         <h2>Мој животни пут<br/><em>и моја борба.</em></h2>
         <p class="about-lead">Рођен сам у Београду 1981. године, у граду који је истовремено врвео од живота и гушио се у сопственим противречностима. Одрастао сам између два ауторитета – оца и очуха. Један ме је учио послушности, дисциплини и прихватању „као што јесте“, док ме је други водио ка слободи, преиспитивању и одговорности за сопствени живот. Управо тај судар у мени запалио је искру која и данас гори.</p>
+        <details class="about-more">
+          <summary><span>ВИДИ ВИШЕ О МОЈЕМ ОДРАСТАЊУ</span><b>＋</b></summary>
+          <div class="about-more-content">
+            <p>Одрастање између та два ауторитета значило је сусрет са два различита начина разумевања живота. Са једне стране били су послушност, дисциплина и прихватање ствари онаквим какве јесу. Са друге стране, слобода да постављам питања, да преиспитујем оно што ми се представља као једино исправно и да преузмем одговорност за сопствене изборе.</p>
+            <p>Тај судар није ми дао готове одговоре. Научио ме је да их тражим. Управо ту видим један од корена свог бунта — у потреби да не прихватам свет без питања и да сам одлучујем у шта верујем.</p>
+          </div>
+        </details>
         <p>Никада нисам био конформиста. Нисам прихватао ствари здраво за готово нити веровао да је нешто исправно само зато што већина тако мисли. Увек сам преиспитивао наметнуте норме, тражио сопствени пут и бунтовао против неправде и ограничења слободе. Мој животни пут је зато прича о бунту, преиспитивању и настојању да оно у шта верујем претворим у конкретно деловање.</p>
       </section>
 
@@ -85,6 +92,13 @@ const chapters = [
     </nav>
   </div>
   <style>
+    .about-more{margin:22px 0 28px;border:1px solid rgba(229,72,77,.45);background:rgba(229,72,77,.045)}
+    .about-more summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;list-style:none;color:inherit;font-size:.72rem;font-weight:850;letter-spacing:.1em}
+    .about-more summary::-webkit-details-marker{display:none}
+    .about-more summary b{color:#e5484d;font-size:1.2rem;transition:transform .2s}
+    .about-more[open] summary b{transform:rotate(45deg)}
+    .about-more-content{padding:0 18px 16px;border-top:1px solid rgba(229,72,77,.2)}
+    .about-more-content p{font-size:.96rem;line-height:1.8;color:inherit;opacity:.88;margin:14px 0 0}
     .about-top-title{color:inherit;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.13em}
     .about-hero{position:relative;isolation:isolate;overflow:hidden;min-height: min(790px, calc(100svh - 56px));background:#111}
     .about-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:-2;filter:grayscale(1) contrast(1.08)}
