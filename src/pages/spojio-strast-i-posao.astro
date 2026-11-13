@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Како сам спојио страст и посао — Јовица Вратница" description="Прича о томе како су се мој рад, страст и друштвено деловање повезали у Јуначком Срцу.">
+<header class="chapter-nav"><a href={base + 'o-meni/'}>← О МЕНИ</a><a href={base}>⌂ ПОЧЕТНА</a></header>
+<main class="chapter-page">
+<p class="kicker">ПОГЛАВЉЕ 02 · РАД И СМИСАО</p>
+<h1>Како сам спојио<br/><em>страст и посао.</em></h1>
+<p class="lead">Једно ми обезбеђује егзистенцију, друго ми даје смисао. Дуго су то биле две паралелне стране мог живота — рад од којег живим и борба којој посвећујем себе.</p>
+<p>Годинама радим на грађевини, стварам простор у којем ће људи живети, а паралелно са тим покушавам да допринесем друштву у којем вреди живети. Данас желим да те две стране повежем: да оно што волим и у шта верујем постане и начин на који радим.</p>
+<p>Тако настаје Јуначко Срце — простор у којем маркетинг није само продаја, већ средство да добре идеје постану видљиве, да се људи повежу и да они који се усуде добију подршку.</p>
+<a class="feature-link" href={base + 'junacko-srce/'}><span>УПОЗНАЈ ПРОЈЕКАТ</span><strong>О Јуначком Срцу ↗</strong></a>
+<a class="next" href={base + 'podrska/'}>СЛЕДЕЋЕ: ЈА САМ ТУ ЗА ОНЕ КОЈИ СЕ УСУДЕ ↗</a>
+</main>
+<style>
+.chapter-nav{display:flex;justify-content:space-between;padding:22px max(22px,calc((100vw - 1000px)/2));border-bottom:1px solid #ddd;font-size:.75rem;font-weight:800;letter-spacing:.1em}.chapter-nav a{color:inherit;text-decoration:none}.chapter-page{max-width:850px;margin:auto;padding:clamp(65px,10vw,120px) 24px 100px;color:#20232a}.kicker{color:#d83e47;font-size:.75rem;font-weight:800;letter-spacing:.16em}.chapter-page h1{font-size:clamp(3rem,9vw,6.2rem);letter-spacing:-.07em;line-height:.98;margin:28px 0}.chapter-page h1 em{color:#d83e47}.chapter-page p{font-size:1.08rem;line-height:1.85}.chapter-page .lead{font-size:1.35rem;font-weight:650;line-height:1.55}.feature-link{display:flex;flex-direction:column;gap:10px;margin:42px 0;padding:25px;background:#171a20;color:#fff;text-decoration:none}.feature-link span{font-size:.7rem;letter-spacing:.15em;color:#ef555a;font-weight:800}.feature-link strong{font-size:1.6rem}.next{display:inline-block;color:#d83e47;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-decoration:none}
+</style>
+</BaseLayout>
