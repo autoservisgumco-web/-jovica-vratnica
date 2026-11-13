@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Неконформизам — потрага за сопственим путем | Јовица Вратница" description="Лична прича о неконформизму, преиспитивању наметнутих норми и потрази за сопственим путем.">
+<header class="chapter-nav"><a href={base + 'o-meni/'}>← О МЕНИ</a><a href={base}>⌂ ПОЧЕТНА</a></header>
+<main class="nonconform-page">
+  <section class="nonconform-hero">
+    <p class="kicker">МОЈА ПРИЧА · НИТ 02</p>
+    <h1>НЕКОНФОРМИЗАМ —<br/><em>ПОТРАГА ЗА СОПСТВЕНИМ ПУТЕМ</em></h1>
+    <p class="hero-lead">Никада нисам умео да прихватим да је нешто исправно само зато што је уобичајено. Морао сам да разумем, да поставим питање и да пронађем сопствени одговор.</p>
+    <div class="hero-meta"><span>МИСЛИТИ СВОЈОМ ГЛАВОМ</span><span>ПРЕИСПИТИВАТИ · БИРАТИ · БИТИ СВОЈ</span></div>
+  </section>
+
+  <nav class="story-index" aria-label="Секције приче">
+    <p>У ОВОЈ НИТИ</p>
+    <a href="#sta-je-nekonformizam"><span>01</span>Шта за мене значи неконформизам<b>↘</b></a>
+    <a href="#pitanja"><span>02</span>Право да постављам питања<b>↘</b></a>
+    <a href="#sopstveni-put"><span>03</span>Сопствени пут<b>↘</b></a>
+    <a href="#normalnost"><span>04</span>Преиспитивање нормалности<b>↘</b></a>
+  </nav>
+
+  <div class="story-content">
+    <section class="story-section" id="sta-je-nekonformizam">
+      <div class="section-number">01</div>
+      <div class="section-body">
+        <p class="section-kicker">НЕ ПРИХВАТАМ ЗДРАВО ЗА ГОТОВО</p>
+        <h2>Шта за мене значи<br/><em>неконформизам?</em></h2>
+        <p>За мене неконформизам никада није био потреба да будем другачији по сваку цену. Није то ни бунт ради бунта, нити одбијање свега што други прихватају.</p>
+        <p>То је потреба да самостално размишљам, да не препуштам другима да одлучују шта треба да мислим и у шта треба да верујем. Не прихватам нешто само зато што је већина тако одлучила, зато што се тако одувек радило или зато што се од мене очекује да се уклопим.</p>
+      </div>
+    </section>
+
+    <section class="story-section" id="pitanja">
+      <div class="section-number">02</div>
+      <div class="section-body">
+        <p class="section-kicker">ПИТАЊА СУ ПОЧЕТАК СЛОБОДЕ</p>
+        <h2>Право да<br/><em>постављам питања.</em></h2>
+        <p>Одрастање уз различите погледе на свет научило ме је да не постоји само један начин да се живот посматра. Зато сам временом почео да преиспитујем ауторитете, правила и уверења која се често представљају као нешто о чему нема расправе.</p>
+        <p>Питање „Зашто?“ за мене није непослушност. То је начин да разумем. А када нешто не могу да прихватим као исправно, имам потребу да то кажем, чак и онда када је лакше ћутати и уклопити се.</p>
+      </div>
+    </section>
+
+    <section class="story-section" id="sopstveni-put">
+      <div class="section-number">03</div>
+      <div class="section-body">
+        <p class="section-kicker">НЕ ТУЂИМ КОРАЦИМА</p>
+        <h2>Потрага за<br/><em>сопственим путем.</em></h2>
+        <p>Потрага за сопственим путем није значила да увек знам куда идем. Често је значила управо супротно — да морам да застанем, посумњам, погрешим, поново размислим и донесем одлуку за коју ћу сам сносити одговорност.</p>
+        <p>Нисам желео да живим по унапред написаном сценарију само зато што се од мене то очекује. Желео сам да моји избори произлазе из онога у шта заиста верујем, а не из страха од туђег мишљења.</p>
+        <blockquote>Не морам да будем против свега. Али морам да имам право да сам одлучим шта прихватам.</blockquote>
+      </div>
+    </section>
+
+    <section class="story-section final-section" id="normalnost">
+      <div class="section-number">04</div>
+      <div class="section-body">
+        <p class="section-kicker">МОЈЕ МЕРИЛО</p>
+        <h2>Ко одређује<br/><em>шта је нормално?</em></h2>
+        <p>Често се од људи очекује да се уклопе, да не таласају и да прихвате оно што је већина прогласила нормалним. Али нешто не постаје исправно само зато што је уобичајено. И нешто није погрешно само зато што одступа од очекивања.</p>
+        <p>За мене је важно да човек не изгуби себе покушавајући да задовољи туђа мерила. Слобода није у томе да увек будем у праву, већ да имам храбрости да мислим, преиспитујем, учим и мењам сопствене ставове када за то постоји разлог.</p>
+        <p class="closing-line">Неконформизам је моја потрага да живим својим уверењима, а не туђим очекивањима.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="rebel-footer">
+    <p>ЈОВИЦА ВРАТНИЦА · МОЈ ЖИВОТНИ ПУТ</p>
+    <a href={base + 'o-meni/'}>← НАЗАД НА „О МЕНИ“</a>
+    <a href={base + 'moja-borba/'}>СЛЕДЕЋА НИТ: МОЈ БУНТ ↗</a>
+  </footer>
+</main>
+<style>
+.chapter-nav{display:flex;justify-content:space-between;padding:20px max(22px,calc((100vw - 1120px)/2));border-bottom:1px solid #ddd;font-size:.72rem;font-weight:850;letter-spacing:.12em}.chapter-nav a{color:inherit;text-decoration:none}
+.nonconform-page{color:#20232a}.nonconform-hero{background:#171a20;color:#fff;padding:clamp(65px,10vw,125px) max(24px,calc((100vw - 1050px)/2)) 48px}.kicker,.section-kicker{font-size:.7rem;font-weight:850;letter-spacing:.17em;color:#ed555b}.nonconform-hero h1{font-size:clamp(2.8rem,8vw,6.7rem);line-height:.94;letter-spacing:-.065em;margin:28px 0;max-width:1050px}.nonconform-hero h1 em,.story-section h2 em{font-style:normal;color:#e5484d}.hero-lead{max-width:740px;font-size:clamp(1.2rem,2.8vw,1.8rem);line-height:1.5;font-weight:650;color:#e6e7e9}.hero-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:55px;padding-top:18px;border-top:1px solid #555;color:#bfc2c8;font-size:.65rem;font-weight:800;letter-spacing:.12em}
+.story-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:28px max(24px,calc((100vw - 1050px)/2));background:#f0f1f3;border-bottom:1px solid #d9dce1}.story-index>p{grid-column:1/-1;margin:0 0 14px;color:#747982;font-size:.65rem;font-weight:850;letter-spacing:.16em}.story-index a{display:flex;flex-direction:column;gap:10px;padding:12px 14px 12px 0;color:#252932;text-decoration:none;font-size:.83rem;font-weight:800;line-height:1.3;border-right:1px solid #d4d7dc}.story-index a:not(:first-of-type){padding-left:14px}.story-index a span{color:#d83e47;font-size:.68rem}.story-index a b{font-size:1rem;color:#d83e47}
+.story-content{max-width:1050px;margin:0 auto;padding:20px 24px 70px}.story-section{display:grid;grid-template-columns:90px minmax(0,760px);gap:25px;padding:75px 0;border-bottom:1px solid #e1e3e6;scroll-margin-top:25px}.section-number{font-size:1rem;font-weight:900;color:#e5484d;padding-top:8px}.section-body h2{font-size:clamp(2.3rem,5.5vw,4.6rem);letter-spacing:-.06em;line-height:.98;margin:15px 0 28px}.section-body>p:not(.section-kicker){font-size:1.08rem;line-height:1.85;color:#343943;margin:0 0 18px}.section-body blockquote{margin:28px 0 0;padding:22px 28px;border-left:4px solid #e5484d;background:#f1f2f4;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:850;line-height:1.7;color:#20232a}.closing-line{font-size:clamp(1.35rem,3vw,2rem)!important;font-weight:850;color:#20232a!important;margin-top:30px!important}
+.rebel-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:35px max(24px,calc((100vw - 1050px)/2));background:#171a20;color:#fff}.rebel-footer p{width:100%;margin:0;color:#aaa;font-size:.65rem;font-weight:800;letter-spacing:.13em}.rebel-footer a{color:#fff;text-decoration:none;font-size:.72rem;font-weight:850;letter-spacing:.06em}.rebel-footer a:last-child{color:#ff696e}
+@media(max-width:700px){.story-index{grid-template-columns:1fr 1fr;gap:0 14px}.story-index a,.story-index a:not(:first-of-type){padding:13px 4px;border-right:0;border-bottom:1px solid #d4d7dc}.story-section{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:52px 0}.section-number{font-size:.8rem}.section-body>p:not(.section-kicker){font-size:1rem}.hero-meta{margin-top:35px}.rebel-footer{flex-direction:column}}
+</style>
+</BaseLayout>
