@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Потрага за сопственим путем — Јовица Вратница" description="Како сам тражио сопствени пут, преиспитивао друштвена очекивања и градио уверења изван конформизма.">
+<header class="chapter-nav"><a href={base + 'o-meni/'}>← О МЕНИ</a><a href={base}>⌂ ПОЧЕТНА</a></header>
+<main class="life-page">
+  <section class="life-hero">
+    <p class="kicker">МОЈ ЖИВОТНИ ПУТ · 03</p>
+    <h1>ПОТРАГА ЗА<br/><em>СОПСТВЕНИМ ПУТЕМ</em></h1>
+    <p class="hero-lead">Нисам желео да живим по унапред задатим правилима само зато што се то од мене очекивало. Тражио сам сопствена уверења, сопствена мерила и начин живота који има смисла за мене — али и одговорност према другима.</p>
+    <div class="hero-meta"><span>ИЗАЋИ ИЗ ЗАДАТИХ ОБРАЗАЦА</span><span>МИСЛИТИ · БИРАТИ · ПРЕУЗЕТИ ОДГОВОРНОСТ</span></div>
+  </section>
+  <nav class="story-index" aria-label="Секције приче">
+    <p>ПУТ КОЈИ САМ ТРАЖИО</p>
+    <a href="#ocekivanja"><span>01</span>Туђа очекивања<b>↘</b></a>
+    <a href="#konformizam"><span>02</span>Конформизам<b>↘</b></a>
+    <a href="#nekonformizam"><span>03</span>Неконформизам<b>↘</b></a>
+    <a href="#izbor"><span>04</span>Сопствени избор<b>↘</b></a>
+  </nav>
+  <div class="story-content">
+    <section class="story-section" id="ocekivanja"><div class="section-number">01</div><div class="section-body">
+      <p class="section-kicker">НЕ ПОСТОЈИ ЈЕДАН ЗАДАТИ СЦЕНАРИО</p><h2>Туђа очекивања<br/><em>и моја питања.</em></h2>
+      <p>Како сам одрастао, све више сам осећао да постоје очекивања како човек треба да живи, шта треба да жели и како треба да се понаша. Али нисам могао да прихватим да је то једини могући пут.</p>
+      <p>Желео сам да разумем зашто су одређена правила настала, коме служе и да ли су у складу са вредностима које сматрам важним.</p>
+    </div></section>
+    <section class="story-section" id="konformizam"><div class="section-number">02</div><div class="section-body">
+      <p class="section-kicker">УКЛАПАЊЕ БЕЗ ПРЕИСПИТИВАЊА</p><h2>Шта значи<br/><em>конформизам?</em></h2>
+      <p>Конформизам за мене означава прихватање устаљених образаца, правила и очекивања без довољно личног преиспитивања. Људи се често уклапају зато што је тако лакше, зато што не желе да буду осуђени или зато што верују да немају избора.</p>
+      <p>Не мислим да је све што је уобичајено погрешно. Али не верујем ни да нешто постаје исправно само зато што већина тако живи или тако мисли.</p>
+    </div></section>
+    <section class="story-section" id="nekonformizam"><div class="section-number">03</div><div class="section-body">
+      <p class="section-kicker">ПРАВО НА СОПСТВЕНО МИШЉЕЊЕ</p><h2>Мој<br/><em>неконформизам.</em></h2>
+      <p>Неконформизам за мене није потреба да будем другачији по сваку цену, нити одбијање свега што други прихватају. То је право да мислим својом главом, да постављам питања и да сам одлучим шта прихватам.</p>
+      <p>То понекад значи да се не уклапам у већину. Спреман сам да прихватим ту нелагодност ако је цена уклапања одрицање од сопствених уверења.</p>
+      <blockquote>Не морам да будем против свега. Али морам да имам право да сам одлучим шта прихватам.</blockquote>
+    </div></section>
+    <section class="story-section" id="izbor"><div class="section-number">04</div><div class="section-body">
+      <p class="section-kicker">СЛОБОДА И ОДГОВОРНОСТ</p><h2>Пронаћи<br/><em>сопствени пут.</em></h2>
+      <p>Потрага за сопственим путем није значила да увек знам куда идем. Значила је да морам да застанем, посумњам, погрешим, поново размислим и преузмем одговорност за своје изборе.</p>
+      <p>Нисам желео да живим у страху од туђег мишљења. Желео сам живот у складу са својим вредностима — живот у којем има места за слободу, љубав, креативност и одговорност према свету који делимо.</p>
+      <p class="closing-line">Тражећи сопствени пут, све сам јасније схватао да не могу да ћутим пред оним што сматрам неправедним. Ту се моја потрага приближила бунту.</p>
+    </div></section>
+  </div>
+  <footer class="life-footer"><p>ЈОВИЦА ВРАТНИЦА · МОЈ ЖИВОТНИ ПУТ</p><a href={base + 'o-meni/'}>← НАЗАД НА „О МЕНИ“</a><a href={base + 'moja-borba/'}>СЛЕДЕЋЕ: МОЈ БУНТ ↗</a></footer>
+</main>
+<style>
+.chapter-nav{display:flex;justify-content:space-between;padding:20px max(22px,calc((100vw - 1120px)/2));border-bottom:1px solid #ddd;font-size:.72rem;font-weight:850;letter-spacing:.12em}.chapter-nav a{color:inherit;text-decoration:none}
+.life-page{color:#20232a}.life-hero{background:#171a20;color:#fff;padding:clamp(65px,10vw,125px) max(24px,calc((100vw - 1050px)/2)) 48px}.kicker,.section-kicker{font-size:.7rem;font-weight:850;letter-spacing:.17em;color:#ed555b}.life-hero h1{font-size:clamp(2.8rem,8vw,6.7rem);line-height:.94;letter-spacing:-.065em;margin:28px 0;max-width:1050px}.life-hero h1 em,.story-section h2 em{font-style:normal;color:#e5484d}.hero-lead{max-width:740px;font-size:clamp(1.2rem,2.8vw,1.8rem);line-height:1.5;font-weight:650;color:#e6e7e9}.hero-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:55px;padding-top:18px;border-top:1px solid #555;color:#bfc2c8;font-size:.65rem;font-weight:800;letter-spacing:.12em}
+.story-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:28px max(24px,calc((100vw - 1050px)/2));background:#f0f1f3;border-bottom:1px solid #d9dce1}.story-index>p{grid-column:1/-1;margin:0 0 14px;color:#747982;font-size:.65rem;font-weight:850;letter-spacing:.16em}.story-index a{display:flex;flex-direction:column;gap:10px;padding:12px 14px 12px 0;color:#252932;text-decoration:none;font-size:.83rem;font-weight:800;line-height:1.3;border-right:1px solid #d4d7dc}.story-index a:not(:first-of-type){padding-left:14px}.story-index a span{color:#d83e47;font-size:.68rem}.story-index a b{color:#d83e47}
+.story-content{max-width:1050px;margin:0 auto;padding:20px 24px 70px}.story-section{display:grid;grid-template-columns:90px minmax(0,760px);gap:25px;padding:75px 0;border-bottom:1px solid #e1e3e6;scroll-margin-top:25px}.section-number{font-size:1rem;font-weight:900;color:#e5484d;padding-top:8px}.section-body h2{font-size:clamp(2.3rem,5.5vw,4.6rem);letter-spacing:-.06em;line-height:.98;margin:15px 0 28px}.section-body>p:not(.section-kicker){font-size:1.08rem;line-height:1.85;color:#343943;margin:0 0 18px}.section-body blockquote{margin:28px 0 0;padding:22px 28px;border-left:4px solid #e5484d;background:#f1f2f4;font-size:clamp(1.25rem,3vw,1.8rem);font-weight:850;line-height:1.7;color:#20232a}.closing-line{font-size:clamp(1.35rem,3vw,2rem)!important;font-weight:850;color:#20232a!important;margin-top:30px!important}
+.life-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:35px max(24px,calc((100vw - 1050px)/2));background:#171a20;color:#fff}.life-footer p{width:100%;margin:0;color:#aaa;font-size:.65rem;font-weight:800;letter-spacing:.13em}.life-footer a{color:#fff;text-decoration:none;font-size:.72rem;font-weight:850;letter-spacing:.06em}.life-footer a:last-child{color:#ff696e}
+@media(max-width:700px){.story-index{grid-template-columns:1fr 1fr;gap:0 14px}.story-index a,.story-index a:not(:first-of-type){padding:13px 4px;border-right:0;border-bottom:1px solid #d4d7dc}.story-section{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:52px 0}.section-number{font-size:.8rem}.section-body>p:not(.section-kicker){font-size:1rem}.hero-meta{margin-top:35px}.life-footer{flex-direction:column}}
+</style>
+</BaseLayout>
