@@ -47,3 +47,58 @@ footer{border-top:1px solid var(--line);padding:28px 6.5vw;display:flex;justify-
 .path-card-accent{background:#201b1a}
 .path-card-accent:hover{background:#2a201e}
 @media(max-width:760px){.paths-heading{display:block}.paths-heading p{margin-top:22px}.path-grid{grid-template-columns:1fr}.path-card{min-height:165px;padding:24px}}
+
+
+/* ABOUT PAGE — mobile app experience */
+.about-app{min-height:100vh;background:#080f1b;color:#f3f5f8;padding-bottom:82px;font-family:'DM Sans',sans-serif}
+.about-topbar{height:62px;position:sticky;top:0;z-index:10;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;padding:0 18px;background:rgba(5,12,23,.94);backdrop-filter:blur(14px);border-bottom:1px solid #ffffff18}
+.about-topbar>span{text-align:center;font:800 12px Manrope,sans-serif;letter-spacing:.2em}
+.about-back,.about-home{font-size:27px;text-align:center;color:#f4f5f7;line-height:1}
+.about-home{font-size:30px}
+.about-hero{min-height:570px;position:relative;display:flex;align-items:flex-end;overflow:hidden;padding:36px 25px 27px;background:linear-gradient(180deg,#152b42 0%,#24364a 42%,#080f1b 100%)}
+.about-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 36%,#b65e48 0%,#35465b 25%,transparent 58%),linear-gradient(135deg,transparent 35%,#030914 100%);opacity:.85}
+.about-hero:after{content:"";position:absolute;left:-18%;right:-18%;bottom:17%;height:1px;background:#f1a16c;box-shadow:0 -38px 75px 20px #d88a62;opacity:.35;transform:rotate(-7deg)}
+.about-hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,#080f1b 0%,transparent 72%),linear-gradient(90deg,#080f1b88,transparent 90%)}
+.about-hero-content,.about-hero-bottom{position:relative;z-index:1}
+.about-kicker{font-size:9px;letter-spacing:.22em;color:#c5cbd4;margin-bottom:23px}
+.about-signature{font:italic 700 clamp(52px,15vw,78px)/.9 Georgia,serif;letter-spacing:-.07em;margin:0 0 18px;text-shadow:0 3px 25px #0008}
+.about-signature span{display:block;width:190px;height:5px;background:#e52431;transform:rotate(-5deg);margin:12px 0 0 5px}
+.about-motto{font:700 13px Manrope,sans-serif;letter-spacing:.08em;margin:0;color:#e8ebf0}
+.about-hero-bottom{position:absolute;bottom:18px;left:25px;right:25px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:.15em;color:#a9b2bf}
+.about-manifesto{padding:43px 26px 39px;background:#101d2d;border-bottom:1px solid #ffffff18}
+.about-quote-mark{font:700 75px Georgia,serif;line-height:.6;color:#ed2634}
+.about-manifesto blockquote{font:700 clamp(21px,6vw,27px)/1.35 Manrope,sans-serif;letter-spacing:-.04em;margin:10px 0 20px}
+.about-manifesto>p{font-size:8px;letter-spacing:.2em;color:#9aa8b9;margin:0}
+.about-story,.about-chapters,.about-mission{padding:54px 25px}
+.about-section-label{font-size:9px;letter-spacing:.18em;color:#aab4c1;margin-bottom:27px}
+.about-section-label span{color:#ef2d3b;font-weight:800;margin-right:12px}
+.about-story h1,.about-mission h2,.about-call h2{font:800 clamp(39px,11vw,55px)/1.02 Manrope,sans-serif;letter-spacing:-.07em;margin:0 0 25px}
+.about-story h1 em,.about-mission h2 em,.about-call h2 em{font-style:normal;color:#ed2938}
+.about-story p,.about-mission>p{font-size:14px;line-height:1.85;color:#bac3cf;margin:0 0 18px}
+.about-story .about-lead{font:600 18px/1.65 Manrope,sans-serif;color:#f2f4f7;letter-spacing:-.025em}
+.about-chapters{background:#0d1725;border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12}
+.about-chapter{display:grid;grid-template-columns:48px 1fr;gap:17px;padding:22px 0;border-top:1px solid #ffffff18}
+.about-chapter-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#d91f30;color:#fff;font-size:22px;font-weight:700}
+.about-chapter h2{font:700 20px Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 8px}
+.about-chapter p{font-size:13px;line-height:1.75;color:#aeb8c5;margin:0}
+.about-mission{background:linear-gradient(150deg,#111f31,#080f1b)}
+.about-mission h2{margin-bottom:23px}
+.about-mission .about-mission-big{font:700 19px/1.55 Manrope,sans-serif;color:#f3f5f8;letter-spacing:-.025em}
+.about-call{position:relative;overflow:hidden;padding:55px 25px 62px;background:linear-gradient(145deg,#14263b,#070d17);border-top:1px solid #ffffff20}
+.about-wolf-mark{position:absolute;right:22px;top:25px;width:90px;height:90px;border:3px solid #e52635;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:55px;opacity:.8;transform:rotate(-15deg)}
+.about-call>p{font-size:9px;letter-spacing:.2em;color:#b8c3d1;margin:0 0 22px}
+.about-call h2{font-size:clamp(47px,13vw,66px);margin-bottom:32px}
+.about-call>a{display:inline-flex;gap:35px;align-items:center;padding:15px 19px;border:1px solid #e62b39;color:#fff;font-size:9px;font-weight:800;letter-spacing:.16em}
+.about-call>a span{color:#f13a46;font-size:17px}
+.about-bottom-nav{position:fixed;z-index:20;bottom:0;left:0;right:0;min-height:76px;padding:8px 5px max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr);background:rgba(5,12,22,.97);backdrop-filter:blur(16px);border-top:1px solid #8795a855}
+.about-bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#c3ccd8;font-size:9px;font-weight:600;white-space:nowrap}
+.about-bottom-nav a span{font-size:23px;line-height:1.1}
+.about-bottom-nav a.active{color:#f02b3a}
+@media(min-width:761px){
+ .about-app{max-width:520px;margin:0 auto;border-left:1px solid #ffffff15;border-right:1px solid #ffffff15;box-shadow:0 0 80px #0008}
+ .about-topbar{height:70px}
+ .about-hero{min-height:650px}
+ .about-story,.about-chapters,.about-mission{padding:62px 34px}
+ .about-manifesto,.about-call{padding-left:34px;padding-right:34px}
+ .about-bottom-nav{left:50%;right:auto;transform:translateX(-50%);width:min(520px,100%)}
+}
