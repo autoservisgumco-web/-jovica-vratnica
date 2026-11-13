@@ -13,10 +13,7 @@ const base = import.meta.env.BASE_URL;
           <p class="about-kicker">ЛИЧНА ПРИЧА · МОЈ ПУТ</p>
           <h1 class="about-signature">Јовица<br/>Вратница<span>.</span></h1>
           <p class="about-hero-intro">Рођен сам у Београду 1981. године, у граду који је врвео од живота и гушио се у сопственим противречностима. Одбацујем идеју да треба да следим вредности само зато што су друштвено прихваћене. Онда прихватам — нисам нормалан.</p>
-          <p class="about-main-motto">Ја сам ту за оне<br/>који се усуде.</p>
-          <p class="about-motto">Пишем. Делујем. Повезујем.</p>
-          <p class="about-identity">ФИЛОЗОФ · ИДЕАЛИСТА · БУНТОВНИК · ПУТНИК<br/>ЧОВЕК КОЈИ РАДИ СРЦЕМ</p>
-          <a class="about-primary-button" href="#price">УПОЗНАЈ МОЈУ ПРИЧУ <span>↓</span></a>
+          <button class="about-primary-button" type="button" onclick="document.getElementById('story-menu').showModal()">УПОЗНАЈ МОЈУ ПРИЧУ <span>↓</span></button>
         </div>
         <div class="about-hero-bottom">
           <span>НЕ ПРИСТАЈЕМ ДА ЖИВОТ ПРОЂЕ У ЋУТАЊУ.</span>
@@ -24,58 +21,61 @@ const base = import.meta.env.BASE_URL;
         </div>
       </section>
 
-      <section class="about-story" id="odrastanje">
-        <div class="about-section-label"><span>01</span> БИОГРАФИЈА ЈОВИЦЕ ВРАТНИЦЕ</div>
-        <h2>Мој животни пут —<br/><em>од одрастања до деловања.</em></h2>
-        <div class="about-story-chapter">
-          <p class="about-lead">Рођен сам у Београду 1981. године. Моја прича почиње одрастањем између два оца, два ауторитета и два различита погледа на свет. Тај сусрет ме је обликовао и оставио у мени питања на која сам годинама тражио одговоре.</p>
-          <a class="about-read-more" href={base + 'odrastanje/'}>ВИДИ ВИШЕ О МОЈЕМ ОДРАСТАЊУ <span>↗</span></a>
+
+
+      <dialog class="story-menu" id="story-menu" aria-labelledby="story-menu-title">
+        <div class="story-menu-handle"></div>
+        <div class="story-menu-head">
+          <div>
+            <p>МОЈ ЖИВОТНИ ПУТ</p>
+            <h2 id="story-menu-title">Девет поглавља.<br/><em>Једна прича.</em></h2>
+          </div>
+          <button class="story-menu-close" type="button" aria-label="Затвори" onclick="document.getElementById('story-menu').close()">×</button>
         </div>
-        <div class="about-story-chapter">
-          <p class="about-bio-step">Из тог искуства развила се потреба да посматрам свет и да га не прихватам здраво за готово. Почео сам да се питам: шта је нормално, шта је исправно и зашто нешто прихватамо само зато што је већина навикла на то? Тако је преиспитивање постало део мене.</p>
-          <a class="about-read-more" href={base + 'nekonformizam/'}>ВИДИ ВИШЕ О ПРЕИСПИТИВАЊУ <span>↗</span></a>
+        <div class="story-menu-list">
+          <article><span>01</span><div><h3>Два оца, два погледа на свет</h3><p>Моја прича почиње одрастањем између два оца, два ауторитета и два различита погледа на свет.</p></div><b>↗</b></article>
+          <article><span>02</span><div><h3>Неконформиста сам откад знам за себе</h3><p>Потреба да постављам питања и не прихватам правила само зато што их већина следи.</p></div><b>↗</b></article>
+          <article><span>03</span><div><h3>Потрага за сопственим путем</h3><p>Учење да доносим сопствене одлуке и останем веран својим уверењима.</p></div><b>↗</b></article>
+          <article><span>04</span><div><h3>Слобода и аутентичност</h3><p>Зашто нисам желео да живим по туђим очекивањима и мерилима успеха.</p></div><b>↗</b></article>
+          <article><span>05</span><div><h3>Супротстављање ауторитетима</h3><p>Однос према правилима, ауторитетима и људима који су ме подстицали да мислим својом главом.</p></div><b>↗</b></article>
+          <article><span>06</span><div><h3>Сукоб са школским системом</h3><p>Искуства из школе и борба за право на радозналост, слободу мишљења и изражавања.</p></div><b>↗</b></article>
+          <article><span>07</span><div><h3>Од личног бунта до друштвене побуне</h3><p>Како се преиспитивање личних ауторитета проширило на друштво и политички систем.</p></div><b>↗</b></article>
+          <article><span>08</span><div><h3>Искуства која су ме обликовала</h3><p>Људи, ангажовање, путовања и различити послови који су проширили мој поглед на свет.</p></div><b>↗</b></article>
+          <article><span>09</span><div><h3>Проналажење сопственог позива</h3><p>Како сам кроз различита искуства почео да повезујем оно у шта верујем са оним што радим.</p></div><b>↗</b></article>
         </div>
-        <div class="about-story-chapter">
-          <p class="about-bio-step">Када једном почнеш да преиспитујеш свет око себе, неминовно дођеш и до питања сопственог места у њему. Суочио сам се са туђим очекивањима, конформизмом и потребом да пронађем пут који неће бити само испуњавање онога што други очекују од мене. Желео сам да изградим сопствена уверења и да стојим иза њих.</p>
-          <a class="about-read-more" href={base + 'moj-put/'}>ВИДИ ВИШЕ О ПОТРАЗИ ЗА СОПСТВЕНИМ ПУТЕМ <span>↗</span></a>
-        </div>
-        <div class="about-story-chapter">
-          <p class="about-bio-step">Али за мене се све то није завршило на размишљању и тражењу одговора. Временом сам схватио да неке ствари не могу само да посматрам и прихватам. Када сам препознао неправду, наметање и ограничења слободе, осетио сам да морам да им се супротставим. Тако је моје преиспитивање прерасло у бунт и деловање.</p>
-          <a class="about-read-more" href={base + 'moja-borba/'}>ВИДИ ВИШЕ О МОЈЕМ БУНТУ <span>↗</span></a>
-        </div>
-        <div class="about-story-chapter">
-          <p class="about-bio-step">Временом сам схватио да борба није само супротстављање ономе што сматрам погрешним. Она је и прилика да урадим нешто добро, да пружим руку, охрабрим човека који сумња у себе и повежем људе који желе промену. Из те потребе да уверења претворим у дела настало је Јуначко срце.</p>
-          <a class="about-read-more" href={base + 'junacko-srce/'}>ВИДИ ВИШЕ О ЈУНАЧКОМ СРЦУ <span>↗</span></a>
-        </div>
-        <p class="about-story-ending">Када се све ове фазе погледају заједно, види се једна нит: одрастање ме је обликовало, преиспитивање ме је научило да мислим својом главом, потрага за сопственим путем помогла ми је да изградим уверења, бунт ме је покренуо на деловање, а Јуначко срце ми је дало начин да то деловање поделим са другима.</p>
-      </section>
+        <p class="story-menu-note">НАСЛОВИ СУ ЗА САДА ПРИКАЗНИ — САДРЖАЈ ЋЕМО ДОРАЂИВАТИ КАСНИЈЕ.</p>
+      </dialog>
+      <script>
+        const storyMenu = document.getElementById('story-menu');
+        storyMenu?.addEventListener('click', (event) => {
+          if (event.target === storyMenu) storyMenu.close();
+        });
+      </script>
 
-      <section class="about-manifesto" id="price">
-        <span class="about-quote-mark">“</span>
-        <blockquote>Знам како је када се бориш и када немаш увек некога поред себе. Зато желим да пружим руку другима — да знају да нису сами.</blockquote>
-        <p>НЕ ДА СПАСАВАМ. ВЕЋ ДА ПОДРЖИМ.</p>
-      </section>
-
-
-
-
-
-      <section class="about-mission">
-        <div class="about-section-label"><span>03</span> МОЈА МИСИЈА</div>
-        <h2>Не желим да спасавам.<br/><em>Желим да пружим руку.</em></h2>
-        <p class="about-mission-big">Да охрабрим. Да подржим. Да повежем. Да људи знају да нису сами.</p>
-        <p>Верујем у људе који имају идеју, храброст и жељу да нешто промене. Не желим да говорим уместо њих, нити да им одузимам снагу. Желим да их охрабрим, повежем и подржим да сами направе свој корак.</p>
-      </section>
-
-      <section class="about-call">
-        <p>ЗА ОНЕ КОЈИ СЕ УСУДЕ</p>
-        <h2>Пишем.<br/>Делујем.<br/><em>Повезујем.</em></h2>
-        <a href={base + 'podrska/'}>УПОЗНАЈ МОЈУ ПОДРШКУ <span>↗</span></a>
-      </section>
     </main>
 
   </div>
   <style>
+    .about-primary-button{display:inline-flex;gap:26px;align-items:center;margin-top:28px;padding:15px 20px;border:1px solid rgba(255,255,255,.65);color:white;text-decoration:none;background:rgba(255,255,255,.06);font:800 .75rem inherit;letter-spacing:.1em;cursor:pointer;backdrop-filter:blur(8px)}
+    .about-primary-button span{color:#ef555a;font-size:1.2rem}
+    .story-menu{position:fixed;inset:auto 0 0;margin:0 auto 0;width:min(760px,100%);max-width:none;max-height:min(86dvh,780px);overflow-y:auto;padding:18px clamp(20px,5vw,38px) 30px;border:1px solid rgba(255,255,255,.15);border-bottom:0;border-radius:22px 22px 0 0;color:#eeeae5;background:linear-gradient(145deg,#292522,#151413 78%);box-shadow:0 -18px 70px rgba(0,0,0,.5)}
+    .story-menu[open]{animation:story-sheet-in .24s ease-out}
+    .story-menu::backdrop{background:rgba(0,0,0,.68);backdrop-filter:blur(5px)}
+    @keyframes story-sheet-in{from{transform:translateY(35px);opacity:.65}to{transform:translateY(0);opacity:1}}
+    .story-menu-handle{width:42px;height:4px;margin:0 auto 25px;border-radius:9px;background:#77716b}
+    .story-menu-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
+    .story-menu-head p{margin:0 0 8px;color:#e5484d;font-size:.65rem;font-weight:850;letter-spacing:.18em}
+    .story-menu-head h2{margin:0;font-size:clamp(1.65rem,4vw,2.3rem);line-height:1.08;letter-spacing:-.045em}
+    .story-menu-head h2 em{color:#e5484d;font-style:normal}
+    .story-menu-close{width:38px;height:38px;flex:0 0 38px;border:1px solid #625b55;border-radius:50%;color:#fff;background:transparent;font-size:25px;cursor:pointer}
+    .story-menu-list{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .story-menu-list article{display:grid;grid-template-columns:27px minmax(0,1fr) 15px;gap:10px;align-items:start;min-height:106px;padding:15px 13px;border:1px solid rgba(255,255,255,.13);border-radius:5px;background:rgba(255,255,255,.035)}
+    .story-menu-list article>span{padding-top:3px;color:#e5484d;font-size:.68rem;font-weight:850;letter-spacing:.08em}
+    .story-menu-list h3{margin:0 0 7px;color:#f4f1ed;font-size:.93rem;line-height:1.25}
+    .story-menu-list p{margin:0;color:#bbb5ae;font-size:.78rem;line-height:1.55}
+    .story-menu-list article>b{color:#e5484d;font-size:.95rem;font-weight:500}
+    .story-menu-note{margin:18px 0 0;color:#8f8982;font-size:.58rem;font-weight:800;letter-spacing:.12em;line-height:1.6}
+    @media(max-width:600px){.story-menu{padding:14px 18px 25px}.story-menu-list{grid-template-columns:1fr}.story-menu-list article{min-height:0;padding:13px}.about-hero-content{padding-bottom:110px}}
     .about-hero-intro{max-width:660px;margin:0 0 26px;font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.75;color:#f2f2f2;text-wrap:pretty}
     .about-bio-step{font-size:1.02rem;line-height:1.85;margin:0 0 14px;color:inherit;opacity:.92}.about-story-chapter{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}.about-read-more{display:inline-flex;gap:16px;align-items:center;color:#f2f2f2;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;padding:0 0 7px;border-bottom:1px solid rgba(229,72,77,.75)}.about-read-more span{color:#e5484d;font-size:1.1rem}.about-read-more:hover{color:#e5484d}.about-story-ending{margin-top:30px;font-size:1.02rem;line-height:1.85;color:inherit;opacity:.94}
     .about-more{margin:22px 0 28px;border:1px solid rgba(229,72,77,.45);background:rgba(229,72,77,.045)}
