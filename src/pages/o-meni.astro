@@ -1,13 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
-const chapters = [
-  { no: '01', title: 'Рођење и одрастање', desc: 'Моја прича почиње у Београду, 1981. године. Одрастао сам између два оца, два ауторитета и два различита погледа на свет. Тај однос није ми дао готове одговоре, али је поставио темеље мог карактера и научио ме да свет посматрам из више углова.', href: base + 'odrastanje/' },
-  { no: '02', title: 'Преиспитивање', desc: 'Из тих различитих погледа родила су се питања која су ме пратила кроз живот: шта је нормално, шта је исправно и ко одређује границу између тога? Почео сам да сумњам у готове одговоре и да тражим смисао иза онога што се подразумева.', href: base + 'nekonformizam/' },
-  { no: '03', title: 'Потрага за сопственим путем', desc: 'Када једном почнеш да преиспитујеш свет, неминовно дођеш и до питања сопственог места у њему. Суочавао сам се са туђим очекивањима, конформизмом и потребом да изградим уверења иза којих могу да станем, чак и када се разликују од већине.', href: base + 'moj-put/' },
-  { no: '04', title: 'Мој бунт', desc: 'Преиспитивање за мене није остало само на размишљању. Дошао је тренутак када више нисам могао да прихватам неправду, страх и наметнута правила као нешто на шта човек мора да пристане. Мој бунт је постао начин да своја уверења претворим у став и деловање.', href: base + 'moja-borba/' },
-  { no: '05', title: 'Јуначко срце', desc: 'Временом сам схватио да борба не мора да буде само отпор. Она може да буде и пружена рука, подршка, повезивање људи и охрабривање других да направе свој корак. Тако је настало Јуначко срце — из уверења да вредности имају смисла тек када их претворимо у дела.', href: base + 'junacko-srce/' }
-];
+
 ---
 <BaseLayout title="О мени — Јовица Вратница" description="Моја животна прича, борба, Јуначко Срце и подршка онима који се усуде.">
   <div class="about-app">
@@ -38,19 +32,27 @@ const chapters = [
       <section class="about-story" id="odrastanje">
         <div class="about-section-label"><span>01</span> БИОГРАФИЈА ЈОВИЦЕ ВРАТНИЦЕ</div>
         <h2>Мој животни пут —<br/><em>од одрастања до деловања.</em></h2>
-        <p class="about-lead"><a class="about-inline-link" href={base + 'odrastanje/'}>Рођен сам у Београду 1981. године.</a> Одрастао сам између два ауторитета – оца и очуха – и два различита погледа на свет. Тај сусрет обликовао је моју личност и пробудио потребу да самостално размишљам.</p>
-        <p class="about-bio-step"><a class="about-inline-link" href={base + 'nekonformizam/'}>Почео сам да преиспитујем свет око себе.</a> Питање „Шта је нормално?“ постало је једно од главних питања мог живота. Нисам желео да прихватам друштвене норме и уверења само зато што их већина сматра исправним.</p>
-        <p class="about-bio-step"><a class="about-inline-link" href={base + 'moj-put/'}>Кренуо сам у потрагу за сопственим путем.</a> Преиспитивао сам конформизам, откривао неконформизам и градио сопствена уверења, чак и када су ме она удаљавала од очекивања околине.</p>
-        <p class="about-bio-step"><a class="about-inline-link" href={base + 'moja-borba/'}>Временом сам схватио да морам да се побуним.</a> Није ми било довољно да само посматрам и постављам питања. Морао сам да се успротивим неправди, ограничењима слободе и нормама које сам сматрао погрешним.</p>
-        <p class="about-bio-step"><a class="about-inline-link" href={base + 'junacko-srce/'}>Из тог бунта настало је Јуначко срце.</a> Моја тежња да лична уверења претворим у дела, подршку људима, повезивање и борбу за друштво у којем желим да живим.</p>
-        <details class="about-more">
-          <summary><span>ВИДИ ВИШЕ О МОЈЕМ ОДРАСТАЊУ</span><b>＋</b></summary>
-          <div class="about-more-content">
-            <p>Одрастање између та два ауторитета значило је сусрет са два различита начина разумевања живота. Са једне стране били су послушност, дисциплина и прихватање ствари онаквим какве јесу. Са друге стране, слобода да постављам питања, да преиспитујем оно што ми се представља као једино исправно и да преузмем одговорност за сопствене изборе.</p>
-            <p>Тај судар није ми дао готове одговоре. Научио ме је да их тражим. Управо ту видим један од корена свог бунта — у потреби да не прихватам свет без питања и да сам одлучујем у шта верујем.</p>
-          </div>
-        </details>
-        <p>Никада нисам био конформиста. Нисам прихватао ствари здраво за готово нити веровао да је нешто исправно само зато што већина тако мисли. Увек сам преиспитивао наметнуте норме, тражио сопствени пут и бунтовао против неправде и ограничења слободе. Мој животни пут је зато прича о одрастању, преиспитивању, тражењу себе и бунту који је временом прерастао у конкретно деловање.</p>
+        <div class="about-story-chapter">
+          <p class="about-lead">Рођен сам у Београду 1981. године. Моја прича почиње одрастањем између два оца, два ауторитета и два различита погледа на свет. Тај сусрет ме је обликовао и оставио у мени питања на која сам годинама тражио одговоре.</p>
+          <a class="about-read-more" href={base + 'odrastanje/'}>ВИДИ ВИШЕ О МОЈЕМ ОДРАСТАЊУ <span>↗</span></a>
+        </div>
+        <div class="about-story-chapter">
+          <p class="about-bio-step">Из тог искуства развила се потреба да посматрам свет и да га не прихватам здраво за готово. Почео сам да се питам: шта је нормално, шта је исправно и зашто нешто прихватамо само зато што је већина навикла на то? Тако је преиспитивање постало део мене.</p>
+          <a class="about-read-more" href={base + 'nekonformizam/'}>ВИДИ ВИШЕ О ПРЕИСПИТИВАЊУ <span>↗</span></a>
+        </div>
+        <div class="about-story-chapter">
+          <p class="about-bio-step">Када једном почнеш да преиспитујеш свет око себе, неминовно дођеш и до питања сопственог места у њему. Суочио сам се са туђим очекивањима, конформизмом и потребом да пронађем пут који неће бити само испуњавање онога што други очекују од мене. Желео сам да изградим сопствена уверења и да стојим иза њих.</p>
+          <a class="about-read-more" href={base + 'moj-put/'}>ВИДИ ВИШЕ О ПОТРАЗИ ЗА СОПСТВЕНИМ ПУТЕМ <span>↗</span></a>
+        </div>
+        <div class="about-story-chapter">
+          <p class="about-bio-step">Али за мене се све то није завршило на размишљању и тражењу одговора. Временом сам схватио да неке ствари не могу само да посматрам и прихватам. Када сам препознао неправду, наметање и ограничења слободе, осетио сам да морам да им се супротставим. Тако је моје преиспитивање прерасло у бунт и деловање.</p>
+          <a class="about-read-more" href={base + 'moja-borba/'}>ВИДИ ВИШЕ О МОЈЕМ БУНТУ <span>↗</span></a>
+        </div>
+        <div class="about-story-chapter">
+          <p class="about-bio-step">Временом сам схватио да борба није само супротстављање ономе што сматрам погрешним. Она је и прилика да урадим нешто добро, да пружим руку, охрабрим човека који сумња у себе и повежем људе који желе промену. Из те потребе да уверења претворим у дела настало је Јуначко срце.</p>
+          <a class="about-read-more" href={base + 'junacko-srce/'}>ВИДИ ВИШЕ О ЈУНАЧКОМ СРЦУ <span>↗</span></a>
+        </div>
+        <p class="about-story-ending">Када се све ове фазе погледају заједно, види се једна нит: одрастање ме је обликовало, преиспитивање ме је научило да мислим својом главом, потрага за сопственим путем помогла ми је да изградим уверења, бунт ме је покренуо на деловање, а Јуначко срце ми је дало начин да то деловање поделим са другима.</p>
       </section>
 
       <section class="about-manifesto" id="price">
@@ -61,23 +63,7 @@ const chapters = [
 
 
 
-      <section class="about-chapters" aria-label="Поглавља мог животног пута">
-        <div class="about-section-label"><span>02</span> ПЕТ ПОГЛАВЉА МОГ ЖИВОТНОГ ПУТА</div>
-        <h2 class="about-journey-heading">Свака фаза је оставила траг.<br/><em>Свака ме је водила ка следећој.</em></h2>
-        <p class="about-journey-intro">Ово није пет одвојених прича. То је један животни пут — од онога што сам понео из детињства, преко питања која су ме обликовала, до бунта и деловања које данас живим.</p>
-        <div class="about-journey-list">
-          {chapters.map((item) => (
-            <article class="about-journey-item">
-              <span class="about-menu-no">{item.no} / ПОГЛАВЉЕ</span>
-              <div class="about-journey-copy">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                <a class="about-journey-link" href={item.href}>ПРОЧИТАЈ ЦЕЛУ ПРИЧУ <span>↗</span></a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+
 
       <section class="about-mission">
         <div class="about-section-label"><span>03</span> МОЈА МИСИЈА</div>
@@ -102,7 +88,7 @@ const chapters = [
     </nav>
   </div>
   <style>
-    .about-inline-link{color:inherit;text-decoration-color:#e5484d;text-decoration-thickness:2px;text-underline-offset:4px;font-weight:850;transition:color .2s}.about-inline-link:hover{color:#e5484d}.about-bio-step{font-size:1.02rem;line-height:1.85;margin:18px 0;color:inherit;opacity:.92}
+    .about-bio-step{font-size:1.02rem;line-height:1.85;margin:0 0 14px;color:inherit;opacity:.92}.about-story-chapter{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}.about-read-more{display:inline-flex;gap:16px;align-items:center;color:#f2f2f2;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;padding:0 0 7px;border-bottom:1px solid rgba(229,72,77,.75)}.about-read-more span{color:#e5484d;font-size:1.1rem}.about-read-more:hover{color:#e5484d}.about-story-ending{margin-top:30px;font-size:1.02rem;line-height:1.85;color:inherit;opacity:.94}
     .about-more{margin:22px 0 28px;border:1px solid rgba(229,72,77,.45);background:rgba(229,72,77,.045)}
     .about-more summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;list-style:none;color:inherit;font-size:.72rem;font-weight:850;letter-spacing:.1em}
     .about-more summary::-webkit-details-marker{display:none}
