@@ -2,11 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 const chapters = [
-  { no: '01', title: 'Одрастање', desc: 'Београд, 1981. Два ауторитета, два погледа на свет и почетак формирања моје личности.', href: base + 'odrastanje/' },
-  { no: '02', title: 'Преиспитивање', desc: 'Мој филозофски дух и питање шта је нормално, шта је исправно и зашто прихватамо устаљена уверења.', href: base + 'nekonformizam/' },
-  { no: '03', title: 'Потрага за сопственим путем', desc: 'Суочавање са туђим очекивањима, конформизмом и неконформизмом; изградња сопствених уверења.', href: base + 'moj-put/' },
-  { no: '04', title: 'Мој бунт', desc: 'Када више није било довољно само постављати питања — морао сам да се успротивим неправди и наметнутим нормама.', href: base + 'moja-borba/' },
-  { no: '05', title: 'Јуначко срце', desc: 'Како је мој бунт добио нови облик — подршка људима, повезивање и деловање за опште добро.', href: base + 'junacko-srce/' }
+  { no: '01', title: 'Рођење и одрастање', desc: 'Моја прича почиње у Београду, 1981. године. Одрастао сам између два оца, два ауторитета и два различита погледа на свет. Тај однос није ми дао готове одговоре, али је поставио темеље мог карактера и научио ме да свет посматрам из више углова.', href: base + 'odrastanje/' },
+  { no: '02', title: 'Преиспитивање', desc: 'Из тих различитих погледа родила су се питања која су ме пратила кроз живот: шта је нормално, шта је исправно и ко одређује границу између тога? Почео сам да сумњам у готове одговоре и да тражим смисао иза онога што се подразумева.', href: base + 'nekonformizam/' },
+  { no: '03', title: 'Потрага за сопственим путем', desc: 'Када једном почнеш да преиспитујеш свет, неминовно дођеш и до питања сопственог места у њему. Суочавао сам се са туђим очекивањима, конформизмом и потребом да изградим уверења иза којих могу да станем, чак и када се разликују од већине.', href: base + 'moj-put/' },
+  { no: '04', title: 'Мој бунт', desc: 'Преиспитивање за мене није остало само на размишљању. Доšao је тренутак када више нисам могао да прихватам неправду, страх и наметнута правила као нешто на шта човек мора да пристане. Мој бунт је постао начин да своја уверења претворим у став и деловање.', href: base + 'moja-borba/' },
+  { no: '05', title: 'Јуначко срце', desc: 'Временом сам схватио да борба не мора да буде само отпор. Она може да буде и пружена рука, подршка, повезивање људи и охрабривање других да направе свој корак. Тако је настало Јуначко срце — из уверења да вредности имају смисла тек када их претворимо у дела.', href: base + 'junacko-srce/' }
 ];
 ---
 <BaseLayout title="О мени — Јовица Вратница" description="Моја животна прича, борба, Јуначко Срце и подршка онима који се усуде.">
@@ -61,16 +61,20 @@ const chapters = [
 
 
 
-      <section class="about-chapters" aria-label="Поглавља о мени">
+      <section class="about-chapters" aria-label="Поглавља мог животног пута">
         <div class="about-section-label"><span>02</span> ПЕТ ПОГЛАВЉА МОГ ЖИВОТНОГ ПУТА</div>
-        <div class="about-menu-grid">
+        <h2 class="about-journey-heading">Свака фаза је оставила траг.<br/><em>Свака ме је водила ка следећој.</em></h2>
+        <p class="about-journey-intro">Ово није пет одвојених прича. То је један животни пут — од онога што сам понео из детињства, преко питања која су ме обликовала, до бунта и деловања које данас живим.</p>
+        <div class="about-journey-list">
           {chapters.map((item) => (
-            <a class="about-menu-card" href={item.href}>
+            <article class="about-journey-item">
               <span class="about-menu-no">{item.no} / ПОГЛАВЉЕ</span>
-              <h2>{item.title}</h2>
-              <p>{item.desc}</p>
-              <span class="about-menu-arrow">ОТВОРИ ПРИЧУ <b>↗</b></span>
-            </a>
+              <div class="about-journey-copy">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <a class="about-journey-link" href={item.href}>ПРОЧИТАЈ ЦЕЛУ ПРИЧУ <span>↗</span></a>
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -118,14 +122,7 @@ const chapters = [
     .about-identity{margin:22px 0 0;color:#e6e7e9;font-size:.72rem;line-height:1.9;font-weight:850;letter-spacing:.12em}.about-primary-button{display:inline-flex;gap:26px;align-items:center;margin-top:28px;padding:14px 18px;border:1px solid rgba(255,255,255,.55);color:white;text-decoration:none;font-size:.75rem;font-weight:800;letter-spacing:.1em}
     .about-primary-button span{color:#ef555a;font-size:1.2rem}
     .about-hero-bottom{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:18px clamp(24px,7vw,90px);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.12em}
-    .about-menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:25px}
-    .about-menu-card{display:flex;flex-direction:column;min-height:220px;padding:25px;background:#171a20;border:1px solid rgba(255,255,255,.12);color:#f4f4f4;text-decoration:none;transition:transform .2s,border-color .2s}
-    .about-menu-card:hover{transform:translateY(-3px);border-color:#e5484d}
-    .about-menu-no{font-size:.68rem;color:#e5484d;font-weight:800;letter-spacing:.13em}
-    .about-menu-card h2{font-size:clamp(1.25rem,2.5vw,1.8rem);line-height:1.1;margin:24px 0 12px}
-    .about-menu-card p{font-size:.9rem;line-height:1.6;color:#b9bdc5;margin:0 0 24px}
-    .about-menu-arrow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:.68rem;font-weight:800;letter-spacing:.1em}
-    .about-menu-arrow b{color:#e5484d;font-size:1.2rem}
-    @media(max-width:640px){.about-menu-grid{grid-template-columns:1fr}.about-menu-card{min-height:190px;padding:22px}.about-hero-content{padding-top:105px}.about-hero-bottom{font-size:.55rem}}
+    .about-journey-heading{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;letter-spacing:-.04em;margin:24px 0 14px;color:#f4f4f4}.about-journey-heading em{color:#e5484d;font-style:normal}.about-journey-intro{max-width:760px;color:#c2c5cc;line-height:1.8;font-size:1rem;margin:0 0 34px}.about-journey-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.14)}.about-journey-item{display:grid;grid-template-columns:110px minmax(0,1fr);gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.14)}.about-menu-no{font-size:.68rem;color:#e5484d;font-weight:800;letter-spacing:.13em;padding-top:8px}.about-journey-copy h3{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;margin:0 0 12px;color:#f4f4f4}.about-journey-copy p{max-width:780px;font-size:1rem;line-height:1.8;color:#c2c5cc;margin:0 0 18px}.about-journey-link{display:inline-flex;gap:18px;align-items:center;color:#f4f4f4;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;border-bottom:1px solid rgba(229,72,77,.7);padding:0 0 7px}.about-journey-link span{font-size:1.15rem;color:#e5484d}.about-journey-link:hover{color:#e5484d}
+    @media(max-width:640px){.about-journey-item{grid-template-columns:1fr;gap:8px;padding:23px 0}.about-journey-copy p{font-size:.94rem}.about-hero-content{padding-top:105px}.about-hero-bottom{font-size:.55rem}}
   </style>
 </BaseLayout>
