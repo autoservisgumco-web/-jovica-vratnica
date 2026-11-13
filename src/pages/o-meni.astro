@@ -5,12 +5,6 @@ const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="О мени — Јовица Вратница" description="Моја животна прича, борба, Јуначко Срце и подршка онима који се усуде.">
   <div class="about-app">
-    <header class="about-topbar">
-      <a class="about-back" href={base} aria-label="Назад на почетну">←</a>
-      <a class="about-top-title" href={base}>ЈОВИЦА ВРАТНИЦА</a>
-      <a class="about-home" href={base} aria-label="Почетна">⌂</a>
-    </header>
-
     <main>
       <section class="about-hero">
         <img class="about-hero-photo" src={base + 'images/jovica-uvod.jpg'} alt="Јовица Вратница на јавном окупљању" />
@@ -79,13 +73,6 @@ const base = import.meta.env.BASE_URL;
       </section>
     </main>
 
-    <nav class="about-bottom-nav" aria-label="Главна навигација">
-      <a href={base}><span>⌂</span>Почетна</a>
-      <a class="active" href={base + 'o-meni/'}><span>●</span>О мени</a>
-      <a href={base + 'junacko-srce/'}><span>♡</span>Јуначко Срце</a>
-      <a href={base + 'projekti/'}><span>▦</span>Пројекти</a>
-      <a href={base + 'saradnja/'}><span>↗</span>Сарадња</a>
-    </nav>
   </div>
   <style>
     .about-bio-step{font-size:1.02rem;line-height:1.85;margin:0 0 14px;color:inherit;opacity:.92}.about-story-chapter{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}.about-read-more{display:inline-flex;gap:16px;align-items:center;color:#f2f2f2;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;padding:0 0 7px;border-bottom:1px solid rgba(229,72,77,.75)}.about-read-more span{color:#e5484d;font-size:1.1rem}.about-read-more:hover{color:#e5484d}.about-story-ending{margin-top:30px;font-size:1.02rem;line-height:1.85;color:inherit;opacity:.94}
