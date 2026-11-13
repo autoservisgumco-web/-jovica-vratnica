@@ -1,0 +1,31 @@
+---
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const current = Astro.url.pathname.replace(base, '').replace(/\/+$/, '') || 'home';
+const items = [
+  { path: '', label: 'Почетна', icon: '⌂', key: 'home' },
+  { path: 'o-meni/', label: 'О мени', icon: '◉', key: 'o-meni' },
+  { path: 'moja-borba/', label: 'Моја борба', icon: '✳', key: 'moja-borba' },
+  { path: 'junacko-srce/', label: 'Јуначко срце', icon: '♡', key: 'junacko-srce' },
+  { path: 'projekti/', label: 'Пројекти', icon: '▦', key: 'projekti' }
+];
+---
+<header class="global-topbar">
+  <a class="global-brand" href={base} aria-label="Јовица Вратница — почетна">ЈВ<span>.</span></a>
+  <span class="global-top-caption">ЈОВИЦА ВРАТНИЦА</span>
+  <button class="global-menu-trigger" type="button" aria-label="Отвори главни мени" aria-haspopup="dialog" onclick="document.getElementById('global-menu').showModal()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<dialog class="global-menu-sheet" id="global-menu" aria-labelledby="global-menu-title">
+  <div class="global-menu-head">
+    <div><p>ЈОВИЦА ВРАТНИЦА</p><h2 id="global-menu-title">Куда желиш даље?</h2></div>
+    <button class="global-menu-close" type="button" aria-label="Затвори мени" onclick="document.getElementById('global-menu').close()">×</button>
+  </div>
+  <nav class="global-menu-links" aria-label="Главни мени">
+    {items.map((item) => <a href={base + item.path} aria-current={current === item.key ? 'page' : undefined}><span>{item.icon}</span><strong>{item.label}</strong><b>↗</b></a>)}
+    <a href={base + 'saradnja/'}><span>↗</span><strong>Сарадња</strong><b>↗</b></a>
+  </nav>
+</dialog>
+<nav class="global-bottom-nav" aria-label="Доња главна навигација">
+  {items.map((item) => <a href={base + item.path} class:list={{ active: current === item.key }} aria-current={current === item.key ? 'page' : undefined}><span>{item.icon}</span><small>{item.label}</small></a>)}
+</nav>
