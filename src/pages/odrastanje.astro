@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="Одрастање — Биографија Јовице Вратнице" description="Моје одрастање у Београду, између оца и очуха, два ауторитета и два погледа на свет.">
+<header class="chapter-nav"><a href={base + 'o-meni/'}>← О МЕНИ</a><a href={base}>⌂ ПОЧЕТНА</a></header>
+<main class="life-page">
+  <section class="life-hero">
+    <p class="kicker">МОЈ ЖИВОТНИ ПУТ · 01</p>
+    <h1>ОДРАСТАЊЕ —<br/><em>КОРЕНИ МОЈЕ ЛИЧНОСТИ</em></h1>
+    <p class="hero-lead">Рођен сам у Београду 1981. године. Одрастао сам између два ауторитета и два различита погледа на свет. Тај сусрет различитих вредности обележио је моје одрастање и пробудио потребу да самостално размишљам.</p>
+    <div class="hero-meta"><span>БЕОГРАД · 1981.</span><span>ДВА АУТОРИТЕТА · ДВА ПОГЛЕДА НА СВЕТ</span></div>
+  </section>
+  <nav class="story-index" aria-label="Секције приче">
+    <p>МОЈИ ПОЧЕЦИ</p>
+    <a href="#dva-pogleda"><span>01</span>Два погледа на свет<b>↘</b></a>
+    <a href="#sudar"><span>02</span>Сусрет различитих вредности<b>↘</b></a>
+    <a href="#iskra"><span>03</span>Искра преиспитивања<b>↘</b></a>
+  </nav>
+  <div class="story-content">
+    <section class="story-section" id="dva-pogleda"><div class="section-number">01</div><div class="section-body">
+      <p class="section-kicker">ПОЧЕТАК МОЈЕ ПРИЧЕ</p><h2>Два ауторитета,<br/><em>два погледа на свет.</em></h2>
+      <p>Рођен сам у Београду 1981. године, у граду који је истовремено врвео од живота и гушио се у сопственим противречностима. Моје одрастање обележила су два важна ауторитета — отац и очух.</p>
+      <p>Један ме је учио послушности, дисциплини и прихватању ствари „као што јесу“, док ме је други водио ка слободи, преиспитивању и одговорности за сопствени живот.</p>
+    </div></section>
+    <section class="story-section" id="sudar"><div class="section-number">02</div><div class="section-body">
+      <p class="section-kicker">ДВА РАЗЛИЧИТА СВЕТА</p><h2>Судар различитих<br/><em>вредности.</em></h2>
+      <p>Одрастање између та два погледа није значило да сам одмах знао коме да поверујем. Учио сам да разумем разлике, да посматрам последице различитих ставова и да покушам да пронађем сопствени однос према ономе што ми се представља као исправно.</p>
+      <p>Нисам добио готов одговор. Добио сам прилику да видим да свет може да се посматра из различитих углова.</p>
+    </div></section>
+    <section class="story-section" id="iskra"><div class="section-number">03</div><div class="section-body">
+      <p class="section-kicker">ОНО ШТО ЈЕ ОСТАЛО У МЕНИ</p><h2>Прва искра<br/><em>преиспитивања.</em></h2>
+      <p>Управо тај судар у мени је запалио искру која и данас гори. Научио ме је да не прихватам ствари без размишљања, да постављам питања и да тражим сопствене одговоре.</p>
+      <p class="closing-line">Моје одрастање није дало готов облик мом карактеру — поставило је питања на која сам наставио да тражим одговоре.</p>
+    </div></section>
+  </div>
+  <footer class="life-footer"><p>ЈОВИЦА ВРАТНИЦА · МОЈ ЖИВОТНИ ПУТ</p><a href={base + 'o-meni/'}>← НАЗАД НА „О МЕНИ“</a><a href={base + 'nekonformizam/'}>СЛЕДЕЋЕ: ПРЕИСПИТИВАЊЕ ↗</a></footer>
+</main>
+<style>
+.chapter-nav{display:flex;justify-content:space-between;padding:20px max(22px,calc((100vw - 1120px)/2));border-bottom:1px solid #ddd;font-size:.72rem;font-weight:850;letter-spacing:.12em}.chapter-nav a{color:inherit;text-decoration:none}
+.life-page{color:#20232a}.life-hero{background:#171a20;color:#fff;padding:clamp(65px,10vw,125px) max(24px,calc((100vw - 1050px)/2)) 48px}.kicker,.section-kicker{font-size:.7rem;font-weight:850;letter-spacing:.17em;color:#ed555b}.life-hero h1{font-size:clamp(2.8rem,8vw,6.7rem);line-height:.94;letter-spacing:-.065em;margin:28px 0;max-width:1050px}.life-hero h1 em,.story-section h2 em{font-style:normal;color:#e5484d}.hero-lead{max-width:740px;font-size:clamp(1.2rem,2.8vw,1.8rem);line-height:1.5;font-weight:650;color:#e6e7e9}.hero-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:55px;padding-top:18px;border-top:1px solid #555;color:#bfc2c8;font-size:.65rem;font-weight:800;letter-spacing:.12em}
+.story-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:28px max(24px,calc((100vw - 1050px)/2));background:#f0f1f3;border-bottom:1px solid #d9dce1}.story-index>p{grid-column:1/-1;margin:0 0 14px;color:#747982;font-size:.65rem;font-weight:850;letter-spacing:.16em}.story-index a{display:flex;flex-direction:column;gap:10px;padding:12px 14px 12px 0;color:#252932;text-decoration:none;font-size:.83rem;font-weight:800;line-height:1.3;border-right:1px solid #d4d7dc}.story-index a:not(:first-of-type){padding-left:14px}.story-index a span{color:#d83e47;font-size:.68rem}.story-index a b{color:#d83e47}
+.story-content{max-width:1050px;margin:0 auto;padding:20px 24px 70px}.story-section{display:grid;grid-template-columns:90px minmax(0,760px);gap:25px;padding:75px 0;border-bottom:1px solid #e1e3e6;scroll-margin-top:25px}.section-number{font-size:1rem;font-weight:900;color:#e5484d;padding-top:8px}.section-body h2{font-size:clamp(2.3rem,5.5vw,4.6rem);letter-spacing:-.06em;line-height:.98;margin:15px 0 28px}.section-body>p:not(.section-kicker){font-size:1.08rem;line-height:1.85;color:#343943;margin:0 0 18px}.closing-line{font-size:clamp(1.35rem,3vw,2rem)!important;font-weight:850;color:#20232a!important;margin-top:30px!important}
+.life-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:35px max(24px,calc((100vw - 1050px)/2));background:#171a20;color:#fff}.life-footer p{width:100%;margin:0;color:#aaa;font-size:.65rem;font-weight:800;letter-spacing:.13em}.life-footer a{color:#fff;text-decoration:none;font-size:.72rem;font-weight:850;letter-spacing:.06em}.life-footer a:last-child{color:#ff696e}
+@media(max-width:700px){.story-index{grid-template-columns:1fr}.story-index a,.story-index a:not(:first-of-type){padding:13px 4px;border-right:0;border-bottom:1px solid #d4d7dc}.story-section{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:52px 0}.section-number{font-size:.8rem}.section-body>p:not(.section-kicker){font-size:1rem}.hero-meta{margin-top:35px}.life-footer{flex-direction:column}}
+</style>
+</BaseLayout>
