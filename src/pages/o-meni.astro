@@ -1,37 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<BaseLayout title="О мени — Јовица Вратница" description="Мој животни пут није права линија. То је прича о одрастању, изборима, падовима, искуствима и борби да останем свој.">
-  <header class="site-header">
-    <a class="brand" href={import.meta.env.BASE_URL}>ЈВ<span>.</span></a>
-    <nav aria-label="Главна навигација">
-      <a href={import.meta.env.BASE_URL + 'o-meni/'}>О мени</a>
-      <a href={import.meta.env.BASE_URL + 'junacko-srce/'}>Јуначко Срце</a>
-      <a href={import.meta.env.BASE_URL + 'projekti/'}>Пројекти</a>
-      <a href={import.meta.env.BASE_URL + 'saradnja/'}>Сарадња</a>
+<BaseLayout title="О мени — Јовица Вратница" description="Лична прича Јовице Вратнице: животни пут, бунт, вредности и разлози због којих подржава људе који се усуде да покрену промену.">
+  <div class="about-app">
+    <header class="about-topbar">
+      <a class="about-back" href={base} aria-label="Назад на почетну">←</a>
+      <span>О МЕНИ</span>
+      <a class="about-home" href={base} aria-label="Почетна">⌂</a>
+    </header>
+
+    <main>
+      <section class="about-hero">
+        <div class="about-hero-shade"></div>
+        <div class="about-hero-content">
+          <p class="about-kicker">ЛИЧНА ПРИЧА · МОЈ ПУТ</p>
+          <p class="about-signature">Јовица<br/>Вратница<span></span></p>
+          <p class="about-motto">Пишем. Делујем. Повезујем.</p>
+        </div>
+        <div class="about-hero-bottom">
+          <span>НЕ ПРИСТАЈЕМ ДА ЖИВОТ ПРОЂЕ У ЋУТАЊУ.</span>
+          <span>01 / 05</span>
+        </div>
+      </section>
+
+      <section class="about-manifesto">
+        <span class="about-quote-mark">“</span>
+        <blockquote>Не мораш да будеш најгласнији, нити да имаш све одговоре. Довољно је да имаш храбрости да покренеш нешто добро.</blockquote>
+        <p>— МОЈ ПОГЛЕД НА СТВАРИ</p>
+      </section>
+
+      <section class="about-story">
+        <div class="about-section-label"><span>01</span> МОЈ ЖИВОТНИ ПУТ</div>
+        <h1>Нисам тражио<br/><em>савршен живот.</em></h1>
+        <p class="about-lead">Када сам се доселио у Велику Плану, пре скоро осам година, искрено — нисам имао неке велике планове. Хтео сам мир.</p>
+        <p>После година у великом граду, борбе, стреса и хаоса, мислио сам да ће мање место донети спокој, да ћу коначно моћи да средим мисли и пронађем свој ритам.</p>
+        <p>Рођен сам у Београду 1981. године. Све оно што сам проживео, људи које сам сретао и избори које сам правио део су мог пута. Не посматрам живот као готову биографију, већ као причу која се и даље пише.</p>
+      </section>
+
+      <section class="about-chapters">
+        <div class="about-section-label"><span>02</span> ШТА МЕ ЈЕ ОБЛИКОВАЛО</div>
+        <article class="about-chapter">
+          <div class="about-chapter-icon">↗</div>
+          <div><h2>Мој пут</h2><p>Искуства, успони, падови и сусрети који су ме научили да човек мора сам да пронађе свој правац.</p></div>
+        </article>
+        <article class="about-chapter">
+          <div class="about-chapter-icon">✊</div>
+          <div><h2>Мој бунт</h2><p>Нисам човек који лако прихвата неправду, лицемерје и наметнута правила. Важно ми је да сачувам право да мислим својом главом и да говорим отворено.</p></div>
+        </article>
+        <article class="about-chapter">
+          <div class="about-chapter-icon">♡</div>
+          <div><h2>Моје вредности</h2><p>Слобода, аутентичност, интегритет, емпатија и одговорност. Не као лепе речи, већ као принципи које треба живети.</p></div>
+        </article>
+      </section>
+
+      <section class="about-mission">
+        <div class="about-section-label"><span>03</span> МОЈА МИСИЈА</div>
+        <h2>Нисам ту да<br/><em>спасавам људе.</em></h2>
+        <p class="about-mission-big">Ту сам да им пружим руку. Да знају да нису сами.</p>
+        <p>Верујем у људе који имају идеју, храброст и жељу да нешто промене. Не желим да говорим уместо њих, нити да им одузимам снагу. Желим да их охрабрим, повежем и подржим да сами направе свој корак.</p>
+      </section>
+
+      <section class="about-call">
+        <div class="about-wolf-mark">♡</div>
+        <p>ЗА ОНЕ КОЈИ СЕ УСУДЕ</p>
+        <h2>Пишем.<br/>Делујем.<br/><em>Повезујем.</em></h2>
+        <a href={base + 'saradnja/'}>УПОЗНАЈМО СЕ <span>↗</span></a>
+      </section>
+    </main>
+
+    <nav class="about-bottom-nav" aria-label="Доња навигација">
+      <a href={base}><span>⌂</span>Почетна</a>
+      <a class="active" href={base + 'o-meni/'}><span>●</span>О мени</a>
+      <a href={base + 'junacko-srce/'}><span>♡</span>Јуначко Срце</a>
+      <a href={base + 'projekti/'}><span>▦</span>Пројекти</a>
+      <a href={base + 'saradnja/'}><span>↗</span>Сарадња</a>
     </nav>
-    <a class="header-mark" href={import.meta.env.BASE_URL + 'saradnja/'}>ПОВЕЖИМО СЕ <span>↘</span></a>
-  </header>
-  <main>
-    <section class="inner-hero">
-      <p class="eyebrow"><span></span> ЛИЧНИ ПУТ · ИСКУСТВО · УВЕРЕЊА</p>
-      <h1>О мени</h1>
-      <p class="hero-copy">Мој животни пут није права линија. То је прича о одрастању, изборима, падовима, искуствима и борби да останем свој.</p>
-    </section>
-    <section class="inner-content">
-      <p class="lead">Не желим да моја биографија буде само списак датума, места и догађаја. Желим да испричам како сам постао човек какав сам данас — шта ме је обликовало, шта сам научио и зашто не пристајем на готове одговоре.</p>
-<h2>Човек се гради <em>кроз живот.</em></h2>
-<p>Породица, одрастање, људи које срећемо и околности у којима живимо остављају траг на нама. Али верујем да човек може да преиспита оно што је научио, донесе сопствене одлуке и преузме одговорност за то какав жели да буде.</p>
-<p>Овде ћу постепено испричати свој животни пут — од детињства и првих искустава, преко година рада и личних борби, до ангажовања и пројеката које данас покрећем. Без улепшавања и без измишљања. Својим речима.</p>
-<h2>Пишем. Делујем. <em>Повезујем.</em></h2>
-<p>Ово је простор за моју личну причу, ставове и записе. Не тражим да се сви слажу са мном. Важно ми је да разговарамо отворено и да имамо храбрости да мислимо својом главом.</p>
-      <a class="inner-back" href={import.meta.env.BASE_URL}>← НАЗАД НА ПОЧЕТНУ</a>
-    </section>
-    <div class="inner-quote">„Нисам овде да се уклопим. Овде сам да останем свој и да нешто покренем.</div>
-  </main>
-  <footer>
-    <a class="brand" href={import.meta.env.BASE_URL}>ЈВ<span>.</span></a>
-    <p>СЛОБОДА · АУТЕНТИЧНОСТ · ОДГОВОРНОСТ</p>
-    <a href={import.meta.env.BASE_URL}>ПОЧЕТНА ↑</a>
-  </footer>
+  </div>
 </BaseLayout>
