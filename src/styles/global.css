@@ -102,3 +102,37 @@ footer{border-top:1px solid var(--line);padding:28px 6.5vw;display:flex;justify-
  .about-manifesto,.about-call{padding-left:34px;padding-right:34px}
  .about-bottom-nav{left:50%;right:auto;transform:translateX(-50%);width:min(520px,100%)}
 }
+
+
+/* SHARED SITE NAVIGATION */
+body{padding-bottom:84px}
+.global-topbar{height:64px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 max(22px,calc((100vw - 1120px)/2));background:rgba(16,16,16,.94);backdrop-filter:blur(16px);border-bottom:1px solid #343331}
+.global-brand{font:800 25px Manrope,sans-serif;letter-spacing:-2px;color:#f2f0ec}
+.global-brand span{color:var(--red)}
+.global-top-caption{position:absolute;left:50%;transform:translateX(-50%);font-size:9px;font-weight:800;letter-spacing:.2em;color:#a6a29c}
+.global-menu-trigger{width:42px;height:42px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border:1px solid #55504a;border-radius:50%;background:transparent;cursor:pointer}
+.global-menu-trigger span{display:block;width:16px;height:1.5px;background:#f1eee9;transition:transform .2s}
+.global-menu-trigger:hover{border-color:var(--red)}
+.global-menu-trigger:hover span:nth-child(2){width:11px}
+.global-menu-sheet{position:fixed;inset:auto 0 0;margin:0 auto;width:min(520px,100%);max-width:none;max-height:min(82dvh,720px);overflow:auto;padding:25px 22px calc(28px + env(safe-area-inset-bottom));border:1px solid #514a43;border-bottom:0;border-radius:20px 20px 0 0;color:#f0eee9;background:linear-gradient(145deg,#292522,#121110 78%);box-shadow:0 -18px 70px #0009}
+.global-menu-sheet[open]{animation:global-sheet-in .24s ease-out}
+.global-menu-sheet::backdrop{background:#000a;backdrop-filter:blur(4px)}
+@keyframes global-sheet-in{from{transform:translateY(28px);opacity:.6}to{transform:translateY(0);opacity:1}}
+.global-menu-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:18px}
+.global-menu-head p{margin:0 0 8px;color:var(--red);font-size:9px;font-weight:800;letter-spacing:.2em}
+.global-menu-head h2{margin:0;font-size:clamp(23px,5vw,30px);line-height:1.15;letter-spacing:-.04em}
+.global-menu-close{width:38px;height:38px;flex:0 0 38px;border:1px solid #625b55;border-radius:50%;color:#fff;background:transparent;font-size:25px;cursor:pointer}
+.global-menu-links{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.global-menu-links a{min-height:76px;display:grid;grid-template-columns:32px 1fr 18px;align-items:center;gap:8px;padding:13px;border:1px solid #49433e;border-radius:7px;background:#ffffff08;color:#f1eee9}
+.global-menu-links a:hover,.global-menu-links a[aria-current="page"]{border-color:var(--red);background:#e4474315}
+.global-menu-links a>span{color:var(--red);font-size:20px;text-align:center}
+.global-menu-links strong{font-size:13px}
+.global-menu-links b{color:var(--red);font-size:16px}
+.global-bottom-nav{position:fixed;z-index:99;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);min-height:76px;padding:7px 5px max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:rgba(12,12,12,.97);backdrop-filter:blur(18px);border:1px solid #ffffff20;border-bottom:0;border-radius:15px 15px 0 0;box-shadow:0 -8px 35px #0005}
+.global-bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#aaa7a1;font-size:9px;font-weight:650;white-space:nowrap}
+.global-bottom-nav a>span{font-size:21px;line-height:1.1}
+.global-bottom-nav a small{font-size:8px}
+.global-bottom-nav a.active,.global-bottom-nav a:hover{color:#f05a56}
+.global-bottom-nav a.active>span{color:var(--red)}
+@media(min-width:761px){.global-bottom-nav{width:min(760px,calc(100% - 40px));border-radius:12px 12px 0 0}.global-menu-sheet{width:min(620px,100%)}}
+@media(max-width:390px){.global-top-caption{font-size:8px;letter-spacing:.14em}.global-bottom-nav a small{font-size:7px}.global-bottom-nav a>span{font-size:19px}.global-menu-links{grid-template-columns:1fr}.global-menu-links a{min-height:64px}}
