@@ -1,75 +1,80 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
+const chapters = [
+  { no: '01', title: 'Моја борба', desc: 'Животни пут, искуства, падови, истрајност и оно што ме је обликовало.', href: base + 'moja-borba/' },
+  { no: '02', title: 'Како сам спојио страст и посао', desc: 'Како је моја потреба да стварам и моја жеља за друштвеном променом добила заједнички пут.', href: base + 'spojio-strast-i-posao/' },
+  { no: '03', title: 'О Јуначком Срцу', desc: 'Зашто сам покренуо Јуначко Срце и како маркетинг може да служи људима, а не само продаји.', href: base + 'junacko-srce/' },
+  { no: '04', title: 'Ја сам ту за оне који се усуде', desc: 'Моја подршка људима који покрећу идеје и не желе да у својој борби остану сами.', href: base + 'podrska/' }
+];
 ---
-<BaseLayout title="О мени — Јовица Вратница" description="Лична прича Јовице Вратнице: животни пут, бунт, вредности и разлози због којих подржава људе који се усуде да покрену промену.">
+<BaseLayout title="О мени — Јовица Вратница" description="Моја животна прича, борба, Јуначко Срце и подршка онима који се усуде.">
   <div class="about-app">
     <header class="about-topbar">
       <a class="about-back" href={base} aria-label="Назад на почетну">←</a>
-      <span>О МЕНИ</span>
+      <a class="about-top-title" href={base}>ЈОВИЦА ВРАТНИЦА</a>
       <a class="about-home" href={base} aria-label="Почетна">⌂</a>
     </header>
 
     <main>
       <section class="about-hero">
+        <img class="about-hero-photo" src={base + 'images/jovica-uvod.jpg'} alt="Јовица Вратница на јавном окупљању" />
         <div class="about-hero-shade"></div>
         <div class="about-hero-content">
           <p class="about-kicker">ЛИЧНА ПРИЧА · МОЈ ПУТ</p>
-          <p class="about-signature">Јовица<br/>Вратница<span></span></p>
+          <h1 class="about-signature">Јовица<br/>Вратница<span>.</span></h1>
+          <p class="about-main-motto">Ја сам ту за оне<br/>који се усуде.</p>
           <p class="about-motto">Пишем. Делујем. Повезујем.</p>
+          <a class="about-primary-button" href="#price">УПОЗНАЈ МОЈУ ПРИЧУ <span>↓</span></a>
         </div>
         <div class="about-hero-bottom">
           <span>НЕ ПРИСТАЈЕМ ДА ЖИВОТ ПРОЂЕ У ЋУТАЊУ.</span>
-          <span>01 / 05</span>
+          <span>01 / 04</span>
         </div>
       </section>
 
-      <section class="about-manifesto">
+      <section class="about-manifesto" id="price">
         <span class="about-quote-mark">“</span>
-        <blockquote>Не мораш да будеш најгласнији, нити да имаш све одговоре. Довољно је да имаш храбрости да покренеш нешто добро.</blockquote>
-        <p>— МОЈ ПОГЛЕД НА СТВАРИ</p>
+        <blockquote>Знам како је када се бориш и када немаш увек некога поред себе. Зато желим да пружим руку другима — да знају да нису сами.</blockquote>
+        <p>НЕ ДА СПАСАВАМ. ВЕЋ ДА ПОДРЖИМ.</p>
       </section>
 
       <section class="about-story">
-        <div class="about-section-label"><span>01</span> МОЈ ЖИВОТНИ ПУТ</div>
-        <h1>Нисам тражио<br/><em>савршен живот.</em></h1>
-        <p class="about-lead">Када сам се доселио у Велику Плану, пре скоро осам година, искрено — нисам имао неке велике планове. Хтео сам мир.</p>
-        <p>После година у великом граду, борбе, стреса и хаоса, мислио сам да ће мање место донети спокој, да ћу коначно моћи да средим мисли и пронађем свој ритам.</p>
-        <p>Рођен сам у Београду 1981. године. Све оно што сам проживео, људи које сам сретао и избори које сам правио део су мог пута. Не посматрам живот као готову биографију, већ као причу која се и даље пише.</p>
+        <div class="about-section-label"><span>01</span> МОЈА ПРИЧА</div>
+        <h2>Мој животни пут<br/><em>и моја борба.</em></h2>
+        <p class="about-lead">Не желим да се представим само кроз оно што данас радим. Важно ми је да разумеш и пут који ме је довео довде — искуства, изборе, борбе и уверења која су ме обликовала.</p>
+        <p>Моја прича није само биографија са датумима. То је прича о човеку који је тражио свој пут, чувао право да мисли својом главом и покушавао да оно у шта верује претвори у нешто конкретно.</p>
       </section>
 
-      <section class="about-chapters">
-        <div class="about-section-label"><span>02</span> ШТА МЕ ЈЕ ОБЛИКОВАЛО</div>
-        <article class="about-chapter">
-          <div class="about-chapter-icon">↗</div>
-          <div><h2>Мој пут</h2><p>Искуства, успони, падови и сусрети који су ме научили да човек мора сам да пронађе свој правац.</p></div>
-        </article>
-        <article class="about-chapter">
-          <div class="about-chapter-icon">✊</div>
-          <div><h2>Мој бунт</h2><p>Нисам човек који лако прихвата неправду, лицемерје и наметнута правила. Важно ми је да сачувам право да мислим својом главом и да говорим отворено.</p></div>
-        </article>
-        <article class="about-chapter">
-          <div class="about-chapter-icon">♡</div>
-          <div><h2>Моје вредности</h2><p>Слобода, аутентичност, интегритет, емпатија и одговорност. Не као лепе речи, већ као принципи које треба живети.</p></div>
-        </article>
+      <section class="about-chapters" aria-label="Поглавља о мени">
+        <div class="about-section-label"><span>02</span> УПОЗНАЈ МЕ КРОЗ МОЈЕ ПРИЧЕ</div>
+        <div class="about-menu-grid">
+          {chapters.map((item) => (
+            <a class="about-menu-card" href={item.href}>
+              <span class="about-menu-no">{item.no} / ПОГЛАВЉЕ</span>
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
+              <span class="about-menu-arrow">ОТВОРИ ПРИЧУ <b>↗</b></span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section class="about-mission">
         <div class="about-section-label"><span>03</span> МОЈА МИСИЈА</div>
-        <h2>Нисам ту да<br/><em>спасавам људе.</em></h2>
-        <p class="about-mission-big">Ту сам да им пружим руку. Да знају да нису сами.</p>
+        <h2>Не желим да спасавам.<br/><em>Желим да пружим руку.</em></h2>
+        <p class="about-mission-big">Да охрабрим. Да подржим. Да повежем. Да људи знају да нису сами.</p>
         <p>Верујем у људе који имају идеју, храброст и жељу да нешто промене. Не желим да говорим уместо њих, нити да им одузимам снагу. Желим да их охрабрим, повежем и подржим да сами направе свој корак.</p>
       </section>
 
       <section class="about-call">
-        <div class="about-wolf-mark">♡</div>
         <p>ЗА ОНЕ КОЈИ СЕ УСУДЕ</p>
         <h2>Пишем.<br/>Делујем.<br/><em>Повезујем.</em></h2>
-        <a href={base + 'saradnja/'}>УПОЗНАЈМО СЕ <span>↗</span></a>
+        <a href={base + 'podrska/'}>УПОЗНАЈ МОЈУ ПОДРШКУ <span>↗</span></a>
       </section>
     </main>
 
-    <nav class="about-bottom-nav" aria-label="Доња навигација">
+    <nav class="about-bottom-nav" aria-label="Главна навигација">
       <a href={base}><span>⌂</span>Почетна</a>
       <a class="active" href={base + 'o-meni/'}><span>●</span>О мени</a>
       <a href={base + 'junacko-srce/'}><span>♡</span>Јуначко Срце</a>
@@ -77,4 +82,27 @@ const base = import.meta.env.BASE_URL;
       <a href={base + 'saradnja/'}><span>↗</span>Сарадња</a>
     </nav>
   </div>
+  <style>
+    .about-top-title{color:inherit;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.13em}
+    .about-hero{position:relative;isolation:isolate;overflow:hidden;min-height: min(790px, calc(100svh - 56px));background:#111}
+    .about-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:-2;filter:grayscale(1) contrast(1.08)}
+    .about-hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,9,12,.92) 0%,rgba(8,9,12,.58) 58%,rgba(8,9,12,.15) 100%),linear-gradient(0deg,rgba(8,9,12,.78),transparent 45%)}
+    .about-hero-content{position:relative;max-width:780px;padding:clamp(90px,15vw,175px) clamp(24px,7vw,90px) 130px;color:#fff}
+    .about-signature{font-size:clamp(3.3rem,8vw,6.8rem);line-height:.9;letter-spacing:-.065em;margin:15px 0 26px;font-weight:850}
+    .about-signature span{color:#e5484d}
+    .about-main-motto{font-size:clamp(1.9rem,4.5vw,3.7rem);font-weight:850;line-height:1.04;letter-spacing:-.045em;margin:0 0 18px}
+    .about-motto{font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .about-primary-button{display:inline-flex;gap:26px;align-items:center;margin-top:28px;padding:14px 18px;border:1px solid rgba(255,255,255,.55);color:white;text-decoration:none;font-size:.75rem;font-weight:800;letter-spacing:.1em}
+    .about-primary-button span{color:#ef555a;font-size:1.2rem}
+    .about-hero-bottom{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:18px clamp(24px,7vw,90px);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.12em}
+    .about-menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:25px}
+    .about-menu-card{display:flex;flex-direction:column;min-height:220px;padding:25px;background:#171a20;border:1px solid rgba(255,255,255,.12);color:#f4f4f4;text-decoration:none;transition:transform .2s,border-color .2s}
+    .about-menu-card:hover{transform:translateY(-3px);border-color:#e5484d}
+    .about-menu-no{font-size:.68rem;color:#e5484d;font-weight:800;letter-spacing:.13em}
+    .about-menu-card h2{font-size:clamp(1.25rem,2.5vw,1.8rem);line-height:1.1;margin:24px 0 12px}
+    .about-menu-card p{font-size:.9rem;line-height:1.6;color:#b9bdc5;margin:0 0 24px}
+    .about-menu-arrow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:.68rem;font-weight:800;letter-spacing:.1em}
+    .about-menu-arrow b{color:#e5484d;font-size:1.2rem}
+    @media(max-width:640px){.about-menu-grid{grid-template-columns:1fr}.about-menu-card{min-height:190px;padding:22px}.about-hero-content{padding-top:105px}.about-hero-bottom{font-size:.55rem}}
+  </style>
 </BaseLayout>
