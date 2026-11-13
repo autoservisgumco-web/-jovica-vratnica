@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 <BaseLayout>
   <main class="landing">
@@ -17,19 +18,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <nav class="main-links" aria-label="Главне странице">
-      <a class="link-card" href={import.meta.env.BASE_URL + 'o-meni/'}>
+      <a class="link-card" href={basePath + 'o-meni/'}>
         <span class="number">01 / ЛИЧНА ПРИЧА</span>
         <span class="link-title">О мени</span><span class="arrow">↗</span>
       </a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'moja-borba/'}>
+      <a class="link-card" href={basePath + 'moja-borba/'}>
         <span class="number">02 / УВЕРЕЊА</span>
         <span class="link-title">Моја борба</span><span class="arrow">↗</span>
       </a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}>
+      <a class="link-card" href={basePath + 'junacko-srce/'}>
         <span class="number">03 / ИДЕЈА</span>
         <span class="link-title">Јуначко срце</span><span class="arrow">↗</span>
       </a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'projekti/'}>
+      <a class="link-card" href={basePath + 'projekti/'}>
         <span class="number">04 / ДЕЛА</span>
         <span class="link-title">Пројекти</span><span class="arrow">↗</span>
       </a>
