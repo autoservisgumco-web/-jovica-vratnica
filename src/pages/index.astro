@@ -12,14 +12,14 @@ const opening = [
 ---
 <BaseLayout>
   <header class="site-header">
-    <a class="brand" href="#pocetak" aria-label="Јовица Вратница — почетна">ЈВ<span>.</span></a>
+    <a class="brand" href={import.meta.env.BASE_URL} aria-label="Јовица Вратница — почетна">ЈВ<span>.</span></a>
     <nav aria-label="Главна навигација">
-      <a href="#prica">Моја прича</a>
-      <a href="#borba">Моја борба</a>
-      <a href="#projekti">Пројекти</a>
-      <a href="#kontakt">Контакт</a>
+      <a href={import.meta.env.BASE_URL + 'o-meni/'}>О мени</a>
+      <a href={import.meta.env.BASE_URL + 'junacko-srce/'}>Јуначко Срце</a>
+      <a href={import.meta.env.BASE_URL + 'projekti/'}>Пројекти</a>
+      <a href={import.meta.env.BASE_URL + 'saradnja/'}>Сарадња</a>
     </nav>
-    <a class="header-mark" href="#prica">ЛИЧНИ ЗАПИСИ <span>↘</span></a>
+    <a class="header-mark" href={import.meta.env.BASE_URL + 'saradnja/'}>ПОВЕЖИМО СЕ <span>↘</span></a>
   </header>
 
   <main>
@@ -35,6 +35,17 @@ const opening = [
       <div class="hero-index">01 <span>/</span> ЛИЧНИ ПУТ</div>
     </section>
 
+
+    <section class="home-paths section-wrap" aria-label="Наставите даље">
+      <div class="section-kicker"><span>→</span> / УПОЗНАЈ МОЈ СВЕТ</div>
+      <div class="paths-heading"><h2>Ово је тек <em>почетак.</em></h2><p>Изабери тему која те занима и упознај причу, идеје и људе који стоје иза онога што радим.</p></div>
+      <div class="path-grid">
+        <a class="path-card" href={import.meta.env.BASE_URL + 'o-meni/'}><span>01 / ЛИЧНА ПРИЧА</span><strong>О мени</strong><small>Мој животни пут, искуства и уверења.</small><b>↗</b></a>
+        <a class="path-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}><span>02 / МОЈ БУНТ</span><strong>Јуначко Срце</strong><small>За оне који се усуде. Маркетинг са ставом и људима у средишту.</small><b>↗</b></a>
+        <a class="path-card" href={import.meta.env.BASE_URL + 'projekti/'}><span>03 / ДЕЛА</span><strong>Пројекти и ангажман</strong><small>Идеје које покрећем, подржавам и претварам у дела.</small><b>↗</b></a>
+        <a class="path-card path-card-accent" href={import.meta.env.BASE_URL + 'saradnja/'}><span>04 / ОТВОРЕН ПОЗИВ</span><strong>Позив на сарадњу</strong><small>Имаш идеју, иницијативу или жељу да нешто промениш?</small><b>↗</b></a>
+      </div>
+    </section>
     <section class="intro section-wrap" id="prica">
       <div class="section-kicker"><span>01</span> / УВОД</div>
       <div class="intro-grid">
