@@ -40,7 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     :global(*){box-sizing:border-box}
     :global(html),:global(body){margin:0;min-height:100%;background:#101010}
     .landing{width:100%;min-height:100svh;color:#e9e7e3;background:#101010;font-family:'Manrope',Arial,sans-serif}
-    .hero{position:relative;width:100%;min-height:68svh;display:flex;align-items:center;overflow:hidden;padding:clamp(55px,9vw,120px) clamp(24px,10vw,150px);color:#fff;background:#101010}
+    .hero{position:relative;width:100%;min-height:100svh;min-height:100dvh;display:flex;align-items:center;overflow:hidden;padding:clamp(55px,9vw,120px) clamp(24px,10vw,150px);color:#fff;background:#101010}
     .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2000&q=88') center 34%/cover}
     .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.68) 48%,rgba(8,8,8,.18)),linear-gradient(0deg,rgba(8,8,8,.6),transparent 55%)}
     .hero-content{position:relative;z-index:1;width:min(700px,100%)}
@@ -62,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .arrow{position:absolute;right:clamp(17px,3vw,42px);bottom:25px;color:#e44743;font-size:22px}
     footer{width:100%;margin:0;padding:25px 6vw;color:#777;font-size:9px;font-weight:800;letter-spacing:.2em;text-align:center;background:#101010}
     @media(max-width:760px){
-      .hero{min-height:66svh;padding:55px 25px 75px;align-items:flex-end}
+      .hero{min-height:100svh;min-height:100dvh;padding:55px 25px 75px;align-items:flex-end}
       .hero-photo{background-position:58% center}
       .hero-shade{background:linear-gradient(0deg,rgba(8,8,8,.96),rgba(8,8,8,.55) 70%,rgba(8,8,8,.18))}
       h1{font-size:clamp(49px,12vw,76px)}
