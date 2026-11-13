@@ -23,7 +23,6 @@ const items = [
   </div>
   <nav class="global-menu-links" aria-label="Главни мени">
     {items.map((item) => <a href={base + item.path} aria-current={current === item.key ? 'page' : undefined}><span>{item.icon}</span><strong>{item.label}</strong><b>↗</b></a>)}
-    <a href={base + 'saradnja/'}><span>↗</span><strong>Сарадња</strong><b>↗</b></a>
   </nav>
 </dialog>
 <nav class="global-bottom-nav" aria-label="Доња главна навигација">
