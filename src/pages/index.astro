@@ -1,151 +1,135 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const opening = [
-  'Често прихватамо себе онаквима какви јесмо, не размишљајући много о томе како смо заправо постали такви. Неко верује да му је такав карактер судбина, неко ће разлог потражити у хороскопу, а неко једноставно каже: „Ја сам такав и ту нема промене.“ Али да ли смо заиста рођени такви или смо временом постали такви?',
-  'Моје уверење је да човека у великој мери обликују околности у којима одраста, а да најзначајнију улогу у том процесу има породица. Породица је прво окружење у којем формирамо представу о свету. Ту усвајамо прве вредности, учимо како да се односимо према другима, како да разумемо ауторитет, како да решавамо сукобе и како да доносимо одлуке.',
-  'Начин на који нас васпитавају, односи које посматрамо и искуства која проживљавамо постепено утичу на формирање наше личности. Зато верујем да многе особине које приписујемо својој природи заправо имају дубље корене у нашем одрастању.',
-  'Нисмо сви одрастали у истим околностима. Нисмо имали исте родитеље, исте породичне односе, исту подршку нити исте животне услове. Зато није реално очекивати да сви развијемо исти поглед на свет, исте вредности и исти однос према животу.',
-  'Човек није само производ онога са чим је рођен. Он је и производ окружења у којем је одрастао, искустава која је стекао и односа који су га обликовали. Али то не значи да смо заувек одређени својим детињством. Напротив, спознаја о томе шта нас је обликовало пружа нам прилику да преиспитамо усвојене обрасце, донесемо сопствене одлуке и преузмемо одговорност за човека каквог желимо да будемо.',
-  'Можда нисмо рођени такви какви јесмо. Можда смо највећим делом постали такви у околностима у којима смо одрастали.'
-];
 ---
 <BaseLayout>
-  <header class="site-header">
-    <a class="brand" href={import.meta.env.BASE_URL} aria-label="Јовица Вратница — почетна">ЈВ<span>.</span></a>
-    <nav aria-label="Главна навигација">
-      <a href={import.meta.env.BASE_URL + 'o-meni/'}>О мени</a>
-      <a href={import.meta.env.BASE_URL + 'junacko-srce/'}>Јуначко Срце</a>
-      <a href={import.meta.env.BASE_URL + 'projekti/'}>Пројекти</a>
-      <a href={import.meta.env.BASE_URL + 'saradnja/'}>Сарадња</a>
-    </nav>
-    <a class="header-mark" href={import.meta.env.BASE_URL + 'saradnja/'}>ПОВЕЖИМО СЕ <span>↘</span></a>
-  </header>
+  <main class="landing">
+    <div class="landing-inner">
+      <p class="eyebrow">ЛИЧНИ САЈТ</p>
+      <h1>Јовица <em>Вратница</em></h1>
+      <p class="intro">Изабери где желиш да наставиш.</p>
 
-  <main>
-    <section class="hero" id="pocetak">
-      <div class="hero-grain"></div>
-      <div class="hero-content">
-        <p class="eyebrow"><span></span> ЈОВИЦА ВРАТНИЦА · ЛИЧНА БИОГРАФИЈА</p>
-        <h1>Неконформиста<br />сам <em>откад знам</em><br />за себе.</h1>
-        <p class="hero-copy">Моја прича није прича о уклапању. То је прича о слободи, бунту, одговорности и стварању.</p>
-        <a class="text-link" href="#prica">УПОЗНАЈ МОЈУ ПРИЧУ <span>↘</span></a>
-      </div>
-      <div class="hero-side-note">НЕ ПРИСТАЈЕМ<br />НА ГОТОВЕ ОДГОВОРЕ.</div>
-      <div class="hero-index">01 <span>/</span> ЛИЧНИ ПУТ</div>
-    </section>
+      <nav class="main-links" aria-label="Главне странице">
+        <a class="link-card" href={import.meta.env.BASE_URL + 'o-meni/'}>
+          <span class="number">01</span>
+          <span class="link-title">О мени</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="link-card" href={import.meta.env.BASE_URL + 'moja-borba/'}>
+          <span class="number">02</span>
+          <span class="link-title">Моја борба</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="link-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}>
+          <span class="number">03</span>
+          <span class="link-title">Јуначко срце</span>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="link-card" href={import.meta.env.BASE_URL + 'projekti/'}>
+          <span class="number">04</span>
+          <span class="link-title">Пројекти</span>
+          <span class="arrow">↗</span>
+        </a>
+      </nav>
 
-
-    <section class="home-paths section-wrap" aria-label="Наставите даље">
-      <div class="section-kicker"><span>→</span> / УПОЗНАЈ МОЈ СВЕТ</div>
-      <div class="paths-heading"><h2>Ово је тек <em>почетак.</em></h2><p>Изабери тему која те занима и упознај причу, идеје и људе који стоје иза онога што радим.</p></div>
-      <div class="path-grid">
-        <a class="path-card" href={import.meta.env.BASE_URL + 'o-meni/'}><span>01 / ЛИЧНА ПРИЧА</span><strong>О мени</strong><small>Мој животни пут, искуства и уверења.</small><b>↗</b></a>
-        <a class="path-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}><span>02 / МОЈ БУНТ</span><strong>Јуначко Срце</strong><small>За оне који се усуде. Маркетинг са ставом и људима у средишту.</small><b>↗</b></a>
-        <a class="path-card" href={import.meta.env.BASE_URL + 'projekti/'}><span>03 / ДЕЛА</span><strong>Пројекти и ангажман</strong><small>Идеје које покрећем, подржавам и претварам у дела.</small><b>↗</b></a>
-        <a class="path-card path-card-accent" href={import.meta.env.BASE_URL + 'saradnja/'}><span>04 / ОТВОРЕН ПОЗИВ</span><strong>Позив на сарадњу</strong><small>Имаш идеју, иницијативу или жељу да нешто промениш?</small><b>↗</b></a>
-      </div>
-    </section>
-    <section class="intro section-wrap" id="prica">
-      <div class="section-kicker"><span>01</span> / УВОД</div>
-      <div class="intro-grid">
-        <div>
-          <p class="overline">ПРЕ НЕГО ШТО ИСПРИЧАМ СВОЈУ ПРИЧУ</p>
-          <h2>Да ли смо заиста<br />рођени такви<br /><em>какви јесмо?</em></h2>
-        </div>
-        <div class="intro-text">
-          <p class="lead">Пре него што говорим о себи, желим да објасним у шта верујем: човек се не формира у празнини. Одрастање, породица и околности остављају дубок траг на то ко постајемо.</p>
-          <details class="reading">
-            <summary>ПРОЧИТАЈ ЦЕО УВОД <span>＋</span></summary>
-            <div class="reading-content">
-              {opening.map((paragraph) => <p>{paragraph}</p>)}
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote-band">
-      <p>„Моја борба није почела на улици.<br /><em>Почела је у породици.</em>“</p>
-      <span>ЛИЧНО УВЕРЕЊЕ · ПОЛАЗНА ТАЧКА</span>
-    </section>
-
-    <section class="support section-wrap" id="podrska">
-      <div class="section-kicker"><span>03</span> / ЗАШТО ДЕЛУЈЕМ</div>
-      <div class="section-heading">
-        <h2>Подршка онима<br />који желе <em>промену.</em></h2>
-        <p>Не желим да будем само неко ко говори о проблемима. Желим да будем уз људе који имају храбрости да покрену нешто добро.</p>
-      </div>
-      <div class="intro-grid">
-        <div>
-          <p class="overline">ОСУДА УМЕСТО ПОДРШКЕ</p>
-          <h2>Када неко<br />проговори, не би<br />смео да остане <em>сам.</em></h2>
-        </div>
-        <div class="intro-text">
-          <p class="lead">Данас готово сви видимо да постоје проблеми у друштву. О њима разговарамо, жалимо се и питамо се зашто се ништа не мења. Али када неко одлучи да јавно укаже на проблем, покрене иницијативу или покуша нешто да промени, често уместо подршке добије осуду.</p>
-          <p>Таква реакција многе заустави и пре него што почну. Људи се плаше подсмеха, омаловажавања, спутавања и тога да ће остати сами. Не одустају зато што немају идеје или воље, већ зато што не виде да ће их неко подржати.</p>
-          <p>Ја желим да будем уз те људе. Уз оне који не ћуте, који покрећу иницијативе и који желе да створе нешто добро. Не тврдим да је свака идеја савршена нити да сваку ствар треба подржати без питања. Али верујем да свака искрена намера да се нешто промени заслужује да буде саслушана и да добије прилику.</p>
-          <p>Нисам ту да спасавам људе, нити да говорим у њихово име. Ту сам да им пружим руку, охрабрим их, помогнем да се њихов глас чује и да их повежем са људима који могу да допринесу.</p>
-        </div>
-      </div>
-      <div class="quote-band">
-        <p>„Друштво се не мења тако што ћемо само указивати на проблеме.<br /><em>Мења се онда када почнемо да подржавамо људе који су спремни да нешто предузму.</em>“</p>
-        <span>МОЈ СТАВ · МОЈ РАЗЛОГ ДА ДЕЛУЈЕМ</span>
-      </div>
-    </section>
-
-    <section class="chapters section-wrap">
-      <div class="section-kicker"><span>02</span> / ЖИВОТНИ ПУТ</div>
-      <div class="section-heading">
-        <h2>Како сам<br /><em>постао ја.</em></h2>
-        <p>Не желим да ово буде биографија са набројаним датумима. Желим да испричам пут, људе, околности и одлуке које су ме обликовале.</p>
-      </div>
-      <div class="chapter-list">
-        <article class="chapter">
-          <span class="chapter-no">01</span>
-          <div><p class="overline">ПОЧЕТАК</p><h3>Неконформиста од малена</h3><p>Породица, детињство и прва искуства која су обликовала мој однос према свету.</p></div>
-          <span class="chapter-arrow">↗</span>
-        </article>
-        <article class="chapter">
-          <span class="chapter-no">02</span>
-          <div><p class="overline">ОДРАСТАЊЕ</p><h3>Мој животни пут</h3><p>Искуства, послови, сусрети, падови и лекције које нисам учио из књига, већ живећи.</p></div>
-          <span class="chapter-arrow">↗</span>
-        </article>
-        <article class="chapter" id="borba">
-          <span class="chapter-no">03</span>
-          <div><p class="overline">ДЕЛОВАЊЕ</p><h3>Моја борба</h3><p>Од личног бунта до јавног ангажовања, од уверења до конкретних поступака.</p></div>
-          <span class="chapter-arrow">↗</span>
-        </article>
-      </div>
-      <p class="chapter-note">Ово су теме и оквир поглавља. Личне приче ћемо уносити постепено, на основу твојих сећања и чињеница — без измишљања.</p>
-    </section>
-
-    <section class="projects section-wrap" id="projekti">
-      <div class="section-kicker"><span>04</span> / НАСТАВАК БОРБЕ</div>
-      <div class="projects-grid">
-        <div>
-          <p class="overline">ИДЕЈЕ КОЈЕ ПОСТАЈУ ДЕЛА</p>
-          <h2>Борба се<br />наставља кроз<br /><em>стварање.</em></h2>
-        </div>
-        <div class="project-copy">
-          <p>За мене прича о животу није само осврт на оно што је било. Она је и објашњење зашто данас покрећем пројекте, повезујем људе и покушавам да мењам ствари које не прихватам као нормалне.</p>
-          <a class="project-link" href="https://junackosrce.co.rs/" target="_blank" rel="noreferrer"><span>ЈУНАЧКО СРЦЕ</span><b>Маркетинг који буди, не продаје.</b><i>↗</i></a>
-          <a class="project-link" href="https://junackosrce.co.rs/" target="_blank" rel="noreferrer"><span>ОДГОВОРНА ПЛАНА</span><b>Грађанска одговорност и промена.</b><i>↗</i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section-wrap" id="kontakt">
-      <div class="section-kicker"><span>05</span> / КОНТАКТ</div>
-      <p class="overline">ПРИЧА СЕ НАСТАВЉА</p>
-      <h2>Ако имаш разлог<br />да се <em>повежемо —</em><br />јави се.</h2>
-      <p class="contact-note">Овде ћемо поставити директне контакт податке и линкове ка профилима када их изаберемо.</p>
-    </section>
+      <footer>ПИШЕМ · ДЕЛУЈЕМ · ПОВЕЗУЈЕМ</footer>
+    </div>
   </main>
 
-  <footer>
-    <a class="brand" href="#pocetak">ЈВ<span>.</span></a>
-    <p>СЛОБОДА · АУТЕНТИЧНОСТ · ОДГОВОРНОСТ</p>
-    <a href="#pocetak">НАЗАД НА ВРХ ↑</a>
-  </footer>
+  <style>
+    :global(*) { box-sizing: border-box; }
+    :global(html), :global(body) { margin: 0; min-height: 100%; }
+    .landing {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 48px 22px;
+      color: #292b27;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(206, 196, 174, .25), transparent 38%),
+        #f4f2ec;
+      font-family: 'Manrope', 'Arial', sans-serif;
+    }
+    .landing-inner { width: min(760px, 100%); }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #8b7559;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .22em;
+    }
+    h1 {
+      margin: 0;
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: clamp(54px, 10vw, 86px);
+      line-height: .95;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+    h1 em { color: #9a6948; font-style: normal; }
+    .intro {
+      margin: 17px 0 34px;
+      color: #77766f;
+      font-size: 14px;
+    }
+    .main-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+    .link-card {
+      min-height: 128px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 19px 21px;
+      color: #292b27;
+      text-decoration: none;
+      background: rgba(255,255,255,.72);
+      border: 1px solid #dedbd2;
+      border-radius: 5px;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+    .link-card:hover {
+      background: #fff;
+      border-color: #9a6948;
+      transform: translateY(-3px);
+    }
+    .number {
+      color: #9a6948;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+    .link-title {
+      padding-right: 28px;
+      font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1;
+      font-weight: 700;
+    }
+    .arrow {
+      position: absolute;
+      right: 19px;
+      bottom: 18px;
+      color: #9a6948;
+      font-size: 21px;
+    }
+    .landing-inner > footer {
+      margin-top: 34px;
+      color: #99958b;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    @media (max-width: 520px) {
+      .landing { padding: 34px 18px; }
+      .intro { margin-bottom: 25px; }
+      .main-links { gap: 10px; }
+      .link-card { min-height: 116px; padding: 15px 14px; }
+      .link-title { font-size: clamp(23px, 6.5vw, 30px); }
+      .arrow { right: 13px; bottom: 13px; }
+      .landing-inner > footer { margin-top: 25px; font-size: 9px; }
+    }
+  </style>
 </BaseLayout>
