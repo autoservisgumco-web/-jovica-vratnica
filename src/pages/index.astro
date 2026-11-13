@@ -11,49 +11,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h1>Јовица <em>Вратница</em></h1>
         <p class="motto">Пишем. Делујем. Повезујем.</p>
         <p class="intro">Моја прича је прича о бунту, слободи, одговорности и људима. Не пристајем на готове одговоре — верујем у разговор, личну иницијативу и дела.</p>
-        <p class="choose">Упознај мој свет:</p>
+        <p class="choose">Упознај мој свет <span>↓</span></p>
       </div>
+      <span class="hero-index">01 <i>/</i> 04</span>
     </section>
+
     <nav class="main-links" aria-label="Главне странице">
-      <a class="link-card" href={import.meta.env.BASE_URL + 'o-meni/'}><span class="number">01 / ЛИЧНА ПРИЧА</span><span class="link-title">О мени</span><span class="arrow">↗</span></a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'moja-borba/'}><span class="number">02 / УВЕРЕЊА</span><span class="link-title">Моја борба</span><span class="arrow">↗</span></a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}><span class="number">03 / ИДЕЈА</span><span class="link-title">Јуначко срце</span><span class="arrow">↗</span></a>
-      <a class="link-card" href={import.meta.env.BASE_URL + 'projekti/'}><span class="number">04 / ДЕЛА</span><span class="link-title">Пројекти</span><span class="arrow">↗</span></a>
+      <a class="link-card" href={import.meta.env.BASE_URL + 'o-meni/'}>
+        <span class="number">01 / ЛИЧНА ПРИЧА</span>
+        <span class="link-title">О мени</span><span class="arrow">↗</span>
+      </a>
+      <a class="link-card" href={import.meta.env.BASE_URL + 'moja-borba/'}>
+        <span class="number">02 / УВЕРЕЊА</span>
+        <span class="link-title">Моја борба</span><span class="arrow">↗</span>
+      </a>
+      <a class="link-card" href={import.meta.env.BASE_URL + 'junacko-srce/'}>
+        <span class="number">03 / ИДЕЈА</span>
+        <span class="link-title">Јуначко срце</span><span class="arrow">↗</span>
+      </a>
+      <a class="link-card" href={import.meta.env.BASE_URL + 'projekti/'}>
+        <span class="number">04 / ДЕЛА</span>
+        <span class="link-title">Пројекти</span><span class="arrow">↗</span>
+      </a>
     </nav>
     <footer>ЗА ЉУДЕ, НЕ ЗА ПРОФИТ.</footer>
   </main>
   <style>
     :global(*){box-sizing:border-box}
-    :global(html),:global(body){margin:0;min-height:100%;background:#f4f2ec}
-    .landing{min-height:100svh;padding:0 22px 30px;color:#292b27;background:#f4f2ec;font-family:'Manrope',Arial,sans-serif}
-    .hero{position:relative;min-height:410px;max-width:1100px;margin:0 auto;display:flex;align-items:center;overflow:hidden;padding:62px clamp(24px,7vw,78px);color:#fff;background:#34332f}
-    .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1800&q=88') center 34%/cover}
-    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,19,18,.88),rgba(17,19,18,.54) 52%,rgba(17,19,18,.12)),linear-gradient(0deg,rgba(17,19,18,.32),transparent 55%)}
-    .hero-content{position:relative;z-index:1;width:min(590px,100%)}
-    .eyebrow{margin:0 0 17px;color:#e6c6a5;font-size:10px;font-weight:800;letter-spacing:.22em}
-    h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(52px,8vw,82px);line-height:.98;font-weight:800;letter-spacing:-.035em}
-    h1 em{color:#e6b58f;font-style:normal}
-    .motto{margin:18px 0 12px;font-size:15px;font-weight:800;letter-spacing:.08em}
-    .intro{max-width:520px;margin:0;color:#e3e0da;font-size:13px;line-height:1.8}
-    .choose{margin:21px 0 0;color:#e6c6a5;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
-    .main-links{width:min(900px,100%);margin:22px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-    .link-card{min-height:112px;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:17px 20px;color:#292b27;text-decoration:none;background:#fff;border:1px solid #dedbd2;border-left:4px solid #a77a58;border-radius:4px;transition:background .2s,border-color .2s,transform .2s}
-    .link-card:hover{background:#faf7f1;border-color:#a77a58;transform:translateY(-2px)}
-    .number{color:#927253;font-size:9px;font-weight:800;letter-spacing:.13em}
-    .link-title{padding-right:28px;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(27px,4vw,34px);line-height:1;font-weight:700}
-    .arrow{position:absolute;right:18px;bottom:16px;color:#a77a58;font-size:21px}
-    footer{width:min(900px,100%);margin:23px auto 0;color:#918a7e;font-size:9px;font-weight:800;letter-spacing:.18em;text-align:center}
-    @media(max-width:520px){
-      .landing{padding:0 12px 24px}
-      .hero{min-height:430px;padding:42px 23px;align-items:flex-end}
+    :global(html),:global(body){margin:0;min-height:100%;background:#101010}
+    .landing{width:100%;min-height:100svh;color:#e9e7e3;background:#101010;font-family:'Manrope',Arial,sans-serif}
+    .hero{position:relative;width:100%;min-height:68svh;display:flex;align-items:center;overflow:hidden;padding:clamp(55px,9vw,120px) clamp(24px,10vw,150px);color:#fff;background:#101010}
+    .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2000&q=88') center 34%/cover}
+    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.68) 48%,rgba(8,8,8,.18)),linear-gradient(0deg,rgba(8,8,8,.6),transparent 55%)}
+    .hero-content{position:relative;z-index:1;width:min(700px,100%)}
+    .eyebrow{margin:0 0 22px;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.24em}
+    h1{margin:0;font-family:'Manrope',Arial,sans-serif;font-size:clamp(54px,9vw,112px);line-height:.98;font-weight:800;letter-spacing:-.075em}
+    h1 em{color:#e44743;font-style:normal}
+    .motto{margin:24px 0 14px;font-size:clamp(14px,1.5vw,18px);font-weight:800;letter-spacing:.08em}
+    .intro{max-width:590px;margin:0;color:#d0ceca;font-size:clamp(13px,1.3vw,16px);line-height:1.85}
+    .choose{margin:30px 0 0;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .choose span{font-size:17px;margin-left:12px}
+    .hero-index{position:absolute;z-index:1;right:clamp(24px,6vw,90px);bottom:28px;color:#aaa;font-size:10px;letter-spacing:.16em}
+    .hero-index i{font-style:normal;color:#e44743;padding:0 8px}
+    .main-links{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #343331;border-bottom:1px solid #343331}
+    .link-card{min-height:175px;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:27px clamp(17px,3vw,42px);color:#e9e7e3;text-decoration:none;background:#151413;border-right:1px solid #343331;transition:background .2s ease}
+    .link-card:last-child{border-right:0}
+    .link-card:hover{background:#211f1d}
+    .number{color:#999895;font-size:9px;font-weight:800;letter-spacing:.15em}
+    .link-title{padding-right:25px;font-family:'Manrope',Arial,sans-serif;font-size:clamp(23px,3vw,38px);line-height:1.05;font-weight:800;letter-spacing:-.05em}
+    .arrow{position:absolute;right:clamp(17px,3vw,42px);bottom:25px;color:#e44743;font-size:22px}
+    footer{width:100%;margin:0;padding:25px 6vw;color:#777;font-size:9px;font-weight:800;letter-spacing:.2em;text-align:center;background:#101010}
+    @media(max-width:760px){
+      .hero{min-height:66svh;padding:55px 25px 75px;align-items:flex-end}
       .hero-photo{background-position:58% center}
-      .hero-shade{background:linear-gradient(0deg,rgba(15,17,16,.94),rgba(15,17,16,.5) 68%,rgba(15,17,16,.12))}
-      h1{font-size:clamp(50px,14vw,70px)}
-      .intro{font-size:12px;line-height:1.7}
-      .main-links{gap:9px;margin-top:13px}
-      .link-card{min-height:104px;padding:14px 12px}
-      .link-title{font-size:clamp(23px,6.4vw,29px)}
-      .arrow{right:11px;bottom:12px}
+      .hero-shade{background:linear-gradient(0deg,rgba(8,8,8,.96),rgba(8,8,8,.55) 70%,rgba(8,8,8,.18))}
+      h1{font-size:clamp(49px,12vw,76px)}
+      .intro{font-size:13px;line-height:1.75}
+      .main-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .link-card{min-height:135px;padding:20px 17px;border-bottom:1px solid #343331}
+      .link-card:nth-child(2){border-right:0}
+      .link-title{font-size:clamp(24px,6vw,32px)}
+      .arrow{right:17px;bottom:18px}
     }
+    @media(max-width:380px){.link-card{min-height:125px;padding:17px 13px}.number{font-size:8px}.link-title{font-size:23px}.arrow{right:13px}}
   </style>
 </BaseLayout>
