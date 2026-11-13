@@ -10,30 +10,31 @@ const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_U
       <div class="hero-content">
         <p class="eyebrow">ЛИЧНИ САЈТ</p>
         <h1>Јовица <em>Вратница</em></h1>
-        <p class="intro">Рођен сам у Београду 1981. године, у граду који је истовремено хрипео од живота и гушио се у сопственим противречностима. Одрастао сам између два ауторитета – оца и очуха. Један ме је учио послушности, дисциплини и прихватању „као што јесте“, док ме је други водио ка слободи, преиспитивању и одговорности за сопствени живот. Управо тај судар у мени запалио је искру која и данас гори.</p>
+        <p class="identity">Филозоф. Бунтовник. Човек који се води срцем.</p>
         <p class="motto">Пишем. Делујем. Повезујем.</p>
-        <p class="choose">Упознај мој свет <span>↓</span></p>
+        <div class="pathways" aria-label="Изабери свој пут">
+          <a class="path path-about" href={basePath + 'o-meni/'}>
+            <span class="path-kicker">УПОЗНАЈ ЧОВЕКА</span>
+            <span class="path-title">Ко сам ја?</span>
+            <span class="path-description">Моја прича, мој пут, моја уверења и борба.</span>
+            <span class="path-arrow">↗</span>
+          </a>
+          <a class="path path-for-you" href={basePath + 'junacko-srce/'}>
+            <span class="path-kicker">МОЈА МИСИЈА</span>
+            <span class="path-title">Ја сам ту за оне који се усуде.</span>
+            <span class="path-description">За људе са идејом, иницијативом и жељом да покрену промену.</span>
+            <span class="path-arrow">↗</span>
+          </a>
+        </div>
+        <p class="supporting">За људе који не чекају да неко други направи први корак.</p>
       </div>
-      <span class="hero-index">01 <i>/</i> 04</span>
+      <span class="hero-index">ПИШЕМ <i>·</i> ДЕЛУЈЕМ <i>·</i> ПОВЕЗУЈЕМ</span>
     </section>
 
-    <nav class="main-links" aria-label="Главне странице">
-      <a class="link-card" href={basePath + 'o-meni/'}>
-        <span class="number">01 / ЛИЧНА ПРИЧА</span>
-        <span class="link-title">О мени</span><span class="arrow">↗</span>
-      </a>
-      <a class="link-card" href={basePath + 'moja-borba/'}>
-        <span class="number">02 / УВЕРЕЊА</span>
-        <span class="link-title">Моја борба</span><span class="arrow">↗</span>
-      </a>
-      <a class="link-card" href={basePath + 'junacko-srce/'}>
-        <span class="number">03 / ИДЕЈА</span>
-        <span class="link-title">Јуначко срце</span><span class="arrow">↗</span>
-      </a>
-      <a class="link-card" href={basePath + 'projekti/'}>
-        <span class="number">04 / ДЕЛА</span>
-        <span class="link-title">Пројекти</span><span class="arrow">↗</span>
-      </a>
+    <nav class="secondary-links" aria-label="Остали делови сајта">
+      <span>ИСТРАЖИ И ОСТАЛЕ ДЕЛОВЕ МОГ СВЕТА</span>
+      <a href={basePath + 'moja-borba/'}>Моја борба <b>↗</b></a>
+      <a href={basePath + 'projekti/'}>Пројекти <b>↗</b></a>
     </nav>
     <footer>ЗА ЉУДЕ, НЕ ЗА ПРОФИТ.</footer>
   </main>
@@ -41,39 +42,53 @@ const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_U
     :global(*){box-sizing:border-box}
     :global(html),:global(body){margin:0;min-height:100%;background:#101010}
     .landing{width:100%;min-height:100svh;color:#e9e7e3;background:#101010;font-family:'Manrope',Arial,sans-serif}
-    .hero{position:relative;width:100%;min-height:100svh;min-height:100dvh;display:flex;align-items:center;overflow:hidden;padding:clamp(55px,9vw,120px) clamp(24px,10vw,150px);color:#fff;background:#101010}
-    .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2000&q=88') center 34%/cover}
-    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.68) 48%,rgba(8,8,8,.18)),linear-gradient(0deg,rgba(8,8,8,.6),transparent 55%)}
-    .hero-content{position:relative;z-index:1;width:min(700px,100%)}
-    .eyebrow{margin:0 0 22px;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.24em}
-    h1{margin:0;font-family:'Manrope',Arial,sans-serif;font-size:clamp(54px,9vw,112px);line-height:.98;font-weight:800;letter-spacing:-.075em}
+    .hero{position:relative;width:100%;min-height:100svh;min-height:100dvh;display:flex;align-items:center;overflow:hidden;padding:clamp(48px,7vw,90px) clamp(24px,10vw,150px);color:#fff;background:radial-gradient(ellipse at 78% 22%,rgba(228,71,67,.2),transparent 42%),linear-gradient(135deg,#252321 0%,#141312 58%,#101010 100%)}
+    .hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2000&q=88') center 34%/cover;opacity:.55}
+    .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.94),rgba(8,8,8,.72) 52%,rgba(8,8,8,.3)),linear-gradient(0deg,rgba(8,8,8,.72),transparent 65%),radial-gradient(ellipse at 78% 20%,rgba(228,71,67,.16),transparent 48%)}
+    .hero-content{position:relative;z-index:1;width:min(850px,100%)}
+    .eyebrow{margin:0 0 18px;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.24em}
+    h1{margin:0;font-family:'Manrope',Arial,sans-serif;font-size:clamp(52px,8vw,100px);line-height:.98;font-weight:800;letter-spacing:-.075em}
     h1 em{color:#e44743;font-style:normal}
-    .motto{margin:24px 0 14px;font-size:clamp(14px,1.5vw,18px);font-weight:800;letter-spacing:.08em}
-    .intro{max-width:590px;margin:0;color:#d0ceca;font-size:clamp(13px,1.3vw,16px);line-height:1.85}
-    .choose{margin:30px 0 0;color:#e44743;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
-    .choose span{font-size:17px;margin-left:12px}
-    .hero-index{position:absolute;z-index:1;right:clamp(24px,6vw,90px);bottom:28px;color:#aaa;font-size:10px;letter-spacing:.16em}
-    .hero-index i{font-style:normal;color:#e44743;padding:0 8px}
-    .main-links{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #343331;border-bottom:1px solid #343331}
-    .link-card{min-height:175px;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:27px clamp(17px,3vw,42px);color:#e9e7e3;text-decoration:none;background:#151413;border-right:1px solid #343331;transition:background .2s ease}
-    .link-card:last-child{border-right:0}
-    .link-card:hover{background:#211f1d}
-    .number{color:#999895;font-size:9px;font-weight:800;letter-spacing:.15em}
-    .link-title{padding-right:25px;font-family:'Manrope',Arial,sans-serif;font-size:clamp(23px,3vw,38px);line-height:1.05;font-weight:800;letter-spacing:-.05em}
-    .arrow{position:absolute;right:clamp(17px,3vw,42px);bottom:25px;color:#e44743;font-size:22px}
-    footer{width:100%;margin:0;padding:25px 6vw;color:#777;font-size:9px;font-weight:800;letter-spacing:.2em;text-align:center;background:#101010}
+    .identity{margin:19px 0 0;color:#f0eeeb;font-size:clamp(15px,1.8vw,21px);font-weight:650;letter-spacing:.01em}
+    .motto{margin:12px 0 28px;color:#c9c5bf;font-size:clamp(12px,1.3vw,15px);font-weight:800;letter-spacing:.12em}
+    .pathways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:760px}
+    .path{position:relative;min-height:158px;display:flex;flex-direction:column;justify-content:center;gap:9px;padding:22px 52px 22px 23px;border:1px solid rgba(255,255,255,.3);border-radius:5px;color:#fff;text-decoration:none;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.035));backdrop-filter:blur(5px);transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .path:hover{transform:translateY(-3px);border-color:#e44743;background:rgba(228,71,67,.15)}
+    .path-for-you{border-color:rgba(228,71,67,.85);background:linear-gradient(135deg,rgba(228,71,67,.88),rgba(137,40,38,.72))}
+    .path-for-you:hover{background:linear-gradient(135deg,rgba(228,71,67,.98),rgba(137,40,38,.88))}
+    .path-kicker{font-size:9px;font-weight:800;letter-spacing:.17em;color:#e9aaa7}
+    .path-title{max-width:330px;font-size:clamp(21px,2.7vw,31px);font-weight:850;line-height:1.08;letter-spacing:-.045em}
+    .path-description{max-width:340px;color:#e0ddda;font-size:12px;line-height:1.55}
+    .path-arrow{position:absolute;right:20px;top:20px;color:#fff;font-size:22px}
+    .supporting{margin:17px 0 0;color:#aaa6a0;font-size:11px;letter-spacing:.025em}
+    .hero-index{position:absolute;z-index:1;right:clamp(24px,6vw,90px);bottom:25px;color:#aaa;font-size:9px;letter-spacing:.16em}
+    .hero-index i{font-style:normal;color:#e44743;padding:0 5px}
+    .secondary-links{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;padding:23px 20px;border-top:1px solid #343331;border-bottom:1px solid #343331;background:#151413}
+    .secondary-links span{color:#85817b;font-size:9px;font-weight:800;letter-spacing:.15em}
+    .secondary-links a{color:#e9e7e3;text-decoration:none;font-size:12px;font-weight:700}
+    .secondary-links a:hover{color:#e44743}
+    .secondary-links b{margin-left:5px;color:#e44743}
+    footer{width:100%;margin:0;padding:23px 6vw;color:#777;font-size:9px;font-weight:800;letter-spacing:.2em;text-align:center;background:#101010}
     @media(max-width:760px){
-      .hero{min-height:100svh;min-height:100dvh;padding:55px 25px 75px;align-items:flex-end}
-      .hero-photo{background-position:58% center}
-      .hero-shade{background:linear-gradient(0deg,rgba(8,8,8,.96),rgba(8,8,8,.55) 70%,rgba(8,8,8,.18))}
-      h1{font-size:clamp(49px,12vw,76px)}
-      .intro{font-size:13px;line-height:1.75}
-      .main-links{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .link-card{min-height:135px;padding:20px 17px;border-bottom:1px solid #343331}
-      .link-card:nth-child(2){border-right:0}
-      .link-title{font-size:clamp(24px,6vw,32px)}
-      .arrow{right:17px;bottom:18px}
+      .hero{min-height:100svh;min-height:100dvh;padding:52px 22px 66px;align-items:center}
+      .hero-photo{background-position:58% center;opacity:.42}
+      .hero-shade{background:linear-gradient(0deg,rgba(8,8,8,.97),rgba(8,8,8,.76) 68%,rgba(8,8,8,.42)),radial-gradient(ellipse at 80% 15%,rgba(228,71,67,.18),transparent 48%)}
+      h1{font-size:clamp(47px,11.5vw,72px)}
+      .identity{font-size:15px;line-height:1.45}
+      .motto{margin:10px 0 23px;font-size:11px}
+      .pathways{grid-template-columns:1fr;gap:10px}
+      .path{min-height:125px;padding:18px 48px 18px 18px}
+      .path-title{font-size:clamp(22px,6vw,29px)}
+      .path-description{font-size:11px}
+      .supporting{max-width:330px;font-size:10px;line-height:1.5}
+      .hero-index{right:22px;bottom:17px;font-size:8px}
+      .secondary-links{gap:14px 22px;padding:20px 14px}
+      .secondary-links span{width:100%;text-align:center}
     }
-    @media(max-width:380px){.link-card{min-height:125px;padding:17px 13px}.number{font-size:8px}.link-title{font-size:23px}.arrow{right:13px}}
+    @media(max-height:760px) and (min-width:761px){
+      .hero{padding-top:35px;padding-bottom:45px}
+      .path{min-height:135px}
+      .motto{margin-bottom:18px}
+    }
   </style>
 </BaseLayout>
