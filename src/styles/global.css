@@ -301,3 +301,71 @@ footer>a:last-child{color:var(--ink)!important}
   .global-bottom-nav a small{font-size:7px!important}
   .story-index{grid-template-columns:1fr!important}
 }
+
+
+/* FINAL SHARED TYPOGRAPHY — one scale across every page */
+:root{
+  --font-body:'DM Sans',sans-serif;
+  --font-heading:'Manrope',sans-serif;
+  --type-h1:clamp(3.1rem,7vw,5.8rem);
+  --type-h2:clamp(2rem,4.2vw,3.25rem);
+  --type-h3:clamp(1.25rem,2.3vw,1.65rem);
+  --type-body:1rem;
+  --type-lead:1.15rem;
+  --leading-heading:1.08;
+  --leading-body:1.8;
+}
+/* All page headings use the same font, weight, tracking and responsive scale. */
+main h1{
+  font-family:var(--font-heading)!important;
+  font-size:var(--type-h1)!important;
+  font-weight:800!important;
+  line-height:.99!important;
+  letter-spacing:-.065em!important;
+  margin-top:0!important;
+}
+main h2{
+  font-family:var(--font-heading)!important;
+  font-size:var(--type-h2)!important;
+  font-weight:750!important;
+  line-height:1.08!important;
+  letter-spacing:-.05em!important;
+}
+main h3{
+  font-family:var(--font-heading)!important;
+  font-size:var(--type-h3)!important;
+  font-weight:750!important;
+  line-height:1.2!important;
+  letter-spacing:-.035em!important;
+}
+/* Standard paragraph rhythm and reading width, including the separate story pages. */
+main p:not(.eyebrow):not(.kicker):not(.section-kicker):not(.overline):not(.about-kicker):not(.about-section-label):not(.about-hero-bottom):not(.identity):not(.motto):not(.supporting):not(.path-kicker):not(.path-description):not(.hero-meta):not(.section-number):not(.menu-head p):not(.story-menu-head p):not(.story-menu-note){
+  font-family:var(--font-body)!important;
+  font-size:var(--type-body)!important;
+  font-weight:400!important;
+  line-height:var(--leading-body)!important;
+  letter-spacing:0!important;
+}
+/* Introductory paragraphs share one lead treatment across the site. */
+main .lead,main .hero-copy,main .hero-lead,main .hero-intro,main .about-hero-intro,main .about-story .about-lead{
+  font-family:var(--font-body)!important;
+  font-size:var(--type-lead)!important;
+  font-weight:500!important;
+  line-height:1.72!important;
+  letter-spacing:-.012em!important;
+}
+/* Page-specific layouts remain distinct, but the reading column is consistent. */
+.inner-content,.story-content,.chapter-page{
+  width:min(100%,1080px)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+@media(max-width:600px){
+  :root{
+    --type-h1:clamp(2.65rem,11vw,4.1rem);
+    --type-h2:clamp(1.8rem,7vw,2.45rem);
+    --type-h3:clamp(1.2rem,5vw,1.45rem);
+    --type-body:1rem;
+    --type-lead:1.08rem;
+  }
+}
