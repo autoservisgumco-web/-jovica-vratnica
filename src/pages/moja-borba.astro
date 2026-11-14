@@ -1,106 +1,48 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
-const chapters = [
-  { id: 'pocetak-u-meni', no: '01', title: 'Моја борба није почела на улици' },
-  { id: 'prvi-front', no: '02', title: 'Први фронт — борба у мени' },
-  { id: 'drugi-front', no: '03', title: 'Други фронт — неправда око мене' },
-  { id: 'godine-delovanja', no: '04', title: 'Године деловања, не равнодушности' },
-  { id: 'od-ulice-do-platforme', no: '05', title: 'Од улице до платформе' }
+import StoryHub from '../components/StoryHub.astro';
+
+const cards = [
+  {
+    href: 'odrastanje/',
+    kicker: 'ПОЧЕТАК ОТПОРА',
+    title: 'Борба која је почела у мени',
+    description: 'Одрастање, ауторитети и прва питања која су ме навела да мислим својом главом.'
+  },
+  {
+    href: 'nekonformizam/',
+    kicker: 'ПРЕИСПИТИВАЊЕ',
+    title: 'Не пристајем на наметнута правила',
+    description: 'Зашто не прихватам готове одговоре и зашто је важно задржати право на сопствени став.'
+  },
+  {
+    href: 'moj-put/',
+    kicker: 'ЛИЧНИ ИЗБОР',
+    title: 'Од отпора до сопственог пута',
+    description: 'Како се унутрашњи отпор претварао у одлуке, уверења и одговорност.'
+  },
+  {
+    href: 'projekti/',
+    kicker: 'КОНКРЕТНО ДЕЛОВАЊЕ',
+    title: 'Године деловања, не равнодушности',
+    description: 'Иницијативе, пројекти и покушаји да се оно у шта верујем претвори у нешто конкретно.'
+  },
+  {
+    href: 'podrska/',
+    kicker: 'ЗАЈЕДНИШТВО',
+    title: 'Нисам против људи',
+    description: 'Моја борба није против људи, већ против неправде, страха, апатије и осећаја беспомоћности.'
+  }
 ];
 ---
-<BaseLayout title="Моја борба није почела на улици | Јовица Вратница" description="Лична прича о бунту, преиспитивању, неправди, апатији и борби која траје — из љубави према човеку и уверења да можемо више.">
-<main class="rebel-page">
-  <section class="rebel-hero">
-    <p class="kicker">МОЈ ЖИВОТНИ ПУТ · ЛИЧНА ПРИЧА</p>
-    <h1>МОЈА БОРБА<br/><em>НИЈЕ ПОЧЕЛА НА УЛИЦИ.</em></h1>
-    <p class="hero-lead">Почела је у мени.</p>
-    <p class="hero-intro">У свету где је све уређено тако да не мислиш превише, не преиспитујеш ништа и ћутиш док ти узимају и време и достојанство — у такав свет сам рођен, али у њега нисам припадао.</p>
-    <div class="hero-meta"><span>ПРЕИСПИТИВАЊЕ · БУНТ · ДЕЛОВАЊЕ</span><span>ЛИЧНИ ПУТ · ОД 1996. ДО ДАНАС</span></div>
-  </section>
 
-  <nav class="story-index" aria-label="Делови моје приче">
-    <p>ПРИЧА КОЈА СЕ ЧИТА ПОВЕЗАНО — А СВАКИ ДЕО МОЖЕ И ЗАСЕБНО</p>
-    {chapters.map((chapter) => <a href={'#' + chapter.id}><span>{chapter.no}</span>{chapter.title}<b>↘</b></a>)}
-  </nav>
-
-  <div class="story-content">
-    <section class="story-section" id="pocetak-u-meni">
-      <div class="section-number">01</div>
-      <div class="section-body">
-        <p class="section-kicker">ОДАКЛЕ ЈЕ СВЕ ПОЧЕЛО</p>
-        <h2>Моја борба<br/><em>почела је у мени.</em></h2>
-        <p>Прво против наметнутих ауторитета у породици, против васпитања у коме је „послушност“ највећа врлина. Онда против школе која те не учи да мислиш, већ да ћутиш и понављаш. Па онда против послова на којима се рад не цени, већ троши — баш као и људи.</p>
-        <p>Нисам одједном постао бунтовник. У мени се постепено стварао отпор према свему што од човека тражи да се одрекне сопственог мишљења, достојанства и права да поставља питања.</p>
-        <p class="related">Овај део моје приче наставља се у тексту <a href={base + 'odrastanje/'}>„Током мог одрастања“ ↗</a>, где говорим о искуствима која су ме обликовала.</p>
-      </div>
-    </section>
-
-    <section class="story-section" id="prvi-front">
-      <div class="section-number">02</div>
-      <div class="section-body">
-        <p class="section-kicker">УНУТРАШЊИ ОТПОР</p>
-        <h2>Први фронт:<br/><em>борба у мени.</em></h2>
-        <p>Моја борба је увек имала два фронта:</p>
-        <blockquote>
-          <span>01</span> Против неправде одозго<br/>
-          <span>02</span> Против апатије око мене.
-        </blockquote>
-        <p>Тај први фронт био је суочавање са сопственим страховима, сумњама и очекивањима других. Нисам желео да прихватим да је послушност исто што и доброта, да је ћутање исто што и мудрост или да је прилагођавање по сваку цену једини начин да човек живи.</p>
-        <p class="related">О томе како сам градио сопствени поглед на свет пишем и у целини <a href={base + 'nekonformizam/'}>„Неконформизам“ ↗</a>.</p>
-      </div>
-    </section>
-
-    <section class="story-section" id="drugi-front">
-      <div class="section-number">03</div>
-      <div class="section-body">
-        <p class="section-kicker">ОНОМЕ ШТО СЕ НЕ ПРИХВАТА ЋУТКЕ</p>
-        <h2>Други фронт:<br/><em>неправда око мене.</em></h2>
-        <p>Од улица и протеста, преко трибина и хуманитарних акција, до форума и кампања — никада нисам могао да ћутим, нити да се помирим са тим да „тако мора“.</p>
-        <p>За мене је највећи непријатељ увек била равнодушност. Не само лопови, лицемери и празна обећања, већ и читав механизам који опстаје на томе да људи буду уморни, обесхрабрени и тихи.</p>
-        <blockquote>Систем који те уморан чека на шалтеру.<br/>Који те лаже преко екрана.<br/>Који ти говори да не можеш ништа да промениш — и да си луд ако покушаш.</blockquote>
-        <p>У ту борбу нисам ушао са илузијама. Нисам хтео функцију. Нисам хтео позицију. Хтео сам глас. Да будем један од оних који не ћуте. Да се не претворим у још једног „паметног човека“ који све види, све зна — али ништа не ради.</p>
-      </div>
-    </section>
-
-    <section class="story-section" id="godine-delovanja">
-      <div class="section-number">04</div>
-      <div class="section-body">
-        <p class="section-kicker">НИСУ ТО ГОДИНЕ РАВНОДУШНОСТИ</p>
-        <h2>Године у покрету,<br/><em>међу људима.</em></h2>
-        <p>То нису године протекле у равнодушности, него у сталном настојању да укажем, покренем и променим.</p>
-        <p>Био сам тамо где је требало устати кад је већина клечала. Присуствовао сам протестима који су се борили за правду кад је било непопуларно. Учествовао сам у акцијама за истину, и онда кад су медији ћутали.</p>
-        <p>То је живот проведен у покрету — међу људима који верују да није свеједно. То је верност идеји да човек није створен да се прилагоди сваком систему, већ да га преиспитује и — ако треба — одбије.</p>
-        <p>Моја борба траје до данас. И не водим је из беса. Водим је из љубави. Јер верујем у боље. Јер знам да можемо више. Јер и даље верујем у човека.</p>
-      </div>
-    </section>
-
-    <section class="story-section final-section" id="od-ulice-do-platforme">
-      <div class="section-number">05</div>
-      <div class="section-body">
-        <p class="section-kicker">МЕЊАЈУ СЕ СРЕДСТВА, НЕ И УВЕРЕЊА</p>
-        <h2>Од улице до дизајна,<br/><em>маркетинга и комуникације.</em></h2>
-        <p>Данас не држим само транспарент — данас држим платформу. Не вичем више само у мраку — причам причу која може да се чује.</p>
-        <p>Докле год се нормалност своди на ћутање и равнодушност — ја ћу говорити.</p>
-        <p>То је борба која не престаје. Не зато што волим конфликт, већ зато што не могу да гледам како људи одустају од себе.</p>
-        <p class="closing-line">Ја радим. Гласно. Видљиво. Страсно. И позивам и тебе — да не ћутиш.</p>
-        <p class="related">Из те исте потребе да идеје претварам у дело настао је и <a href={base + 'junacko-srce/'}>„Јуначко срце“ ↗</a> — маркетинг вођен срцем, као и моји <a href={base + 'projekti/'}>пројекти и иницијативе ↗</a>.</p>
-      </div>
-    </section>
-  </div>
-
-  <footer class="rebel-footer">
-    <p>ЈОВИЦА ВРАТНИЦА · МОЈА БОРБА</p>
-    <a href={base + 'o-meni/'}>← О МЕНИ</a>
-    <a href={base + 'junacko-srce/'}>СЛЕДЕЋЕ: ЈУНАЧКО СРЦЕ ↗</a>
-  </footer>
-</main>
-<style>
-.chapter-nav{display:flex;justify-content:space-between;gap:16px;padding:20px max(22px,calc((100vw - 1120px)/2));border-bottom:1px solid #343331;background:#101010;color:#e9e7e3;font-size:.7rem;font-weight:850;letter-spacing:.12em}.chapter-nav a{color:inherit;text-decoration:none}.chapter-nav a:hover,.rebel-footer a:hover{color:#e44743}
-.rebel-page{color:#e9e7e3;background:#101010}.rebel-hero{background:linear-gradient(120deg,#191817,#101010 72%);color:#fff;padding:clamp(65px,10vw,125px) max(24px,calc((100vw - 1050px)/2)) 48px;border-bottom:1px solid #343331}.kicker,.section-kicker{font-size:.7rem;font-weight:850;letter-spacing:.17em;color:#e44743}.rebel-hero h1{font-size:clamp(2.8rem,8vw,6.7rem);line-height:.94;letter-spacing:-.065em;margin:28px 0;max-width:1050px}.rebel-hero h1 em,.story-section h2 em{font-style:normal;color:#e44743}.hero-lead{max-width:690px;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;font-weight:800;color:#fff;margin:0 0 15px}.hero-intro{max-width:760px;font-size:clamp(1.05rem,2.2vw,1.35rem);line-height:1.7;font-weight:550;color:#c9c6c1;margin:0}.hero-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;margin-top:55px;padding-top:18px;border-top:1px solid #444;color:#aaa7a1;font-size:.65rem;font-weight:800;letter-spacing:.12em}
-.story-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:28px max(24px,calc((100vw - 1050px)/2));background:#171615;border-bottom:1px solid #343331}.story-index>p{grid-column:1/-1;margin:0 0 14px;color:#99958f;font-size:.62rem;font-weight:850;letter-spacing:.13em}.story-index a{display:flex;flex-direction:column;gap:10px;padding:12px 14px 12px 0;color:#e9e7e3;text-decoration:none;font-size:.78rem;font-weight:800;line-height:1.3;border-right:1px solid #343331}.story-index a:not(:first-of-type){padding-left:14px}.story-index a span,.story-index a b{color:#e44743}.story-index a b{font-size:1rem}
-.story-content{max-width:1050px;margin:0 auto;padding:20px 24px 70px}.story-section{display:grid;grid-template-columns:55px minmax(0,760px);gap:25px;padding:75px 0;border-bottom:1px solid #343331;scroll-margin-top:25px}.section-number{font-size:1rem;font-weight:900;color:#e44743;padding-top:8px}.section-body h2{font-size:clamp(2.3rem,5.5vw,4.6rem);letter-spacing:-.06em;line-height:.98;margin:15px 0 28px}.section-body>p:not(.section-kicker){font-size:1.06rem;line-height:1.9;color:#c9c6c1;margin:0 0 19px}.section-body blockquote{margin:28px 0;padding:23px 28px;border-left:3px solid #e44743;background:#191817;font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:800;line-height:1.8;color:#f0eeeb}.section-body blockquote span{display:inline-block;color:#e44743;font-size:.75rem;margin-right:12px}.section-body .related{margin-top:28px;padding-top:18px;border-top:1px solid #343331;color:#99958f;font-size:.9rem}.related a{color:#f06a66;text-decoration:underline;text-underline-offset:4px}.closing-line{font-size:clamp(1.3rem,3vw,1.8rem)!important;font-weight:850;color:#fff!important;margin-top:30px!important}
-.rebel-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:35px max(24px,calc((100vw - 1050px)/2));background:#171615;color:#fff;border-top:1px solid #343331}.rebel-footer p{width:100%;margin:0;color:#99958f;font-size:.65rem;font-weight:800;letter-spacing:.13em}.rebel-footer a{color:#fff;text-decoration:none;font-size:.72rem;font-weight:850;letter-spacing:.06em}.rebel-footer a:last-child{color:#e44743}
-@media(max-width:700px){.chapter-nav{padding:17px 18px;font-size:.61rem}.story-index{grid-template-columns:1fr 1fr;gap:0 14px}.story-index a,.story-index a:not(:first-of-type){padding:13px 4px;border-right:0;border-bottom:1px solid #343331}.story-section{grid-template-columns:30px minmax(0,1fr);gap:12px;padding:52px 0}.section-number{font-size:.8rem}.section-body>p:not(.section-kicker){font-size:1rem}.hero-meta{margin-top:35px}.rebel-footer{flex-direction:column}}
-</style>
-</BaseLayout>
+<StoryHub
+  pageTitle="Моја борба — Јовица Вратница"
+  description="Лична прича о преиспитивању, бунту, неправди, апатији и деловању које траје."
+  eyebrow="МОЈ ЖИВОТНИ ПУТ · ПРЕИСПИТИВАЊЕ И ДЕЛОВАЊЕ"
+  title="Моја борба."
+  subtitle="Моја борба није почела на улици. Почела је у мени."
+  intro="Већ деценијама преиспитујем правила, супротстављам се неправди и покушавам да уверења претворим у деловање. Не борим се против људи. Борим се против страха, апатије и осећаја беспомоћности који нас убеђују да ништа не можемо да променимо."
+  visualQuote="Не морам да будем тај који ће све променити. Али могу да помогнем да се нешто промени."
+  visualLabel="ПРЕИСПИТИВАЊЕ · БУНТ · ДЕЛОВАЊЕ"
+  cards={cards}
+/>
