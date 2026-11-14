@@ -1,103 +1,184 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
-
+const sections = [
+  {
+    number: '01',
+    id: 'o-meni',
+    title: 'О мени',
+    subtitle: 'Човек иза идеја, ставова и поступака.',
+    intro: 'Ко сам, шта ме је обликовало, како размишљам и у шта верујем. Моја прича није само биографија, већ покушај да објасним човека иза свега што радим.',
+    tone: 'light',
+    chapters: [
+      ['Рођен у Београду 1981.', 'Где је све почело и какво је било окружење у коме сам одрастао.'],
+      ['Живот између два ауторитета', 'Одрастање уз различите погледе, савете и могућност да изградим сопствени став.'],
+      ['Шта је нормално у свету који живи у хаосу?', 'Преиспитивање онога што друштво назива нормалним и онога што ја сматрам исправним.'],
+      ['Слобода да будеш свој', 'Зашто нисам желео да живим по туђим очекивањима и мерилима.'],
+      ['Филозоф, идеалиста и неконформиста', 'Начин на који посматрам свет и тражим смисао иза онога што видим.'],
+      ['Вредности које ме покрећу', 'Слобода, аутентичност, интегритет и одговорност.'],
+      ['Живот мора имати смисао', 'Зашто ми није довољно само да постојим и пролазим кроз дане.']
+    ]
+  },
+  {
+    number: '02',
+    id: 'moja-borba',
+    title: 'Моја борба',
+    subtitle: 'Није почела јуче.',
+    intro: 'Моја борба није настала преко ноћи. Није почела са друштвеним мрежама, политичким функцијама или неким новим пројектом. Она је део мог живота, мог начина размишљања и мог односа према неправди, слободи и људима.',
+    tone: 'dark',
+    chapters: [
+      ['Моја борба није почела јуче', 'Почеци, прва искуства и пут који траје много дуже од данашњих пројеката.'],
+      ['Борба против наметнутих правила', 'Преиспитивање ауторитета, правила и система који траже послушност уместо размишљања.'],
+      ['Не пристајем на ћутање', 'Зашто постављам питања и зашто не желим да окрећем главу пред неправдом.'],
+      ['Борба за слободу и достојанство', 'Вредности које браним и разлози због којих не одустајем од њих.'],
+      ['Нисам против људи, већ против неправде', 'Суштина мог отпора није мржња према људима, већ неслагање са неправдом и равнодушношћу.'],
+      ['Тридесет година бунта', 'Искуства, ангажовање и лекције које су временом обликовале мој поглед на свет.'],
+      ['Од личног отпора до друштвеног деловања', 'Како је лична потреба да се супротставим неправди прерасла у конкретно деловање.'],
+      ['Борба се наставља', 'Како данас изгледа моја борба и где усмеравам своју енергију.']
+    ]
+  },
+  {
+    number: '03',
+    id: 'junacko-srce',
+    title: 'Јуначко Срце',
+    subtitle: 'Идеја претворена у дело.',
+    intro: 'Јуначко Срце је настало из жеље да своје идеје, знање, креативност и искуство ставим у службу људи. Да маркетинг постане средство повезивања и позитивних друштвених промена, а не само продаје.',
+    tone: 'red',
+    chapters: [
+      ['Како је настало Јуначко Срце', 'Од личне идеје до простора за стварање, повезивање и деловање.'],
+      ['За људе, не за профит', 'Вредности на којима почива све што радимо.'],
+      ['Маркетинг који буди, не продаје', 'Другачији поглед на маркетинг и његову моћ да покрене људе.'],
+      ['Шта желимо да мењамо', 'Визија друштва у коме људи преузимају иницијативу и одговорност.'],
+      ['Одговорна Плана', 'Када идеја о одговорности постане конкретно деловање у локалној заједници.'],
+      ['Људи који желе нешто да покрену', 'Подршка онима који имају идеју, али им треба помоћ да направе први корак.'],
+      ['Стварање кроз заједништво', 'Кампање, пројекти, производи и сарадње које повезују људе око добрих идеја.'],
+      ['Имаш идеју? Хајде да је остваримо.', 'Позив свима који желе да покрену нешто смислено.']
+    ]
+  }
+];
 ---
-<BaseLayout title="О мени — Јовица Вратница" description="Моја животна прича, борба, Јуначко Срце и подршка онима који се усуде.">
-  <div class="about-app">
-    <main>
-      <section class="about-hero">
-        <img class="about-hero-photo" src={base + 'images/jovica-uvod.jpg'} alt="Јовица Вратница на јавном окупљању" />
-        <div class="about-hero-shade"></div>
-        <div class="about-hero-content">
-          <p class="about-kicker">ЛИЧНА ПРИЧА · МОЈ ПУТ</p>
-          <h1 class="about-signature">Јовица<br/>Вратница<span>.</span></h1>
-          <p class="about-hero-intro">Рођен сам у Београду 1981. године, у граду који је врвео од живота и гушио се у сопственим противречностима. Одбацујем идеју да треба да следим вредности само зато што су друштвено прихваћене. Онда прихватам — нисам нормалан.</p>
-          <button class="about-primary-button" type="button" onclick="document.getElementById('story-menu').showModal()">УПОЗНАЈ МОЈУ ПРИЧУ <span>↓</span></button>
-        </div>
-        <div class="about-hero-bottom">
-          <span>НЕ ПРИСТАЈЕМ ДА ЖИВОТ ПРОЂЕ У ЋУТАЊУ.</span>
-          <span>01 / 04</span>
+<BaseLayout title="О мени — Јовица Вратница" description="Упознај Јовицу Вратницу: његову животну причу, борбу и Јуначко Срце.">
+  <main class="profile-page">
+    <section class="profile-hero">
+      <div class="hero-grain"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> ЛИЧНА ПРИЧА · МОЈ ПУТ</p>
+        <h1>Јовица<br/>Вратница<span>.</span></h1>
+        <p class="hero-subtitle">Бунтовник, неконформиста и филозоф идеала који ради срцем.</p>
+        <p class="hero-intro">Нисам овде да бих се представио као неко ко има све одговоре. Желим да испричам своју причу, поделим своја искуства, ставове и идеје. Да покажем шта ме је обликовало, за шта сам се борио и зашто сам одлучио да од својих уверења створим нешто конкретно.</p>
+        <p class="hero-intro">Мој пут има три важне целине: човек који сам постао, борба која ме је обликовала и идеја коју сам претворио у дело.</p>
+        <a class="hero-cta" href="#tri-puta">УПОЗНАЈ МОЈ ПУТ <span>↓</span></a>
+      </div>
+      <div class="hero-foot"><span>НЕ ПРИСТАЈЕМ ДА ЖИВОТ ПРОЂЕ У ЋУТАЊУ.</span><span>01 / 03</span></div>
+    </section>
+
+    <nav class="chapter-jump" id="tri-puta" aria-label="Три целине">
+      <a href="#o-meni"><span>01</span> О мени <b>↘</b></a>
+      <a href="#moja-borba"><span>02</span> Моја борба <b>↘</b></a>
+      <a href="#junacko-srce"><span>03</span> Јуначко Срце <b>↘</b></a>
+    </nav>
+
+    {sections.map((section) => (
+      <section class:list={['profile-section', section.tone]} id={section.id}>
+        <div class="section-inner">
+          <div class="section-topline"><span>{section.number} / 03</span><span>ЈОВИЦА ВРАТНИЦА</span></div>
+          <div class="section-heading">
+            <div>
+              <p class="section-label"> {section.number === '01' ? 'ЧОВЕК' : section.number === '02' ? 'ПУТ И ОТПОР' : 'ИДЕЈА И ДЕЛО'} </p>
+              <h2>{section.title}<span>.</span></h2>
+              <h3>{section.subtitle}</h3>
+            </div>
+            <p class="section-intro">{section.intro}</p>
+          </div>
+          <div class="chapter-list">
+            {section.chapters.map((chapter, index) => (
+              <details class="chapter">
+                <summary>
+                  <span class="chapter-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span class="chapter-title">{chapter[0]}</span>
+                  <span class="chapter-toggle">+</span>
+                </summary>
+                <div class="chapter-detail">
+                  <p>{chapter[1]}</p>
+                  <span>ПОГЛАВЉЕ У ПРИПРЕМИ</span>
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
+    ))}
 
+    <section class="closing">
+      <p class="closing-kicker">ЗА СВЕ ШТО ДОЛАЗИ</p>
+      <h2>Имаш идеју?<br/><em>Хајде да је остваримо.</em></h2>
+      <p>Не мораш све да знаш. Не мораш имати готов план. Важно је да желиш да покренеш нешто добро. Ако имаш идеју, предлог или потребу да нешто промениш — јави се.</p>
+      <a href="mailto:">ПОКРЕНИМО РАЗГОВОР <span>↗</span></a>
+    </section>
+  </main>
 
-
-      <dialog class="story-menu" id="story-menu" aria-labelledby="story-menu-title">
-        <div class="story-menu-handle"></div>
-        <div class="story-menu-head">
-          <div>
-            <p>МОЈ ЖИВОТНИ ПУТ</p>
-            <h2 id="story-menu-title">Девет поглавља.<br/><em>Једна прича.</em></h2>
-          </div>
-          <button class="story-menu-close" type="button" aria-label="Затвори" onclick="document.getElementById('story-menu').close()">×</button>
-        </div>
-        <div class="story-menu-list">
-          <article><span>01</span><div><h3>Два оца, два погледа на свет</h3><p>Моја прича почиње одрастањем између два оца, два ауторитета и два различита погледа на свет.</p></div><b>↗</b></article>
-          <article><span>02</span><div><h3>Неконформиста сам откад знам за себе</h3><p>Потреба да постављам питања и не прихватам правила само зато што их већина следи.</p></div><b>↗</b></article>
-          <article><span>03</span><div><h3>Потрага за сопственим путем</h3><p>Учење да доносим сопствене одлуке и останем веран својим уверењима.</p></div><b>↗</b></article>
-          <article><span>04</span><div><h3>Слобода и аутентичност</h3><p>Зашто нисам желео да живим по туђим очекивањима и мерилима успеха.</p></div><b>↗</b></article>
-          <article><span>05</span><div><h3>Супротстављање ауторитетима</h3><p>Однос према правилима, ауторитетима и људима који су ме подстицали да мислим својом главом.</p></div><b>↗</b></article>
-          <article><span>06</span><div><h3>Сукоб са школским системом</h3><p>Искуства из школе и борба за право на радозналост, слободу мишљења и изражавања.</p></div><b>↗</b></article>
-          <article><span>07</span><div><h3>Од личног бунта до друштвене побуне</h3><p>Како се преиспитивање личних ауторитета проширило на друштво и политички систем.</p></div><b>↗</b></article>
-          <article><span>08</span><div><h3>Искуства која су ме обликовала</h3><p>Људи, ангажовање, путовања и различити послови који су проширили мој поглед на свет.</p></div><b>↗</b></article>
-          <article><span>09</span><div><h3>Проналажење сопственог позива</h3><p>Како сам кроз различита искуства почео да повезујем оно у шта верујем са оним што радим.</p></div><b>↗</b></article>
-        </div>
-        <p class="story-menu-note">НАСЛОВИ СУ ЗА САДА ПРИКАЗНИ — САДРЖАЈ ЋЕМО ДОРАЂИВАТИ КАСНИЈЕ.</p>
-      </dialog>
-      <script>
-        const storyMenu = document.getElementById('story-menu');
-        storyMenu?.addEventListener('click', (event) => {
-          if (event.target === storyMenu) storyMenu.close();
-        });
-      </script>
-
-    </main>
-
-  </div>
   <style>
-    .about-primary-button{display:inline-flex;gap:26px;align-items:center;margin-top:28px;padding:15px 20px;border:1px solid rgba(255,255,255,.65);color:white;text-decoration:none;background:rgba(255,255,255,.06);font-family:inherit;font-size:.75rem;font-weight:800;letter-spacing:.1em;cursor:pointer;backdrop-filter:blur(8px)}
-    .about-primary-button span{color:#ef555a;font-size:1.2rem}
-    .story-menu{position:fixed;inset:auto 0 0;margin:0 auto 0;width:min(760px,100%);max-width:none;max-height:min(86dvh,780px);overflow-y:auto;padding:18px clamp(20px,5vw,38px) 30px;border:1px solid rgba(255,255,255,.15);border-bottom:0;border-radius:22px 22px 0 0;color:#eeeae5;background:linear-gradient(145deg,#292522,#151413 78%);box-shadow:0 -18px 70px rgba(0,0,0,.5)}
-    .story-menu[open]{animation:story-sheet-in .24s ease-out}
-    .story-menu::backdrop{background:rgba(0,0,0,.68);backdrop-filter:blur(5px)}
-    @keyframes story-sheet-in{from{transform:translateY(35px);opacity:.65}to{transform:translateY(0);opacity:1}}
-    .story-menu-handle{width:42px;height:4px;margin:0 auto 25px;border-radius:9px;background:#77716b}
-    .story-menu-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}
-    .story-menu-head p{margin:0 0 8px;color:#e5484d;font-size:.65rem;font-weight:850;letter-spacing:.18em}
-    .story-menu-head h2{margin:0;font-size:clamp(1.65rem,4vw,2.3rem);line-height:1.08;letter-spacing:-.045em}
-    .story-menu-head h2 em{color:#e5484d;font-style:normal}
-    .story-menu-close{width:38px;height:38px;flex:0 0 38px;border:1px solid #625b55;border-radius:50%;color:#fff;background:transparent;font-size:25px;cursor:pointer}
-    .story-menu-list{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-    .story-menu-list article{display:grid;grid-template-columns:27px minmax(0,1fr) 15px;gap:10px;align-items:start;min-height:106px;padding:15px 13px;border:1px solid rgba(255,255,255,.13);border-radius:5px;background:rgba(255,255,255,.035)}
-    .story-menu-list article>span{padding-top:3px;color:#e5484d;font-size:.68rem;font-weight:850;letter-spacing:.08em}
-    .story-menu-list h3{margin:0 0 7px;color:#f4f1ed;font-size:.93rem;line-height:1.25}
-    .story-menu-list p{margin:0;color:#bbb5ae;font-size:.78rem;line-height:1.55}
-    .story-menu-list article>b{color:#e5484d;font-size:.95rem;font-weight:500}
-    .story-menu-note{margin:18px 0 0;color:#8f8982;font-size:.58rem;font-weight:800;letter-spacing:.12em;line-height:1.6}
-    @media(max-width:600px){.story-menu{padding:14px 18px 25px}.story-menu-list{grid-template-columns:1fr}.story-menu-list article{min-height:0;padding:13px}.about-hero-content{padding-bottom:110px}}
-    .about-hero-intro{max-width:660px;margin:0 0 26px;font-size:clamp(.98rem,1.5vw,1.12rem);line-height:1.75;color:#f2f2f2;text-wrap:pretty}
-    .about-bio-step{font-size:1.02rem;line-height:1.85;margin:0 0 14px;color:inherit;opacity:.92}.about-story-chapter{padding:0 0 22px;margin:0 0 22px;border-bottom:1px solid rgba(255,255,255,.12)}.about-read-more{display:inline-flex;gap:16px;align-items:center;color:#f2f2f2;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;padding:0 0 7px;border-bottom:1px solid rgba(229,72,77,.75)}.about-read-more span{color:#e5484d;font-size:1.1rem}.about-read-more:hover{color:#e5484d}.about-story-ending{margin-top:30px;font-size:1.02rem;line-height:1.85;color:inherit;opacity:.94}
-    .about-more{margin:22px 0 28px;border:1px solid rgba(229,72,77,.45);background:rgba(229,72,77,.045)}
-    .about-more summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;list-style:none;color:inherit;font-size:.72rem;font-weight:850;letter-spacing:.1em}
-    .about-more summary::-webkit-details-marker{display:none}
-    .about-more summary b{color:#e5484d;font-size:1.2rem;transition:transform .2s}
-    .about-more[open] summary b{transform:rotate(45deg)}
-    .about-more-content{padding:0 18px 16px;border-top:1px solid rgba(229,72,77,.2)}
-    .about-more-content p{font-size:.96rem;line-height:1.8;color:inherit;opacity:.88;margin:14px 0 0}
-    .about-top-title{color:inherit;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.13em}
-    .about-hero{position:relative;isolation:isolate;overflow:hidden;min-height: min(790px, calc(100svh - 56px));background:#111}
-    .about-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:-2;filter:grayscale(1) contrast(1.08)}
-    .about-hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,9,12,.92) 0%,rgba(8,9,12,.58) 58%,rgba(8,9,12,.15) 100%),linear-gradient(0deg,rgba(8,9,12,.78),transparent 45%)}
-    .about-hero-content{position:relative;max-width:780px;padding:clamp(90px,15vw,175px) clamp(24px,7vw,90px) 130px;color:#fff}
-    .about-signature{font-size:clamp(3.3rem,8vw,6.8rem);line-height:.9;letter-spacing:-.065em;margin:15px 0 26px;font-weight:850}
-    .about-signature span{color:#e5484d}
-    .about-main-motto{font-size:clamp(1.9rem,4.5vw,3.7rem);font-weight:850;line-height:1.04;letter-spacing:-.045em;margin:0 0 18px}
-    .about-motto{font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-    .about-identity{margin:22px 0 0;color:#e6e7e9;font-size:.72rem;line-height:1.9;font-weight:850;letter-spacing:.12em}.about-primary-button{display:inline-flex;gap:26px;align-items:center;margin-top:28px;padding:14px 18px;border:1px solid rgba(255,255,255,.55);color:white;text-decoration:none;font-size:.75rem;font-weight:800;letter-spacing:.1em}
-    .about-primary-button span{color:#ef555a;font-size:1.2rem}
-    .about-hero-bottom{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:18px clamp(24px,7vw,90px);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.12em}
-    .about-journey-heading{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;letter-spacing:-.04em;margin:24px 0 14px;color:#f4f4f4}.about-journey-heading em{color:#e5484d;font-style:normal}.about-journey-intro{max-width:760px;color:#c2c5cc;line-height:1.8;font-size:1rem;margin:0 0 34px}.about-journey-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.14)}.about-journey-item{display:grid;grid-template-columns:110px minmax(0,1fr);gap:24px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.14)}.about-menu-no{font-size:.68rem;color:#e5484d;font-weight:800;letter-spacing:.13em;padding-top:8px}.about-journey-copy h3{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;margin:0 0 12px;color:#f4f4f4}.about-journey-copy p{max-width:780px;font-size:1rem;line-height:1.8;color:#c2c5cc;margin:0 0 18px}.about-journey-link{display:inline-flex;gap:18px;align-items:center;color:#f4f4f4;text-decoration:none;font-size:.7rem;font-weight:850;letter-spacing:.1em;border-bottom:1px solid rgba(229,72,77,.7);padding:0 0 7px}.about-journey-link span{font-size:1.15rem;color:#e5484d}.about-journey-link:hover{color:#e5484d}
-    @media(max-width:640px){.about-journey-item{grid-template-columns:1fr;gap:8px;padding:23px 0}.about-journey-copy p{font-size:.94rem}.about-hero-bottom{font-size:.55rem}}
+    .profile-page{background:#101010;color:#e9e7e3;overflow:hidden}
+    .profile-hero{position:relative;isolation:isolate;min-height:min(790px,calc(100svh - 68px));display:flex;align-items:center;padding:clamp(82px,12vw,150px) max(24px,calc((100vw - 1080px)/2)) 110px;background:radial-gradient(ellipse at 78% 38%,#38302c 0%,#1d1b1a 35%,#101010 76%)}
+    .profile-hero:after{content:"";position:absolute;z-index:-1;width:min(46vw,620px);aspect-ratio:1;border:1px solid #ffffff18;border-radius:50%;right:-7%;top:10%;box-shadow:0 0 0 55px #ffffff05,0 0 0 110px #ffffff03}
+    .hero-grain{position:absolute;inset:0;z-index:-1;opacity:.14;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+    .hero-copy{position:relative;z-index:1;max-width:780px}
+    .eyebrow,.section-label,.closing-kicker{font-size:10px;letter-spacing:.2em;font-weight:800;color:#aaa49d}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 30px}
+    .eyebrow span{width:7px;height:7px;border-radius:50%;background:#e44743}
+    .profile-hero h1{font:800 clamp(62px,9.2vw,116px)/.91 Manrope,sans-serif;letter-spacing:-.075em;margin:0 0 25px;color:#f4f1ec}
+    .profile-hero h1 span,.section-heading h2 span{color:#e44743}
+    .hero-subtitle{font:700 clamp(18px,2.5vw,25px)/1.4 Manrope,sans-serif;letter-spacing:-.025em;color:#e9e4dd;max-width:660px;margin:0 0 22px}
+    .hero-intro{max-width:690px;color:#bdb8b1;font-size:15px;line-height:1.85;margin:0 0 12px}
+    .hero-cta{display:inline-flex;gap:34px;align-items:center;margin-top:23px;padding:15px 19px;border:1px solid #77716b;color:#f5f1eb;font-size:10px;font-weight:850;letter-spacing:.15em}
+    .hero-cta span{color:#e44743;font-size:18px}
+    .hero-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px max(24px,calc((100vw - 1080px)/2));border-top:1px solid #ffffff18;color:#aaa49d;font-size:9px;font-weight:800;letter-spacing:.16em}
+    .chapter-jump{position:sticky;top:68px;z-index:10;display:grid;grid-template-columns:repeat(3,1fr);background:#171615;border-bottom:1px solid #343331}
+    .chapter-jump a{display:flex;align-items:center;gap:13px;padding:22px clamp(14px,4vw,55px);border-right:1px solid #343331;font:750 14px Manrope,sans-serif}
+    .chapter-jump a:last-child{border:0}.chapter-jump a>span{color:#e44743;font-size:10px}.chapter-jump a>b{margin-left:auto;color:#e44743;font-weight:500}.chapter-jump a:hover{background:#242220}
+    .profile-section{padding:clamp(68px,9vw,112px) 24px}
+    .profile-section.light{background:#e9e7e2;color:#171615}
+    .profile-section.dark{background:#191817;color:#eeeae4}
+    .profile-section.red{background:#812d31;color:#fff}
+    .section-inner{max-width:1080px;margin:0 auto}
+    .section-topline{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid currentColor;opacity:.5;font-size:9px;font-weight:800;letter-spacing:.17em}
+    .section-heading{display:grid;grid-template-columns:1fr .85fr;gap:9vw;align-items:end;padding:48px 0 55px}
+    .section-label{margin:0 0 18px;color:#e44743}
+    .section-heading h2{font:800 clamp(48px,7vw,82px)/.98 Manrope,sans-serif;letter-spacing:-.07em;margin:0 0 14px}
+    .section-heading h3{font:650 clamp(18px,2.5vw,24px)/1.35 Manrope,sans-serif;letter-spacing:-.025em;margin:0;opacity:.75}
+    .section-intro{font-size:15px;line-height:1.9;opacity:.78;margin:0;max-width:480px}
+    .chapter-list{border-top:1px solid currentColor}
+    .chapter{border-bottom:1px solid currentColor}
+    .chapter summary{display:grid;grid-template-columns:70px minmax(0,1fr) 35px;align-items:center;gap:16px;padding:24px 0;cursor:pointer;list-style:none}
+    .chapter summary::-webkit-details-marker{display:none}
+    .chapter-number{font-size:11px;font-weight:850;letter-spacing:.12em;color:#e44743}
+    .chapter-title{font:700 clamp(17px,2.3vw,22px)/1.35 Manrope,sans-serif;letter-spacing:-.025em}
+    .chapter-toggle{width:29px;height:29px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:19px;font-weight:400;transition:transform .2s,color .2s}
+    .chapter[open] .chapter-toggle{transform:rotate(45deg);color:#e44743}
+    .chapter-detail{padding:0 52px 24px 86px}
+    .chapter-detail p{font-size:14px;line-height:1.8;opacity:.75;margin:0 0 12px;max-width:720px}
+    .chapter-detail span{font-size:8px;letter-spacing:.16em;font-weight:850;color:#e44743}
+    .closing{padding:clamp(75px,10vw,125px) 24px;background:#101010;text-align:left}
+    .closing>*{max-width:900px;margin-left:auto;margin-right:auto}
+    .closing-kicker{color:#e44743;margin-bottom:22px}
+    .closing h2{font:800 clamp(42px,7vw,78px)/1.04 Manrope,sans-serif;letter-spacing:-.065em;margin-bottom:22px}
+    .closing h2 em{color:#e44743;font-style:normal}
+    .closing>p:not(.closing-kicker){color:#aaa49d;font-size:15px;line-height:1.85;max-width:680px}
+    .closing>a{display:flex;width:max-content;gap:35px;align-items:center;margin-top:28px;padding:15px 19px;border:1px solid #e44743;color:#f4f1ec;font-size:10px;font-weight:850;letter-spacing:.15em}
+    .closing>a span{color:#e44743;font-size:18px}
+    @media(max-width:700px){
+      .profile-hero{min-height:720px;padding:80px 23px 115px}
+      .profile-hero:after{width:85vw;right:-48vw;top:22%}
+      .hero-intro{font-size:14px}
+      .hero-foot{padding:17px 22px;font-size:7px}
+      .chapter-jump{top:68px}
+      .chapter-jump a{gap:7px;padding:16px 10px;font-size:11px}
+      .chapter-jump a>span{font-size:8px}
+      .section-heading{grid-template-columns:1fr;gap:22px;padding:37px 0 35px}
+      .profile-section{padding:65px 22px}
+      .chapter summary{grid-template-columns:34px minmax(0,1fr) 30px;gap:9px;padding:20px 0}
+      .chapter-detail{padding:0 36px 20px 43px}
+      .chapter-title{font-size:16px}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
 </BaseLayout>
