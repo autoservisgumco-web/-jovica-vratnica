@@ -1,48 +1,369 @@
 ---
-import StoryHub from '../components/StoryHub.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const cards = [
+const sections = [
   {
-    href: 'odrastanje/',
-    kicker: 'ПОЧЕТАК ОТПОРА',
-    title: 'Борба која је почела у мени',
-    description: 'Одрастање, ауторитети и прва питања која су ме навела да мислим својом главом.'
+    number: '01',
+    label: 'ЛИЧНА ПРИЧА',
+    title: 'МОЈ БУНТ. <em>ТРИ ДЕЦЕНИЈЕ БОРБЕ.</em>',
+    paragraphs: [
+      'Мој бунт није почео јуче. Није настао због једне власти, једне неправде или једног догађаја. Он траје више од тридесет година и провлачи се кроз готово све што сам у животу радио, говорио и за шта сам се залагао.'
+    ],
+    chapter: 'ПОЧЕТАК'
   },
   {
-    href: 'nekonformizam/',
-    kicker: 'ПРЕИСПИТИВАЊЕ',
-    title: 'Не пристајем на наметнута правила',
-    description: 'Зашто не прихватам готове одговоре и зашто је важно задржати право на сопствени став.'
+    number: '02',
+    label: 'ШТА ЈЕ МОЈА БОРБА',
+    title: 'НИКАДА НИСАМ ЛАКО ПРИХВАТАО ОНО ШТО МИ СЕ СЕРВИРА КАО НОРМАЛНО.',
+    paragraphs: [
+      'Али да бих објаснио свој бунт, морам да објасним шта за мене значи борба.',
+      'Одувек сам преиспитивао правила, ауторитете, ставове и уверења. Нисам могао да прихватим нешто само зато што ми је речено да тако треба. Нисам желео да живим по туђим очекивањима, нити да се уклапам у калуп који ми не припада.'
+    ],
+    chapter: 'ОДБИЈАЊЕ КАЛУПА'
   },
   {
-    href: 'moj-put/',
-    kicker: 'ЛИЧНИ ИЗБОР',
-    title: 'Од отпора до сопственог пута',
-    description: 'Како се унутрашњи отпор претварао у одлуке, уверења и одговорност.'
+    number: '03',
+    label: 'КОРЕН БУНТА',
+    title: 'МОЈА БОРБА ПОЧЕЛА ЈЕ МНОГО ПРЕ УЛИЦЕ.',
+    paragraphs: [
+      'Мој бунт је почео много пре него што сам изашао на улицу. Почео је у породици, у сусрету са различитим ауторитетима, васпитањима и погледима на живот.',
+      'Одрастао сам између различитих светова, учећи да препознајем разлику између послушности и слободе, између прихватања и сопственог мишљења.',
+      'Већ тада сам почео да схватам да не морам да прихватим све што ми се намеће. Да имам право да мислим другачије, да постављам питања и да тражим сопствени пут.'
+    ],
+    chapter: 'ПРВИ ОТПОР'
   },
   {
-    href: 'projekti/',
-    kicker: 'КОНКРЕТНО ДЕЛОВАЊЕ',
-    title: 'Године деловања, не равнодушности',
-    description: 'Иницијативе, пројекти и покушаји да се оно у шта верујем претвори у нешто конкретно.'
+    number: '04',
+    label: 'СУОЧАВАЊЕ СА СТВАРНОШЋУ',
+    title: 'КАСНИЈЕ СЕ БУНТ ПРЕСЕЛИО У ДРУШТВО.',
+    paragraphs: [
+      'Касније се тај бунт пренео на улицу, у друштво и свакодневни живот. Почео сам да се суочавам са неправдама, лицемерјем, страхом и менталитетом у којем је много лакше прихватити стање ствари него покушати нешто променити.',
+      'И ту сам наишао на зид.'
+    ],
+    quote: 'Када говориш о неправди, многи ће ти дати подршку. Када устанеш и покушаш нешто да промениш, почеће да се питају зашто то радиш.',
+    chapter: 'ЗИД'
   },
   {
-    href: 'podrska/',
-    kicker: 'ЗАЈЕДНИШТВО',
-    title: 'Нисам против људи',
-    description: 'Моја борба није против људи, већ против неправде, страха, апатије и осећаја беспомоћности.'
+    number: '05',
+    label: 'КАДА ПОСТАНЕШ НЕЗГОДАН',
+    title: 'КАДА ИСТРАЈЕШ, ПОСТАЈЕШ ПРОБЛЕМ.',
+    paragraphs: [
+      'Када устанеш и покушаш нешто да промениш, почеће да се питају зашто то радиш. Када истрајеш, постајеш незгодан. Када не одустајеш, постајеш проблем.',
+      'И тада сам схватио да моја борба никада није била само борба против неправде или система. Била је то борба за свест људи.'
+    ],
+    chapter: 'СВЕСТ'
+  },
+  {
+    number: '06',
+    label: 'ЗА ШТА СЕ БОРИМ',
+    title: 'ЗА ПРАВО ДА МИСЛЕ СВОЈОМ ГЛАВОМ.',
+    paragraphs: [
+      'За слободу да не прихватају наметнуте норме. За храброст да кажу не када нешто није исправно. За веру да промене нису немогуће.'
+    ],
+    quote: 'За право да се човек пита. Да говори. Да учествује. Да не пристаје на неправду.',
+    chapter: 'СЛОБОДА'
+  },
+  {
+    number: '07',
+    label: 'ЦЕНА ИСТРАЈНОСТИ',
+    title: 'НИСУ СВА РАЗОЧАРАЊА ДОШЛА ОД ПРОТИВНИКА.',
+    paragraphs: [
+      'Током свих ових година много пута сам доживео разочарање. Људи који су те у почетку подржавали временом се повуку.',
+      'Неки окрену главу, неки почну да те критикују, а неки постану противници управо зато што си наставио да радиш оно због чега су те некада поштовали.',
+      'Научио сам да није тешко подржати нечију борбу док не захтева ништа од тебе.'
+    ],
+    chapter: 'РАЗОЧАРАЊА'
+  },
+  {
+    number: '08',
+    label: 'ОСТАТИ УЗ ОНО У ШТА ВЕРУЈЕШ',
+    title: 'ТЕШКО ЈЕ ОСТАТИ КАДА БОРБА ПОСТАНЕ НЕПРИЈАТНА.',
+    paragraphs: [
+      'Тешко је остати када борба постане непријатна, када донесе последице и када захтева храброст.',
+      'Али нисам због тога престао да верујем у људе. Напротив. И даље верујем да у сваком човеку постоји потенцијал за промену.',
+      'Само мислим да смо превише научени да сумњамо у себе, да се плашимо последица и да прихватамо границе које нам други постављају.'
+    ],
+    chapter: 'ВЕРА У ЉУДЕ'
+  },
+  {
+    number: '09',
+    label: 'ПРОБУДИТИ ЧОВЕКА',
+    title: 'НАЈВАЖНИЈЕ ЈЕ ДА ЧОВЕК СХВАТИ ДА НИЈЕ НЕМОЋАН.',
+    paragraphs: [
+      'Зато сам увек веровао да је најважније пробудити човека. Помоћи му да схвати да није немоћан, да његов глас нешто значи и да не мора да чека да неко други промени свет уместо њега.'
+    ],
+    chapter: 'ПОКРЕТАЊЕ'
+  },
+  {
+    number: '10',
+    label: 'ОД БУНТА ДО СТВАРАЊА',
+    title: 'МЕЊАО СЕ НАЧИН МОЈЕ БОРБЕ.',
+    paragraphs: [
+      'Тако се временом мењао и начин моје борбе. Од личног бунта, преко друштвеног ангажовања, до стварања простора у којем идеје, комуникација и маркетинг могу постати средство позитивних промена.',
+      'Тако је настајало и Јуначко Срце.'
+    ],
+    chapter: 'ЈУНАЧКО СРЦЕ'
+  },
+  {
+    number: '11',
+    label: 'ЗАШТО СТВАРАМ',
+    title: 'ЖЕЛИМ ДА СТВАРАМ НЕШТО ШТО ИМА СМИСАО.',
+    paragraphs: [
+      'Јер за мене стварање никада није било само посао. Желим да стварам нешто што покреће људе, охрабрује их и подсећа да живот не морају провести у границама које им је неко други одредио.'
+    ],
+    chapter: 'СМИСАО'
+  },
+  {
+    number: '12',
+    label: 'ШТА САМ НАУЧИО',
+    title: 'МОЈ БУНТ НИЈЕ ПОТРЕБА ДА СЕ СУПРОТСТАВЉАМ СВЕМУ.',
+    paragraphs: [
+      'То није потреба да се супротстављам свему. Није жеља да будем другачији по сваку цену. Није борба ради сукоба.',
+      'То је моје одбијање да престанем да мислим, да осећам, да преиспитујем и да верујем да ствари могу бити другачије.'
+    ],
+    chapter: 'МОЈ ИЗБОР'
+  },
+  {
+    number: '13',
+    label: 'И ДАЉЕ ТРАЈЕ',
+    title: 'НИСАМ СЕ РОДИО ДА БИХ СЕ УКЛОПИО.',
+    paragraphs: [
+      'Нисам овде да бих следио туђе стазе само зато што су утабане.',
+      'И ако ме је ових тридесет година нечему научило, онда је то да свет не мењају они који се помире са њим, већ они који пронађу храброст да замисле другачији и почну да га стварају.'
+    ],
+    quote: 'Срцем се водим. Норме не следим.',
+    finalLine: 'МОЈ БУНТ И ДАЉЕ ТРАЈЕ.',
+    chapter: 'НАСТАВЉАМ'
   }
 ];
 ---
 
-<StoryHub
-  pageTitle="Моја борба — Јовица Вратница"
-  description="Лична прича о преиспитивању, бунту, неправди, апатији и деловању које траје."
-  eyebrow="МОЈ ЖИВОТНИ ПУТ · ПРЕИСПИТИВАЊЕ И ДЕЛОВАЊЕ"
-  title="Моја борба."
-  subtitle="Моја борба није почела на улици. Почела је у мени."
-  intro="Већ деценијама преиспитујем правила, супротстављам се неправди и покушавам да уверења претворим у деловање. Не борим се против људи. Борим се против страха, апатије и осећаја беспомоћности који нас убеђују да ништа не можемо да променимо."
-  visualQuote="Не морам да будем тај који ће све променити. Али могу да помогнем да се нешто промени."
-  visualLabel="ПРЕИСПИТИВАЊЕ · БУНТ · ДЕЛОВАЊЕ"
-  cards={cards}
-/>
+<BaseLayout
+  title="Мој бунт — три деценије борбе | Јовица Вратница"
+  description="Лична прича о више од тридесет година бунта, преиспитивања, слободе и борбе за промену."
+>
+  <main class="fight-page">
+    <div class="fight-progress" aria-hidden="true"><span id="fight-progress-bar"></span></div>
+    {sections.map((section, index) => (
+      <section class:list={['fight-screen', { 'fight-screen-cover': index === 0, 'fight-screen-ending': index === sections.length - 1 }]} aria-labelledby={'fight-title-' + section.number}>
+        <div class="fight-content">
+          <p class="fight-eyebrow"><span></span>{section.label}</p>
+          {index === 0 ? (
+            <h1 id={'fight-title-' + section.number} set:html={section.title}></h1>
+          ) : (
+            <h2 id={'fight-title-' + section.number} set:html={section.title}></h2>
+          )}
+          {section.paragraphs.map((paragraph) => <p class="fight-paragraph">{paragraph}</p>)}
+          {section.quote && <blockquote>{section.quote}</blockquote>}
+          {section.finalLine && <p class="fight-final-line">{section.finalLine}</p>}
+          {index === 0 && <span class="fight-scroll-cue">СКРОЛУЈ ДАЉЕ <b>↓</b></span>}
+        </div>
+        <span class="fight-chapter">{section.number} <i>/</i> {section.chapter}</span>
+      </section>
+    ))}
+  </main>
+
+  <script>
+    const bar = document.getElementById('fight-progress-bar');
+    const updateFightProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
+      if (bar) bar.style.width = progress + '%';
+    };
+    window.addEventListener('scroll', updateFightProgress, { passive: true });
+    window.addEventListener('resize', updateFightProgress);
+    updateFightProgress();
+  </script>
+
+  <style>
+    :global(html) {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      background: #101114;
+    }
+    :global(body) { background: #101114; }
+    .fight-page {
+      --fight-bg: #101114;
+      --fight-text: #f3f1ed;
+      --fight-muted: #aaa9a5;
+      --fight-red: #e3424d;
+      color: var(--fight-text);
+      background:
+        radial-gradient(ellipse at 80% 12%, #e3424d1c, transparent 34rem),
+        var(--fight-bg);
+    }
+    .fight-progress {
+      position: fixed;
+      z-index: 40;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      pointer-events: none;
+    }
+    .fight-progress span {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: var(--fight-red);
+      transition: width .12s linear;
+    }
+    .fight-screen {
+      min-height: 100svh;
+      min-height: 100dvh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px max(24px, calc((100vw - 900px) / 2)) 90px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      border-bottom: 1px solid #ffffff0a;
+      isolation: isolate;
+    }
+    .fight-screen:nth-of-type(even) { background: #ffffff06; }
+    .fight-screen::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: min(70vw, 540px);
+      aspect-ratio: 1;
+      right: -24%;
+      bottom: -42%;
+      border: 1px solid #e3424d20;
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px #e3424d08, 0 0 0 90px #e3424d05;
+      pointer-events: none;
+    }
+    .fight-content {
+      width: min(100%, 760px);
+      margin: auto;
+    }
+    .fight-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 23px;
+      color: var(--fight-red);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .2em;
+    }
+    .fight-eyebrow span {
+      width: 27px;
+      height: 1px;
+      background: var(--fight-red);
+    }
+    .fight-screen h1,
+    .fight-screen h2 {
+      max-width: 820px;
+      margin: 0 0 27px;
+      color: var(--fight-text);
+      font: 850 clamp(37px, 6.8vw, 76px)/1.02 Manrope, sans-serif;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+    .fight-screen-cover h1 {
+      font-size: clamp(48px, 9vw, 100px);
+      line-height: .98;
+    }
+    .fight-screen h1 em,
+    .fight-screen h2 em {
+      color: var(--fight-red);
+      font-style: normal;
+    }
+    .fight-paragraph {
+      max-width: 700px;
+      margin: 0 0 15px;
+      color: #d1cfcb;
+      font: 400 clamp(15px, 1.7vw, 18px)/1.75 Manrope, sans-serif;
+    }
+    .fight-screen blockquote {
+      max-width: 700px;
+      margin: 28px 0 0;
+      padding: 5px 0 5px 21px;
+      border-left: 2px solid var(--fight-red);
+      color: var(--fight-text);
+      font: 750 clamp(20px, 3vw, 29px)/1.35 Manrope, sans-serif;
+      letter-spacing: -.035em;
+    }
+    .fight-scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 34px;
+      color: var(--fight-muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+    .fight-scroll-cue b {
+      color: var(--fight-red);
+      font-size: 19px;
+      font-weight: 400;
+    }
+    .fight-chapter {
+      position: absolute;
+      left: max(24px, calc((100vw - 900px) / 2));
+      bottom: 29px;
+      color: #858487;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .fight-chapter i {
+      padding: 0 7px;
+      color: var(--fight-red);
+      font-style: normal;
+    }
+    .fight-screen-ending h2 { font-size: clamp(43px, 7.5vw, 82px); }
+    .fight-screen-ending blockquote { font-size: clamp(25px, 4vw, 38px); }
+    .fight-final-line {
+      margin: 28px 0 0;
+      color: var(--fight-red);
+      font: 900 clamp(32px, 6vw, 62px)/1 Manrope, sans-serif;
+      letter-spacing: -.06em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 700px) {
+      .fight-screen {
+        padding: 92px 24px 82px;
+      }
+      .fight-screen h1,
+      .fight-screen h2 {
+        margin-bottom: 22px;
+        font-size: clamp(33px, 9vw, 49px);
+        line-height: 1.04;
+      }
+      .fight-screen-cover h1 {
+        font-size: clamp(46px, 12.5vw, 66px);
+        line-height: .99;
+      }
+      .fight-paragraph {
+        font-size: 15px;
+        line-height: 1.68;
+        margin-bottom: 12px;
+      }
+      .fight-screen blockquote {
+        margin-top: 21px;
+        padding-left: 16px;
+        font-size: 21px;
+      }
+      .fight-eyebrow { margin-bottom: 18px; font-size: 9px; }
+      .fight-chapter { left: 24px; bottom: 23px; font-size: 8px; }
+      .fight-screen-ending h2 { font-size: clamp(39px, 10vw, 58px); }
+      .fight-final-line { font-size: clamp(31px, 8vw, 44px); }
+    }
+    @media (max-height: 700px) and (min-width: 701px) {
+      .fight-screen { padding-top: 78px; padding-bottom: 70px; }
+      .fight-screen h1, .fight-screen h2 { font-size: clamp(34px, 5vw, 58px); margin-bottom: 18px; }
+      .fight-paragraph { font-size: 14px; line-height: 1.55; margin-bottom: 9px; }
+      .fight-screen blockquote { margin-top: 17px; font-size: 21px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      :global(html) { scroll-behavior: auto; }
+      .fight-progress span { transition: none; }
+    }
+  </style>
+</BaseLayout>
