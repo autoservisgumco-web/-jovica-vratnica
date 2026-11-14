@@ -1,0 +1,445 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const {
+  pageTitle,
+  description,
+  eyebrow,
+  title,
+  subtitle,
+  intro,
+  visualQuote,
+  visualLabel,
+  cards
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <main class="story-hub">
+    <section class="hub-hero" aria-labelledby="hub-title">
+      <div class="hub-hero-inner">
+        <div class="hub-copy">
+          <p class="hub-eyebrow"><span></span>{eyebrow}</p>
+          <h1 id="hub-title">{title}</h1>
+          <p class="hub-subtitle">{subtitle}</p>
+          <p class="hub-intro">{intro}</p>
+          <a class="hub-hero-link" href="#hub-stories">УПОЗНАЈ ОВУ ЦЕЛИНУ <span>↓</span></a>
+        </div>
+
+        <aside class="hub-visual" aria-label={visualLabel}>
+          <div class="visual-topline"><span>ЈОВИЦА ВРАТНИЦА</span><span>01 — 03</span></div>
+          <div class="visual-art">
+            <span class="visual-ring visual-ring-one"></span>
+            <span class="visual-ring visual-ring-two"></span>
+            <span class="visual-red-mark"></span>
+            <span class="visual-yellow-mark"></span>
+            <p>{visualQuote}</p>
+            <span class="visual-signature">ЈВ<span>.</span></span>
+          </div>
+          <p class="visual-caption">{visualLabel}</p>
+        </aside>
+      </div>
+      <div class="hub-hero-footer">
+        <span>БЛИСКОСТ · ЈЕДНАКОСТ · ПОВЕРЕЊЕ</span>
+        <span>НИСАМ ДРУГАЧИЈИ. САМО САМ ДРУГАЧИЈЕ РАСТАО.</span>
+      </div>
+    </section>
+
+    <section class="hub-stories" id="hub-stories" aria-labelledby="stories-title">
+      <div class="hub-section-heading">
+        <div>
+          <p class="hub-section-kicker">ИСТРАЖИ ДАЉЕ</p>
+          <h2 id="stories-title">Упознај делове <em>моје приче.</em></h2>
+        </div>
+        <p>Изабери оно што те занима. Свака тема отвара засебан приказ, без дугог проласка кроз једну страницу.</p>
+      </div>
+
+      <div class="hub-card-grid">
+        {cards.map((card, index) => (
+          <a class="hub-card" href={base + card.href}>
+            <span class="hub-card-number">{String(index + 1).padStart(2, '0')}</span>
+            <div class="hub-card-copy">
+              <p>{card.kicker}</p>
+              <h3>{card.title}</h3>
+              <span class="hub-card-description">{card.description}</span>
+            </div>
+            <span class="hub-card-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <footer class="hub-footer">
+      <span>ЈОВИЦА ВРАТНИЦА</span>
+      <span>ПИШЕМ. ДЕЛУЈЕМ. ПОВЕЗУЈЕМ.</span>
+      <a href={base}>← ПОЧЕТНА</a>
+    </footer>
+  </main>
+
+  <style>
+    .story-hub {
+      --hub-red: #d52b36;
+      --hub-black: #191919;
+      --hub-gray: #e7e7e5;
+      --hub-muted: #666664;
+      --hub-yellow: #f1c644;
+      background: #f5f5f3;
+      color: var(--hub-black);
+      min-height: calc(100svh - 68px);
+    }
+
+    .hub-hero {
+      min-height: 570px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      padding: 62px max(24px, calc((100vw - 1160px) / 2)) 76px;
+      background: #e9e9e7;
+      border-bottom: 1px solid #d2d2d0;
+      isolation: isolate;
+    }
+
+    .hub-hero::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: min(48vw, 650px);
+      aspect-ratio: 1;
+      right: -8%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid #19191918;
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px #19191904, 0 0 0 90px #19191903;
+    }
+
+    .hub-hero-inner {
+      width: min(100%, 1160px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      align-items: center;
+      gap: clamp(35px, 6vw, 90px);
+    }
+
+    .hub-copy { max-width: 720px; }
+
+    .hub-eyebrow, .hub-section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 25px;
+      color: #555552;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .19em;
+    }
+
+    .hub-eyebrow > span {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 8px;
+      background: var(--hub-red);
+      border-radius: 50%;
+    }
+
+    .hub-copy h1 {
+      max-width: 760px;
+      margin: 0 0 18px;
+      color: var(--hub-black);
+      font: 800 clamp(56px, 7.2vw, 94px)/.98 Manrope, sans-serif;
+      letter-spacing: -.075em;
+    }
+
+    .hub-subtitle {
+      max-width: 700px;
+      margin: 0 0 15px;
+      color: #30302f;
+      font: 750 clamp(19px, 2.2vw, 26px)/1.35 Manrope, sans-serif;
+      letter-spacing: -.035em;
+    }
+
+    .hub-intro {
+      max-width: 680px;
+      margin: 0;
+      color: #626260;
+      font: 400 15px/1.8 'DM Sans', sans-serif;
+    }
+
+    .hub-hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 26px;
+      padding: 13px 17px;
+      border: 1px solid #858581;
+      color: var(--hub-black);
+      font-size: 9px;
+      font-weight: 850;
+      letter-spacing: .15em;
+      transition: background .18s ease, border-color .18s ease, color .18s ease;
+    }
+
+    .hub-hero-link span { color: var(--hub-red); font-size: 17px; }
+    .hub-hero-link:hover { background: var(--hub-black); border-color: var(--hub-black); color: #fff; }
+
+    .hub-visual {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      justify-self: end;
+    }
+
+    .visual-topline, .visual-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #6d6d69;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+
+    .visual-topline { padding: 0 0 12px; border-bottom: 1px solid #c9c9c6; }
+
+    .visual-art {
+      min-height: 315px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      margin: 13px 0;
+      padding: 35px;
+      background: var(--hub-black);
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .visual-art::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 250px;
+      height: 250px;
+      right: -65px;
+      top: -80px;
+      border: 1px solid #ffffff30;
+      border-radius: 50%;
+      box-shadow: 0 0 0 30px #ffffff08, 0 0 0 60px #ffffff05;
+    }
+
+    .visual-art::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 120px;
+      height: 120px;
+      right: 28px;
+      bottom: -62px;
+      background: var(--hub-red);
+      transform: rotate(45deg);
+    }
+
+    .visual-ring { position: absolute; border: 1px solid #ffffff24; border-radius: 50%; }
+    .visual-ring-one { width: 190px; height: 190px; right: 16px; bottom: 16px; }
+    .visual-ring-two { width: 125px; height: 125px; right: 49px; bottom: 49px; }
+    .visual-red-mark { position: absolute; left: 0; top: 0; width: 6px; height: 100%; background: var(--hub-red); }
+    .visual-yellow-mark { position: absolute; right: 30px; top: 30px; width: 12px; height: 12px; background: var(--hub-yellow); border-radius: 50%; }
+
+    .visual-art > p {
+      max-width: 300px;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      color: #f5f5f3;
+      font: 750 clamp(25px, 3vw, 35px)/1.2 Manrope, sans-serif;
+      letter-spacing: -.055em;
+    }
+
+    .visual-signature {
+      position: absolute;
+      right: 25px;
+      bottom: 18px;
+      color: #ffffff24;
+      font: 800 38px Manrope, sans-serif;
+      letter-spacing: -.1em;
+    }
+    .visual-signature span { color: var(--hub-red); }
+
+    .hub-hero-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px max(24px, calc((100vw - 1160px) / 2));
+      border-top: 1px solid #c9c9c6;
+      color: #6d6d69;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .14em;
+    }
+
+    .hub-stories {
+      width: min(100%, 1160px);
+      margin: 0 auto;
+      padding: 68px 24px 84px;
+    }
+
+    .hub-section-heading {
+      display: grid;
+      grid-template-columns: 1fr minmax(230px, .55fr);
+      align-items: end;
+      gap: 45px;
+      margin-bottom: 35px;
+    }
+
+    .hub-section-kicker { margin-bottom: 13px; color: var(--hub-red); }
+    .hub-section-heading h2 {
+      margin: 0;
+      color: var(--hub-black);
+      font: 800 clamp(31px, 4.1vw, 48px)/1.08 Manrope, sans-serif;
+      letter-spacing: -.06em;
+    }
+    .hub-section-heading h2 em { color: var(--hub-red); font-style: normal; }
+    .hub-section-heading > p {
+      max-width: 390px;
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .hub-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .hub-card {
+      min-height: 205px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 21px 21px 19px;
+      border: 1px solid #d5d5d2;
+      background: #fff;
+      color: var(--hub-black);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .hub-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--hub-red);
+      box-shadow: 0 9px 24px #1919190b;
+    }
+
+    .hub-card-number {
+      color: var(--hub-red);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .14em;
+    }
+
+    .hub-card-copy { padding: 20px 27px 0 0; }
+    .hub-card-copy > p {
+      margin: 0 0 9px;
+      color: #777773;
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: .15em;
+    }
+
+    .hub-card h3 {
+      margin: 0 0 8px;
+      color: var(--hub-black);
+      font: 750 19px/1.25 Manrope, sans-serif;
+      letter-spacing: -.035em;
+    }
+
+    .hub-card-description {
+      display: block;
+      color: #696966;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .hub-card-arrow {
+      position: absolute;
+      right: 19px;
+      top: 17px;
+      color: var(--hub-red);
+      font-size: 19px;
+    }
+
+    .hub-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 22px max(24px, calc((100vw - 1160px) / 2));
+      border-top: 1px solid #d5d5d2;
+      background: #ededeb;
+      color: #666662;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+    .hub-footer a { color: var(--hub-red); }
+
+    @media (max-width: 820px) {
+      .hub-hero { min-height: auto; padding: 48px 24px 74px; }
+      .hub-hero-inner { grid-template-columns: 1fr minmax(220px, .7fr); gap: 25px; }
+      .hub-copy h1 { font-size: clamp(47px, 8vw, 68px); }
+      .hub-visual { max-width: 310px; }
+      .visual-art { min-height: 260px; padding: 25px; }
+      .visual-art > p { font-size: 25px; }
+      .hub-hero-footer { padding-inline: 24px; }
+      .hub-section-heading { grid-template-columns: 1fr; gap: 15px; }
+      .hub-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .hub-hero { padding: 39px 21px 68px; }
+      .hub-hero-inner { grid-template-columns: 1fr; gap: 25px; }
+      .hub-copy h1 { font-size: clamp(48px, 13vw, 66px); }
+      .hub-subtitle { font-size: 19px; }
+      .hub-intro { font-size: 14px; line-height: 1.7; }
+      .hub-visual { max-width: none; }
+      .visual-topline, .visual-caption { font-size: 7px; }
+      .visual-art { min-height: 150px; padding: 24px; }
+      .visual-art > p { max-width: 250px; font-size: 24px; }
+      .visual-ring-one { width: 135px; height: 135px; }
+      .visual-ring-two { width: 85px; height: 85px; right: 41px; bottom: 41px; }
+      .hub-hero-footer { left: 0; right: 0; padding: 13px 21px; font-size: 6px; }
+      .hub-hero-footer span:last-child { display: none; }
+      .hub-stories { padding: 46px 21px 65px; }
+      .hub-section-heading { margin-bottom: 24px; }
+      .hub-section-heading h2 { font-size: 31px; }
+      .hub-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+      .hub-card { min-height: 190px; padding: 15px 13px; }
+      .hub-card-copy { padding: 17px 13px 0 0; }
+      .hub-card h3 { font-size: 15px; }
+      .hub-card-description { font-size: 10px; }
+      .hub-card-arrow { top: 12px; right: 12px; }
+      .hub-footer { padding: 18px 21px; flex-wrap: wrap; font-size: 7px; }
+    }
+
+    @media (max-width: 360px) {
+      .hub-card-grid { grid-template-columns: 1fr; }
+      .hub-card { min-height: 145px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hub-card, .hub-hero-link { transition: none; }
+    }
+  </style>
+</BaseLayout>
