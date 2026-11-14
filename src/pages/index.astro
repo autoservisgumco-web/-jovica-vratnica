@@ -22,52 +22,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="paths" id="tri-price" aria-labelledby="paths-title">
       <div class="section-intro">
-        <p class="section-kicker">ТРИ ПРИЧЕ. ТРИ ДЕЛА МЕНЕ.</p>
-        <h2 id="paths-title">ОД ЧОВЕКА ДО <em>ДЕЛА.</em></h2>
-        <p>Свака прича има свој почетак. Ове три заједно говоре о томе ко сам, за шта се залажем и шта желим да покренем.</p>
+        <p class="section-kicker">ДВА ПОГЛАВЉА. ЈЕДАН ЖИВОТНИ ПУТ.</p>
+        <h2 id="paths-title">МОЈ ПУТ. МОЈ <em>БУНТ.</em></h2>
+        <p>Прво упознајеш човека који је изабрао сопствени пут. Затим откриваш бунт који га прати кроз живот — и разлог због ког никада није престао да преиспитује наметнута правила.</p>
       </div>
 
       <div class="path-grid">
         <a class="path-card path-one" href="./moja-prica/">
           <div class="path-top"><span>01</span><span class="symbol">↗</span></div>
           <div class="path-bottom">
-            <p class="path-kicker">ЛИЧНИ ПУТ</p>
+            <p class="path-kicker">ЛИЧНА ПРИЧА</p>
             <h3>СОПСТВЕНИМ<br /><em>ПУТЕМ.</em></h3>
-            <p class="path-description">Прича о одрастању, преиспитивању и човеку који је одлучио да не живи туђим мерилима.</p>
+            <p class="path-description">Одрастање, први утицаји и одлука да слушам своје срце, уместо да живим по туђим мерилима.</p>
             <span class="path-cta">УПОЗНАЈ МОЈ ПУТ <b>↗</b></span>
           </div>
           <span class="path-watermark">I</span>
         </a>
 
-        <a class="path-card path-two" href="./moja-borba/">
+        <a class="path-card path-two" href="./moj-bunt/">
           <div class="path-top"><span>02</span><span class="symbol">✳</span></div>
           <div class="path-bottom">
-            <p class="path-kicker">УВЕРЕЊА И ДЕЛА</p>
-            <h3>БОРБА БЕЗ<br /><em>ПРЕДАЈЕ.</em></h3>
-            <p class="path-description">За слободу, достојанство, правду и право човека да остане веран себи.</p>
-            <span class="path-cta">УПОЗНАЈ МОЈУ БОРБУ <b>↗</b></span>
+            <p class="path-kicker">МОЈ ЖИВОТНИ СТАВ</p>
+            <h3>МОЈ<br /><em>БУНТ.</em></h3>
+            <p class="path-description">Бунт против наметнутих норми, страха и ћутања. Борба за слободу да свако пронађе и следи свој пут.</p>
+            <span class="path-cta">УПОЗНАЈ МОЈ БУНТ <b>↗</b></span>
           </div>
           <span class="path-watermark">II</span>
-        </a>
-
-        <a class="path-card path-three" href="./junacko-srce/">
-          <div class="path-top"><span>03</span><span class="symbol heart-symbol">♥</span></div>
-          <div class="path-bottom">
-            <p class="path-kicker">ИДЕЈА КОЈА ПОКРЕЋЕ</p>
-            <h3>СРЦЕ КОЈЕ<br /><em>ПОКРЕЋЕ.</em></h3>
-            <p class="path-description">Јуначко Срце — за људе који се усуде, за идеје које повезују и промене које имају смисла.</p>
-            <span class="path-cta">ОТКРИЈ ЈУНАЧКО СРЦЕ <b>↗</b></span>
-          </div>
-          <span class="path-watermark">III</span>
         </a>
       </div>
     </section>
 
     <section class="closing">
-      <p class="section-kicker">НИЈЕ СТВАР У ТОМЕ ДА БУДЕШ КАО СВИ.</p>
-      <h2>ВАЖНО ЈЕ ДА<br /><em>ОСТАНЕШ СВОЈ.</em></h2>
-      <p>Ја сам ту за оне који се усуде.</p>
-      <a href="./junacko-srce/" class="closing-link">ХАЈДЕ ДА СЕ ПОВЕЖЕМО <span>↗</span></a>
+      <p class="section-kicker">ИЗ МОГ БУНТА НАСТАЛА ЈЕ ИДЕЈА.</p>
+      <h2>ЈА САМ ТУ ЗА ОНЕ<br /><em>КОЈИ СЕ УСУДЕ.</em></h2>
+      <p>Јуначко срце је за оне који мисле својом главом, покрећу добре идеје и не пристају на равнодушност.</p>
+      <a href="./junacko-srce/" class="closing-link">УПОЗНАЈ ЈУНАЧКО СРЦЕ <span>↗</span></a>
     </section>
   </main>
 
@@ -94,7 +83,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .section-kicker{margin:0 0 15px;color:var(--red)}
     .section-intro h2,.closing h2{margin:0;font:900 clamp(38px,5.5vw,65px)/.98 'Barlow Condensed','Arial Narrow',sans-serif;letter-spacing:-.02em}
     .section-intro>p:last-child{max-width:560px;margin:18px auto 0;color:#aaa;font-size:14px;line-height:1.8}
-    .path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .path-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
     .path-card{position:relative;isolation:isolate;min-height:390px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid #424242;border-bottom:4px solid var(--red);background:linear-gradient(145deg,#222,#101010 78%);transition:transform .2s,border-color .2s}
     .path-card:hover{transform:translateY(-5px);border-color:var(--red)}
     .path-one{background:linear-gradient(145deg,#28352f,#111 78%)}
@@ -141,7 +130,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       .closing h2{font-size:48px}
       .closing>p:not(.section-kicker){font-size:12px}
     }
-    @media(min-width:761px) and (max-width:980px){.path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-card:last-child{grid-column:1/-1;min-height:310px}}
+    @media(min-width:761px) and (max-width:980px){.path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(prefers-reduced-motion:reduce){:global(html){scroll-behavior:auto}.path-card{transition:none}}
   </style>
 </BaseLayout>
