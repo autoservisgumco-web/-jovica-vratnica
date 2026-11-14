@@ -408,3 +408,196 @@ main .lead,main .hero-copy,main .hero-lead,main .hero-intro,main .about-hero-int
 .global-bottom-nav a.active,.global-bottom-nav a:hover,.global-bottom-nav a.active>span{
   color:#d52b36!important;
 }
+
+/* =========================================================
+   JOVICA VRATNICA — JEDINSTVENI VIZUELNI SISTEM
+   Jedan font, jedna zelena paleta, iste linije i margine.
+   Ovaj blok je jedino mesto za zajednicke vizuelne vrednosti.
+   ========================================================= */
+:root{
+  --site-bg:#101612;
+  --site-surface:#18221b;
+  --site-surface-2:#202c23;
+  --site-text:#f0f2ed;
+  --site-muted:#b5beb4;
+  --site-green:#91ad96;
+  --site-green-strong:#b0c9b3;
+  --site-line:#405545;
+  --site-line-soft:#2b392e;
+  --font-body:'DM Sans',sans-serif;
+  --font-heading:'Manrope',sans-serif;
+  --site-content:900px;
+  --site-gutter:clamp(22px,5vw,40px);
+}
+html,body{
+  background:var(--site-bg)!important;
+  color:var(--site-text)!important;
+  font-family:var(--font-body)!important;
+}
+body{margin:0!important;padding-bottom:86px!important}
+h1,h2,h3,h4,
+.global-brand,.hub-hero h1,.hub-section-heading h2,
+.hub-card h3,.fight-screen h1,.fight-screen h2,
+.fight-screen blockquote,.hub-quote{
+  font-family:var(--font-heading)!important;
+}
+p,li,blockquote,.hub-intro,.hub-subtitle,.hub-card-description,
+.fight-paragraph{
+  font-family:var(--font-body)!important;
+}
+a{transition:color .18s ease,border-color .18s ease,background .18s ease}
+.global-topbar{
+  background:rgba(16,22,18,.97)!important;
+  color:var(--site-text)!important;
+  border-bottom:1px solid var(--site-line)!important;
+}
+.global-brand,.global-top-caption{color:var(--site-text)!important}
+.global-brand span,.global-menu-head p,.global-menu-links a>span,
+.global-menu-links a>b{color:var(--site-green)!important}
+.global-menu-trigger{border-color:var(--site-line)!important}
+.global-menu-trigger span{background:var(--site-text)!important}
+.global-menu-sheet{
+  color:var(--site-text)!important;
+  background:var(--site-surface)!important;
+  border-color:var(--site-line)!important;
+}
+.global-menu-head h2,.global-menu-close{color:var(--site-text)!important}
+.global-menu-links a{
+  color:var(--site-text)!important;
+  background:var(--site-surface-2)!important;
+  border-color:var(--site-line)!important;
+}
+.global-menu-links a:hover,.global-menu-links a[aria-current="page"]{
+  border-color:var(--site-green)!important;
+  background:#91ad9618!important;
+}
+.global-bottom-nav{
+  background:rgba(16,22,18,.98)!important;
+  border-color:var(--site-line)!important;
+  box-shadow:0 -8px 35px #0006!important;
+}
+.global-bottom-nav a{color:var(--site-muted)!important}
+.global-bottom-nav a.active,.global-bottom-nav a:hover,
+.global-bottom-nav a.active>span{color:var(--site-green-strong)!important}
+
+/* Isti okvir, širina teksta i bočne margine na svim stranicama. */
+.inner-content,.story-content,.chapter-page,
+.hub-content,.hub-stories-content,.fight-content{
+  width:min(100%,var(--site-content))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.inner-hero,.life-hero,.nonconform-hero,.rebel-hero,
+.hub-screen,.fight-screen{
+  padding-left:max(var(--site-gutter),calc((100vw - var(--site-content))/2))!important;
+  padding-right:max(var(--site-gutter),calc((100vw - var(--site-content))/2))!important;
+}
+.inner-content,.story-content,.chapter-page{
+  padding-left:var(--site-gutter)!important;
+  padding-right:var(--site-gutter)!important;
+}
+.hub-screen,.fight-screen{
+  border-bottom:1px solid var(--site-line-soft)!important;
+}
+.hub-screen:nth-of-type(even),.fight-screen:nth-of-type(even){
+  background-color:#ffffff04!important;
+}
+.hub-progress span,.fight-progress span{
+  background:var(--site-green)!important;
+}
+.hub-eyebrow,.fight-eyebrow,.hub-scroll-cue span,
+.fight-scroll-cue b,.hub-chapter i,.fight-chapter i,
+.hub-card-number,.hub-card-arrow,.hub-footer a,
+.hub-section-heading h2 em,.fight-screen h1 em,
+.fight-screen h2 em,.fight-final-line{
+  color:var(--site-green)!important;
+}
+.hub-eyebrow>span,.fight-eyebrow span{
+  background:var(--site-green)!important;
+}
+.hub-quote,.fight-screen blockquote,
+.section-body blockquote,.chapter-page blockquote{
+  border-left-color:var(--site-green)!important;
+}
+.hub-card,.story-index a,.chapter,.chapter-list,
+.story-section,.about-story-chapter,.about-chapter{
+  border-color:var(--site-line)!important;
+}
+.hub-card{background:var(--site-surface)!important}
+.hub-card:hover{border-color:var(--site-green)!important}
+.hub-card-copy>p,.hub-visual-label,.hub-chapter,.fight-chapter{
+  color:var(--site-muted)!important;
+}
+.hub-footer{border-top-color:var(--site-line)!important}
+.fight-photo{border-left-color:var(--site-green)!important}
+.fight-screen,.story-hub,.fight-page{
+  --hub-bg:var(--site-bg)!important;
+  --hub-panel:var(--site-surface)!important;
+  --hub-text:var(--site-text)!important;
+  --hub-muted:var(--site-muted)!important;
+  --hub-red:var(--site-green)!important;
+  --fight-bg:var(--site-bg)!important;
+  --fight-text:var(--site-text)!important;
+  --fight-muted:var(--site-muted)!important;
+  --fight-red:var(--site-green)!important;
+  color:var(--site-text)!important;
+  background-color:var(--site-bg)!important;
+}
+.hub-hero,.fight-screen-cover{
+  background-color:#101612!important;
+}
+.hub-hero-shade{
+  background:linear-gradient(90deg,#101612f2 0%,#101612c9 48%,#10161252 100%),
+             linear-gradient(0deg,#101612f2 0%,transparent 65%)!important;
+}
+.fight-hero-shade{
+  background:linear-gradient(90deg,#101612f2 0%,#101612bd 50%,#10161245 100%),
+             linear-gradient(0deg,#101612f2 0%,transparent 68%)!important;
+}
+.hub-screen::after,.fight-screen::after{
+  border-color:#91ad9620!important;
+  box-shadow:0 0 0 45px #91ad9608,0 0 0 90px #91ad9605!important;
+}
+.hub-hero-image,.fight-hero-image,
+.hub-card-image,.fight-photo img{
+  filter:grayscale(100%) contrast(1.08) brightness(.72)!important;
+}
+.hub-intro,.fight-paragraph,.hub-section-heading>p,
+.inner-content p,.chapter-page p,.section-body>p:not(.section-kicker){
+  color:var(--site-muted)!important;
+}
+.hub-card-description{color:var(--site-muted)!important}
+.inner-hero,.life-hero,.nonconform-hero,.rebel-hero,
+.about-hero,.about-manifesto,.about-call,.life-footer,.rebel-footer,
+.inner-quote,.feature-link,.quote-band{
+  background-color:var(--site-surface)!important;
+}
+.inner-hero,.life-hero,.nonconform-hero,.rebel-hero{
+  background:linear-gradient(135deg,#263a2c,#17231a)!important;
+}
+.inner-hero .eyebrow,.inner-hero .kicker,.life-hero .kicker,
+.nonconform-hero .kicker,.rebel-hero .kicker{
+  color:var(--site-green-strong)!important;
+}
+.inner-content h2,.chapter-page h2,.section-body h2,
+.about-story h1,.about-mission h2,.about-call h2,
+.about-chapter h2{color:var(--site-text)!important}
+.inner-content em,.chapter-page h1 em,.chapter-page h2 em,
+.section-body h2 em,.inner-content h2 em,
+.about-story h1 em,.about-mission h2 em,.about-call h2 em{
+  color:var(--site-green)!important;
+}
+.inner-back,.next,.story-index a span,.story-index a b,
+.section-number,.about-read-more{color:var(--site-green)!important}
+footer{border-top-color:var(--site-line)!important}
+@media(max-width:760px){
+  .hub-screen,.fight-screen,
+  .inner-hero,.life-hero,.nonconform-hero,.rebel-hero{
+    padding-left:var(--site-gutter)!important;
+    padding-right:var(--site-gutter)!important;
+  }
+  .inner-content,.story-content,.chapter-page{
+    padding-left:var(--site-gutter)!important;
+    padding-right:var(--site-gutter)!important;
+  }
+}
