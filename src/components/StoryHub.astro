@@ -10,6 +10,8 @@ const {
   intro,
   visualQuote,
   visualLabel,
+  heroImage,
+  heroImageAlt = 'Фотографија која прати личну причу',
   cards
 } = Astro.props;
 
@@ -23,6 +25,8 @@ const base = import.meta.env.BASE_URL.endsWith('/')
     <div class="hub-progress" aria-hidden="true"><span id="hub-progress-bar"></span></div>
 
     <section class="hub-screen hub-hero" aria-labelledby="hub-title">
+      {heroImage && <img class="hub-hero-image" src={heroImage} alt={heroImageAlt} fetchpriority="high" />}
+      <div class="hub-hero-shade" aria-hidden="true"></div>
       <div class="hub-content">
         <p class="hub-eyebrow"><span></span>{eyebrow}</p>
         <h1 id="hub-title">{title}</h1>
@@ -48,6 +52,7 @@ const base = import.meta.env.BASE_URL.endsWith('/')
         <div class="hub-card-grid">
           {cards.map((card, index) => (
             <a class="hub-card" href={base + card.href}>
+              {card.image && <img class="hub-card-image" src={card.image} alt="" loading="lazy" />}
               <span class="hub-card-number">{String(index + 1).padStart(2, '0')}</span>
               <div class="hub-card-copy">
                 <p>{card.kicker}</p>
@@ -131,6 +136,9 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       isolation: isolate;
     }
     .hub-screen:nth-of-type(even) { background: #ffffff06; }
+    .hub-hero { background: #09090b; }
+    .hub-hero-image { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%; filter:grayscale(100%) contrast(1.08) brightness(.66); }
+    .hub-hero-shade { position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,#09090bf2 0%,#09090bc9 48%,#09090b52 100%),linear-gradient(0deg,#09090bf2 0%,transparent 65%); }
     .hub-screen::after {
       content: '';
       position: absolute;
@@ -252,6 +260,7 @@ const base = import.meta.env.BASE_URL.endsWith('/')
     }
     .hub-card {
       min-height: 165px;
+      overflow: hidden;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -267,13 +276,14 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       border-color: var(--hub-red);
       background: #1d1f25;
     }
-    .hub-card-number {
-      color: var(--hub-red);
+    .hub-card-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.18; filter:grayscale(100%); transition:opacity .2s ease,transform .35s ease; }
+    .hub-card:hover .hub-card-image { opacity:.3; transform:scale(1.04); }
+    .hub-card-number { position:relative; z-index:1; color:var(--hub-red);
       font-size: 10px;
       font-weight: 850;
       letter-spacing: .14em;
     }
-    .hub-card-copy { padding: 14px 25px 0 0; }
+    .hub-card-copy { position:relative; z-index:1; padding:14px 25px 0 0; }
     .hub-card-copy > p {
       margin: 0 0 7px;
       color: #999894;
@@ -293,6 +303,7 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       font: 400 11px/1.55 Manrope, sans-serif;
     }
     .hub-card-arrow {
+      z-index: 1;
       position: absolute;
       top: 15px;
       right: 18px;
@@ -315,6 +326,8 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 
     @media (max-width: 700px) {
       .hub-screen { padding: 92px 24px 82px; }
+      .hub-hero-shade { background:linear-gradient(0deg,#09090bf5 0%,#09090bba 52%,#09090b4d 100%); }
+      .hub-hero-image { object-position:center; }
       .hub-hero h1 { font-size: clamp(39px, 10vw, 57px); line-height: 1.03; }
       .hub-subtitle { font-size: 18px; }
       .hub-intro { font-size: 15px; line-height: 1.68; }
