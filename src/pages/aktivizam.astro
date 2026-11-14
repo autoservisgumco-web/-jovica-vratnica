@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
 const chapters = [
   {
     number: '01',
@@ -155,7 +157,7 @@ const forums = ['Видовдан', 'Верујем', 'Српски национ
       <p class="section-kicker">ЈЕДАН ПУТ · ВИШЕ НАЧИНА ДЕЛОВАЊА</p>
       <h2>МЕЊАЛИ СУ СЕ<br /><em>АЛАТИ. НЕ И ПОТРЕБА ДА ДЕЛУЈЕМ.</em></h2>
       <p>Ово је део мог активизма који могу да сместим у период од 2000. до 2010. године. Ова страница ће се допуњавати како будемо сређивали и остале периоде и активности — без измишљања и без улепшавања онога што се заиста догодило.</p>
-      <a href={import.meta.env.BASE_URL + 'moja-borba/'} class="back-link">НАЗАД НА МОЈУ БОРБУ <span>↗</span></a>
+      <a href={base + 'moja-borba/'} class="back-link">НАЗАД НА МОЈУ БОРБУ <span>↗</span></a>
     </section>
   </main>
 
