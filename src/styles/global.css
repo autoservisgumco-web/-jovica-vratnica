@@ -601,3 +601,213 @@ footer{border-top-color:var(--site-line)!important}
     padding-right:var(--site-gutter)!important;
   }
 }
+
+
+/* =========================================================
+   JOVICA VRATNICA — SHARED GREEN DESIGN SYSTEM
+   One palette, typography scale, spacing and editorial rhythm
+   ========================================================= */
+:root{
+  --site-bg:#101712;
+  --site-bg-soft:#151f18;
+  --site-panel:#1b2820;
+  --site-panel-hover:#223128;
+  --site-paper:#f1f3ee;
+  --site-text:#f0f2ed;
+  --site-muted:#b5beb4;
+  --site-muted-strong:#d0d7cf;
+  --site-green:#91ad96;
+  --site-green-bright:#b0c9b3;
+  --site-line:#405545;
+  --site-line-soft:#2b392e;
+  --site-red:var(--site-green);
+  --site-font-body:'DM Sans',sans-serif;
+  --site-font-heading:'Manrope',sans-serif;
+  --site-gutter:clamp(24px,5.2vw,48px);
+  --site-content:900px;
+  --red:var(--site-green)!important;
+  --muted:var(--site-muted)!important;
+  --line:var(--site-line)!important;
+}
+html,body{
+  background:var(--site-bg)!important;
+  color:var(--site-text)!important;
+  font-family:var(--site-font-body)!important;
+}
+body{padding-bottom:86px!important}
+h1,h2,h3,h4,h5,h6,
+.global-brand,.hub-hero h1,.hub-section-heading h2,
+.hub-card h3,.fight-screen h1,.fight-screen h2,
+.fight-screen blockquote{
+  font-family:var(--site-font-heading)!important;
+}
+p,li,.hub-intro,.hub-subtitle,.hub-section-heading>p,
+.hub-card-description,.fight-paragraph{
+  font-family:var(--site-font-body)!important;
+}
+a{transition:color .18s ease,border-color .18s ease,background .18s ease}
+.global-topbar{
+  height:68px!important;
+  background:rgba(241,243,238,.97)!important;
+  border-bottom:1px solid #cbd5ca!important;
+  color:#17221a!important;
+}
+.global-brand{color:#17221a!important}
+.global-brand span{color:#54785c!important}
+.global-top-caption{color:#68736a!important}
+.global-menu-trigger{border-color:#aab6aa!important}
+.global-menu-trigger span{background:#17221a!important}
+.global-menu-trigger:hover{border-color:#54785c!important}
+.global-menu-sheet{
+  color:var(--site-text)!important;
+  background:linear-gradient(145deg,#223128,#101712 85%)!important;
+  border-color:var(--site-line)!important;
+}
+.global-menu-head p,.global-menu-links a>span,
+.global-menu-links b,.global-menu-close{color:var(--site-green-bright)!important}
+.global-menu-links a{
+  color:var(--site-text)!important;
+  border-color:var(--site-line)!important;
+  background:#ffffff08!important;
+}
+.global-menu-links a:hover,
+.global-menu-links a[aria-current="page"]{
+  border-color:var(--site-green)!important;
+  background:#91ad9618!important;
+}
+.global-menu-close{border-color:var(--site-line)!important}
+.global-bottom-nav{
+  background:rgba(241,243,238,.98)!important;
+  border-color:#cbd5ca!important;
+  box-shadow:0 -8px 35px #07110924!important;
+}
+.global-bottom-nav a{color:#778078!important}
+.global-bottom-nav a.active,
+.global-bottom-nav a:hover,
+.global-bottom-nav a.active>span{color:#54785c!important}
+.global-bottom-nav a.active>span{color:#54785c!important}
+
+/* Shared hero and story layouts */
+.story-hub,.fight-page{
+  --hub-bg:var(--site-bg)!important;
+  --hub-panel:var(--site-panel)!important;
+  --hub-text:var(--site-text)!important;
+  --hub-muted:var(--site-muted)!important;
+  --hub-red:var(--site-green)!important;
+  --fight-bg:var(--site-bg)!important;
+  --fight-text:var(--site-text)!important;
+  --fight-muted:var(--site-muted)!important;
+  --fight-red:var(--site-green)!important;
+  color:var(--site-text)!important;
+  background:var(--site-bg)!important;
+}
+.hub-screen,.fight-screen{
+  padding-left:max(var(--site-gutter),calc((100vw - var(--site-content))/2))!important;
+  padding-right:max(var(--site-gutter),calc((100vw - var(--site-content))/2))!important;
+  border-bottom:1px solid var(--site-line-soft)!important;
+}
+.hub-screen:nth-of-type(even),
+.fight-screen:nth-of-type(even){background:var(--site-bg-soft)!important}
+.hub-hero,.fight-screen-cover{background:var(--site-bg)!important}
+.hub-hero-image,.fight-hero-image{
+  filter:grayscale(100%) contrast(1.08) brightness(.56)!important;
+}
+.hub-hero-shade{
+  background:linear-gradient(90deg,#101712f2 0%,#101712c9 48%,#10171252 100%),
+             linear-gradient(0deg,#101712f2 0%,transparent 65%)!important;
+}
+.fight-hero-shade{
+  background:linear-gradient(90deg,#101712f2 0%,#101712bd 50%,#10171245 100%),
+             linear-gradient(0deg,#101712f2 0%,transparent 68%)!important;
+}
+.hub-screen::after,.fight-screen::after{
+  border-color:#91ad9630!important;
+  box-shadow:0 0 0 45px #91ad960c,0 0 0 90px #91ad9608!important;
+}
+.hub-progress span,.fight-progress span{background:var(--site-green)!important}
+.hub-eyebrow,.fight-eyebrow{color:var(--site-green-bright)!important}
+.hub-eyebrow>span,.fight-eyebrow>span{background:var(--site-green)!important}
+.hub-hero h1,.fight-screen h1,.fight-screen h2,
+.hub-section-heading h2{
+  color:var(--site-text)!important;
+  font-weight:800!important;
+  letter-spacing:-.065em!important;
+  line-height:1.02!important;
+}
+.hub-hero h1 em,.hub-section-heading h2 em,
+.fight-screen h1 em,.fight-screen h2 em{
+  color:var(--site-green-bright)!important;
+}
+.hub-subtitle{
+  color:var(--site-text)!important;
+  font-weight:700!important;
+  line-height:1.4!important;
+}
+.hub-intro,.fight-paragraph{
+  color:var(--site-muted-strong)!important;
+  font-weight:400!important;
+  line-height:1.75!important;
+}
+.hub-quote,.fight-screen blockquote{
+  border-left-color:var(--site-green)!important;
+  color:var(--site-text)!important;
+  font-weight:750!important;
+}
+.hub-visual-label,.hub-chapter,.fight-chapter{color:var(--site-muted)!important}
+.hub-chapter i,.fight-chapter i{color:var(--site-green)!important}
+.hub-scroll-cue,.fight-scroll-cue{color:var(--site-muted)!important}
+.hub-scroll-cue span,.fight-scroll-cue b{color:var(--site-green-bright)!important}
+.fight-photo{border-left-color:var(--site-green)!important}
+.fight-final-line{color:var(--site-green-bright)!important}
+.hub-stories{background:var(--site-bg-soft)!important}
+.hub-card{
+  background:var(--site-panel)!important;
+  border-color:var(--site-line)!important;
+  color:var(--site-text)!important;
+}
+.hub-card:hover{
+  background:var(--site-panel-hover)!important;
+  border-color:var(--site-green)!important;
+}
+.hub-card-number,.hub-card-arrow,.hub-footer a{color:var(--site-green-bright)!important}
+.hub-card-copy>p,.hub-footer{color:var(--site-muted)!important}
+.hub-card h3{color:var(--site-text)!important}
+.hub-card-description{color:var(--site-muted-strong)!important}
+.hub-footer{border-top-color:var(--site-line)!important}
+
+/* Shared mobile rhythm and readable type scale */
+@media(max-width:700px){
+  .hub-screen,.fight-screen{
+    padding:92px var(--site-gutter) 82px!important;
+  }
+  .hub-hero-shade{
+    background:linear-gradient(0deg,#101712f5 0%,#101712bd 55%,#10171248 100%)!important;
+  }
+  .hub-hero h1,.fight-screen-cover h1{
+    font-size:clamp(42px,11.5vw,64px)!important;
+    line-height:1.02!important;
+  }
+  .hub-subtitle{font-size:18px!important;line-height:1.4!important}
+  .hub-intro,.fight-paragraph{font-size:15px!important;line-height:1.7!important}
+  .hub-quote,.fight-screen blockquote{
+    margin-top:22px!important;
+    padding-left:16px!important;
+    font-size:21px!important;
+    line-height:1.38!important;
+  }
+  .hub-eyebrow,.fight-eyebrow{font-size:9px!important;letter-spacing:.18em!important}
+  .hub-section-heading h2{font-size:clamp(30px,8vw,42px)!important}
+  .hub-card h3{font-size:15px!important}
+  .hub-card-description{font-size:11px!important;line-height:1.5!important}
+  .fight-screen h1,.fight-screen h2{
+    font-size:clamp(34px,9vw,49px)!important;
+    line-height:1.04!important;
+  }
+  .fight-screen-ending h2{font-size:clamp(39px,10vw,58px)!important}
+  .fight-final-line{font-size:clamp(31px,8vw,44px)!important}
+  .fight-chapter,.hub-chapter{left:var(--site-gutter)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .hub-progress span,.fight-progress span,.hub-card{transition:none!important}
+}
