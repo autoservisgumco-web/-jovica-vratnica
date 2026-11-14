@@ -29,3 +29,12 @@ const items = [
 <nav class="global-bottom-nav" aria-label="Доња главна навигација">
   {items.map((item) => <a href={base + item.path} class:list={{ active: current === item.key }} aria-current={current === item.key ? 'page' : undefined}><span>{item.icon}</span><small>{item.label}</small></a>)}
 </nav>
+
+<style is:global>
+  .global-bottom-nav { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .global-bottom-nav a small { font-size: 7px; }
+  @media (max-width: 390px) {
+    .global-bottom-nav a small { font-size: 6px; }
+    .global-bottom-nav a > span { font-size: 18px; }
+  }
+</style>
