@@ -369,3 +369,42 @@ main .lead,main .hero-copy,main .hero-lead,main .hero-intro,main .about-hero-int
     --type-lead:1.08rem;
   }
 }
+
+
+/* SHARED NAVIGATION FINISH — red, black and grey palette */
+.global-topbar{
+  background:rgba(245,245,243,.97)!important;
+  border-bottom:1px solid #d5d5d2!important;
+  color:#191919!important;
+}
+.global-brand{color:#191919!important}
+.global-top-caption{color:#666662!important}
+.global-menu-trigger{border-color:#a6a6a2!important}
+.global-menu-trigger span{background:#191919!important}
+.global-menu-sheet{
+  color:#191919!important;
+  background:#f5f5f3!important;
+  border-color:#d5d5d2!important;
+  box-shadow:0 -18px 70px #19191920!important;
+}
+.global-menu-head p,.global-menu-links a>span,.global-menu-links a>b{color:#d52b36!important}
+.global-menu-head h2{color:#191919!important}
+.global-menu-close{color:#191919!important;border-color:#c8c8c4!important}
+.global-menu-links a{
+  color:#191919!important;
+  background:#fff!important;
+  border-color:#d5d5d2!important;
+}
+.global-menu-links a:hover,.global-menu-links a[aria-current="page"]{
+  border-color:#d52b36!important;
+  background:#d52b360c!important;
+}
+.global-bottom-nav{
+  background:rgba(245,245,243,.98)!important;
+  border-color:#d5d5d2!important;
+  box-shadow:0 -8px 35px #19191912!important;
+}
+.global-bottom-nav a{color:#666662!important}
+.global-bottom-nav a.active,.global-bottom-nav a:hover,.global-bottom-nav a.active>span{
+  color:#d52b36!important;
+}
