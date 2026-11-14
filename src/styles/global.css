@@ -316,7 +316,7 @@ footer>a:last-child{color:var(--ink)!important}
   --leading-body:1.8;
 }
 /* All page headings use the same font, weight, tracking and responsive scale. */
-main h1{
+main:not(.story-hub) h1{
   font-family:var(--font-heading)!important;
   font-size:var(--type-h1)!important;
   font-weight:800!important;
@@ -324,14 +324,14 @@ main h1{
   letter-spacing:-.065em!important;
   margin-top:0!important;
 }
-main h2{
+main:not(.story-hub) h2{
   font-family:var(--font-heading)!important;
   font-size:var(--type-h2)!important;
   font-weight:750!important;
   line-height:1.08!important;
   letter-spacing:-.05em!important;
 }
-main h3{
+main:not(.story-hub) h3{
   font-family:var(--font-heading)!important;
   font-size:var(--type-h3)!important;
   font-weight:750!important;
@@ -339,7 +339,7 @@ main h3{
   letter-spacing:-.035em!important;
 }
 /* Standard paragraph rhythm and reading width, including the separate story pages. */
-main p:not(.eyebrow):not(.kicker):not(.section-kicker):not(.overline):not(.about-kicker):not(.about-section-label):not(.about-hero-bottom):not(.identity):not(.motto):not(.supporting):not(.path-kicker):not(.path-description):not(.hero-meta):not(.section-number):not(.menu-head p):not(.story-menu-head p):not(.story-menu-note){
+main:not(.story-hub) p:not(.eyebrow):not(.kicker):not(.section-kicker):not(.overline):not(.about-kicker):not(.about-section-label):not(.about-hero-bottom):not(.identity):not(.motto):not(.supporting):not(.path-kicker):not(.path-description):not(.hero-meta):not(.section-number):not(.menu-head p):not(.story-menu-head p):not(.story-menu-note){
   font-family:var(--font-body)!important;
   font-size:var(--type-body)!important;
   font-weight:400!important;
